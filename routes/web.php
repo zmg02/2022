@@ -17,5 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('mogujie')->group(function () {
+    Route::get('/', 'MogujieHomeController@index');
+    Route::get('/', 'MogujieHomeController@index');
+    Route::get('/', 'MogujieHomeController@index');
+    Route::get('/', 'MogujieHomeController@index');
+});
 
-Route::get('/mogujie', 'MogujieHomeController@index');
