@@ -15,7 +15,7 @@
 		<div>
 			<span>
 				<span></span>
-				<span>蘑菇街首页</span>
+				<span>{{ config('app.name') }}</span>
 			</span>
 			<ul>
 				<li>

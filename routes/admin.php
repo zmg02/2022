@@ -1,9 +1,16 @@
 <?php
-echo 333;
 
 use Illuminate\Support\Facades\Route;
 
+Route::group(['prefix'=>'mogujie'], function () {
+    Route::get('test', function() {
+        return 'test';
+    });
+    Route::get('/', 'HomeController@index');
 
-Route::get('/home', 'HomeController@index');
+    Route::get('index/{name?}', 'LyearController@index');
+
+});
+
 
 
