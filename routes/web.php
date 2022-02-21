@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 Route::prefix('mogujie')->group(function () {
-    Route::get('/', 'MogujieHomeController@index');
-    Route::get('/', 'MogujieHomeController@index');
-    Route::get('/', 'MogujieHomeController@index');
-    Route::get('/', 'MogujieHomeController@index');
+    Route::get('/', 'Mogujie\HomeController@index');
+//    Route::get('/', 'Mogujie\HomeController@index');
+//    Route::get('/', 'Mogujie\HomeController@index');
+//    Route::get('/', 'Mogujie\HomeController@index');
 });
 
