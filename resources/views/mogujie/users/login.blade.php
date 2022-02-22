@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>登录蘑菇街</title>
-	<link rel="stylesheet" href="../css/login.css">
-	<script src="../js/jquery-1.11.1.js"></script>
-	<script src="../js/login.js"></script>
+	<link rel="stylesheet" href="/css/mogujie/login.css">
+	<script src="/js/mogujie/jquery-1.11.1.js"></script>
+	<script src="/js/mogujie/login.js"></script>
 </head>
 <body>
 	<div class="wrap">
 		<div>
-			<a href="index.html"><img src="../images/upload_ie4gkmjvgvqtiytdg4zdambqgiyde_220x52.png" alt=""></a>
+			<a href="{{ url('mogujie/index') }}"><img src="/img/mogujie/upload_ie4gkmjvgvqtiytdg4zdambqgiyde_220x52.png" alt=""></a>
 			<span>依《网络安全法》相关要求，即日起蘑菇街会员登陆需绑定手机。为保障您的账户安全及正常使用，如您尚未绑定，请尽快完成绑定，感谢您的理解和支持!</span>
 		</div>
 	</div>
@@ -20,11 +20,11 @@
 			<div class="pic">
 				<span class="head-img img-two"></span>
 				<span class="head-img img-one"></span>
-			</div>	
+			</div>
 			<div class="fir">
 				<div class="head">
 					<span class="login one">普通登录</span>
-					<span class="login two">手机无密码登录</span>	
+					<span class="login two">手机无密码登录</span>
 				</div>
 				<form action="#">
 					<span class="warn">请输入用户名/邮箱/手机号</span>
@@ -39,7 +39,7 @@
 					<li><a href="#"> QQ登录</a></li>
 					<li><a href="#"> 微信登录</a></li>
 					<li><a href="#" class="forget">忘记密码</a></li>
-				</ul>			
+				</ul>
 			</div>
 			<div class="sec">
 				<div class="title">
@@ -97,7 +97,7 @@
 				</div>
 			<!-- 	<img src="" alt=""> -->
 			</div>
-		</div>	
+		</div>
 	</div>
 	<footer>
 		<ul>
@@ -130,9 +130,9 @@
 			<li class="four">
 				<b>-移动客户端下载-</b>
 				<ol>
-					<li>蘑菇街<img src="../images/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
-					<li>美丽说<img src="../images/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
-					<li>uni引力<img src="../images/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
+					<li>蘑菇街<img src="/img/mogujie/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
+					<li>美丽说<img src="/img/mogujie/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
+					<li>uni引力<img src="/img/mogujie/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
 				</ol>
 			</li>
 		</ul>
@@ -148,7 +148,7 @@
 				<a href="#">规则中心</a>
 				<a href="#">有害信息举报</a> <span>&copy;2018 Mogujie.com 杭州卷瓜网络有限公司</span>
 			</span>
-			<span class="spa2">		
+			<span class="spa2">
 				<span class="a1">营业执照：<a href="#" class="a1">913301065526808764</a></span>
 				<span class="a1">网络文化经营许可证：<a href="#">浙网文（2016）0349-219号</a></span>
 				<span class="a1">增值电信业务经营许可证：<a href="#">浙B2-20110349</a></span>

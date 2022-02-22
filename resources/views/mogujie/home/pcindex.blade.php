@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>超级品牌日</title>
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/rightbar.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/header_mid.css">
-    <link rel="stylesheet" href="../css/foot.css">
-    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="/css/mogujie/base.css">
+    <link rel="stylesheet" href="/css/mogujie/rightbar.css">
+    <link rel="stylesheet" href="/css/mogujie/header.css">
+    <link rel="stylesheet" href="/css/mogujie/header_mid.css">
+    <link rel="stylesheet" href="/css/mogujie/foot.css">
+    <link rel="stylesheet" href="/css/mogujie/body.css">
 
 
-    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="/js/mogujie/jquery-1.11.1.min.js"></script>
 </head>
 <body>
     <!--右侧导航栏-->
@@ -54,7 +54,7 @@
     <!-- 头部 -->
     <div id="header" class="site-top-nav J_sitenav" data-ptp="_head">
         <div class="wrap">
-            <a href="index.html" class="home">蘑菇街首页</a>
+            <a href="{{ url('mogujie/index') }}" class="home">蘑菇街首页</a>
             <ul class="header-top">
                 <li><a href="login.html">登录</a></li>
                 <li class="myorder">
@@ -69,7 +69,7 @@
                         <li><a href="customer.html" style="border:none;">消费者服务</a></li>
                         <li>商家服务</li>
                         <li>规则中心</li>
-                    </ol>  
+                    </ol>
                 </li>
                 <li class="store">
                     <a><i class="icon"></i>商家后台&nbsp;<i class="delta"></i></a>
@@ -87,12 +87,12 @@
     <!-- 中间区域 -->
     <div class="header_mid clearfix">
         <div class="wrap clearfix">
-            <a class="logo" href="index.html">
-                <img src="../images/header_mid.png" alt="" srcset="">
+            <a class="logo" href="{{ url('mogujie/index') }}">
+                <img src="/img/mogujie/header_mid.png" alt="" srcset="">
             </a>
 
             <div class="search-content">
-                <div class="top_nav_search" id="nav_search_form"> 
+                <div class="top_nav_search" id="nav_search_form">
                     <!--搜索框 -->
                     <div class="search_inner_box">
                         <div class="selectbox">
@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="mid_fr">
-                <img src="../images/er.png" alt="" srcset="">
+                <img src="/img/mogujie/er.png" alt="" srcset="">
             </div>
         </div>
     </div>
@@ -131,7 +131,7 @@
         <div class="page_activity">
             <div class="module_row">
                 <div class="modul_row_show">
-                    <img src="../images/bh.jpg" alt="">
+                    <img src="/img/mogujie/bh.jpg" alt="">
                 </div>
             </div>
             <div class="menu_row">
@@ -147,7 +147,7 @@
                             <a href="#" class="item item3">护肤套装</a>
                             <a href="#" class="item item3">魅力彩妆</a>
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="goods_bg">
                     <div class="title_continer">
@@ -160,11 +160,11 @@
                             <div class="good1 shop fl">
                                 <a href="#">
                                     <div class="img_wrap">
-                                        <img src="../images/goods1.jpg" alt="">
+                                        <img src="/img/mogujie/goods1.jpg" alt="">
                                     </div>
                                     <div class="avator">
                                         <div class="shop_img">
-                                            <img src="../images/goods11.png" alt="">
+                                            <img src="/img/mogujie/goods11.png" alt="">
                                         </div>
                                     </div>
                                     <p class="title yahei">韩束官方旗舰店</p>
@@ -186,11 +186,11 @@
                             <div class="good2 shop fl ">
                                 <a href="#">
                                     <div class="img_wrap">
-                                        <img src="../images/goods2.webp" alt="">
+                                        <img src="/img/mogujie/goods2.webp" alt="">
                                     </div>
                                     <div class="avator">
                                         <div class="shop_img">
-                                            <img src="../images/goods22.webp" alt="">
+                                            <img src="/img/mogujie/goods22.webp" alt="">
                                         </div>
                                     </div>
                                     <p class="title yahei">韩束官方旗舰店</p>
@@ -211,11 +211,11 @@
                             <div class="good3 shop fl ">
                                 <a href="#">
                                     <div class="img_wrap">
-                                        <img src="../images/goods3.webp" alt="">
+                                        <img src="/img/mogujie/goods3.webp" alt="">
                                     </div>
                                     <div class="avator">
                                         <div class="shop_img">
-                                            <img src="../images/goods33.webp" alt="">
+                                            <img src="/img/mogujie/goods33.webp" alt="">
                                         </div>
                                     </div>
                                     <p class="title yahei">韩束官方旗舰店</p>
@@ -236,11 +236,11 @@
                             <div class="good4 shop fl ">
                                 <a href="#">
                                     <div class="img_wrap">
-                                        <img src="../images/goods4.webp" alt="">
+                                        <img src="/img/mogujie/goods4.webp" alt="">
                                     </div>
                                     <div class="avator">
                                         <div class="shop_img">
-                                            <img src="../images/goods44.webp" alt="">
+                                            <img src="/img/mogujie/goods44.webp" alt="">
                                         </div>
                                     </div>
                                     <p class="title yahei">韩束官方旗舰店</p>
@@ -261,11 +261,11 @@
                             <div class="good5 shop fl ">
                                 <a href="#">
                                     <div class="img_wrap">
-                                        <img src="../images/goods4.webp" alt="">
+                                        <img src="/img/mogujie/goods4.webp" alt="">
                                     </div>
                                     <div class="avator">
                                         <div class="shop_img">
-                                            <img src="../images/goods44.webp" alt="">
+                                            <img src="/img/mogujie/goods44.webp" alt="">
                                         </div>
                                     </div>
                                     <p class="title yahei">韩束官方旗舰店</p>
@@ -286,11 +286,11 @@
                             <div class="good6 shop fl ">
                                 <a href="#">
                                     <div class="img_wrap">
-                                        <img src="../images/goods3.webp" alt="">
+                                        <img src="/img/mogujie/goods3.webp" alt="">
                                     </div>
                                     <div class="avator">
                                         <div class="shop_img">
-                                            <img src="../images/goods33.webp" alt="">
+                                            <img src="/img/mogujie/goods33.webp" alt="">
                                         </div>
                                     </div>
                                     <p class="title yahei">韩束官方旗舰店</p>
@@ -311,11 +311,11 @@
                             <div class="good7 shop fl ">
                                 <a href="#">
                                     <div class="img_wrap">
-                                        <img src="../images/goods2.webp" alt="">
+                                        <img src="/img/mogujie/goods2.webp" alt="">
                                     </div>
                                     <div class="avator">
                                         <div class="shop_img">
-                                            <img src="../images/goods22.webp" alt="">
+                                            <img src="/img/mogujie/goods22.webp" alt="">
                                         </div>
                                     </div>
                                     <p class="title yahei">韩束官方旗舰店</p>
@@ -336,11 +336,11 @@
                             <div class="good8 shop fl ">
                                 <a href="#">
                                     <div class="img_wrap">
-                                        <img src="../images/goods1.jpg" alt="">
+                                        <img src="/img/mogujie/goods1.jpg" alt="">
                                     </div>
                                     <div class="avator">
                                         <div class="shop_img">
-                                            <img src="../images/goods11.png" alt="">
+                                            <img src="/img/mogujie/goods11.png" alt="">
                                         </div>
                                     </div>
                                     <p class="title yahei">韩束官方旗舰店</p>
@@ -440,15 +440,15 @@
                         <ul>
                             <li class="helper_item item_last">
                                 <div class="color_999">蘑菇街</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                             <li class="helper_item item_last">
                                 <div class="color_999">美丽说</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                             <li class="helper_item item_last">
                                 <div class="color_999">uni引力</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                         </ul>
                     </div>
@@ -496,7 +496,7 @@
                     <span class="footer_span color_999">网络文化经营许可证：</span>
                     <a href="#" class="footer_a color_999">浙网文（2016）0349-219号</a>
                     <b class="foot_b color_999"> | </b>
-                    
+
                     <span class="footer_span color_999">增值电信业务经营许可证：</span>
                     <a href="#" class="footer_a color_999">浙B2-20110349</a>
                     <b class="foot_b color_999"> | </b>
@@ -566,6 +566,6 @@
         </div>
     </div>
 
-    <script src="../js/header.js"></script>
+    <script src="/js/mogujie/header.js"></script>
 </body>
 </html>

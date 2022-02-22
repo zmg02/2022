@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>客户服务</title>
-    <link rel="stylesheet" href="../css/base.css">
-    
-    <link rel="stylesheet" href="../css/foot.css">
-    <link rel="stylesheet" href="../css/customer.css">
+    <link rel="stylesheet" href="/css/mogujie/base.css">
 
-    <script src="../js/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/css/mogujie/foot.css">
+    <link rel="stylesheet" href="/css/mogujie/customer.css">
+
+    <script src="/js/mogujie/jquery-1.11.1.min.js"></script>
 </head>
 <body>
     <!-- 头部 -->
     <div class="helpcenter-header">
         <div class="head_body">
             <div class="floatDiv">
-                <a href="index.html" style="display:block;">
-                    <img src="../images/cus_head.png">
+                <a href="{{ url('mogujie/index') }}" style="display:block;">
+                    <img src="/img/mogujie/cus_head.png">
                 </a>
             </div>
             <div class="floatDiv head_nav">
                 <ul>
                     <li>
-                        <a class="J_menu liselect" href="index.html">首页</a>
+                        <a class="J_menu liselect" href="{{ url('mogujie/index') }}">首页</a>
                     </li>
                     <li>
                         <a class="J_menu" href="#">常见问题</a>
@@ -317,7 +317,7 @@
                         </ul>
                     </div>
                 </div>
-    
+
                 <div class="mod">
                     <div class="mod_container">
                         <h4 class="title">
@@ -339,7 +339,7 @@
                         </ul>
                     </div>
                 </div>
-    
+
                 <div class="mod">
                     <div class="mod_container">
                         <h4 class="title">
@@ -358,7 +358,7 @@
                         </ul>
                     </div>
                 </div>
-    
+
                 <div class="mod">
                     <div class="mod_container">
                         <h4 class="title title_last">
@@ -367,20 +367,20 @@
                         <ul>
                             <li class="helper_item item_last">
                                 <div class="color_999">蘑菇街</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                             <li class="helper_item item_last">
                                 <div class="color_999">美丽说</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                             <li class="helper_item item_last">
                                 <div class="color_999">uni引力</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                         </ul>
                     </div>
                 </div>
-    
+
             </div>
             <div class="info">
                 <ul>
@@ -419,35 +419,35 @@
                     <span class="footer_span color_999">营业执照：</span>
                     <a href="#" class="footer_a color_999">913301065526808764</a>
                     <b class="foot_b color_999"> | </b>
-    
+
                     <span class="footer_span color_999">网络文化经营许可证：</span>
                     <a href="#" class="footer_a color_999">浙网文（2016）0349-219号</a>
                     <b class="foot_b color_999"> | </b>
-    
+
                     <span class="footer_span color_999">增值电信业务经营许可证：</span>
                     <a href="#" class="footer_a color_999">浙B2-20110349</a>
                     <b class="foot_b color_999"> | </b>
-    
+
                     <span class="footer_span color_999"></span>
                     <a href="#" class="footer_a color_999">安全责任书</a>
                     <b class="foot_b color_999"> | </b>
-    
+
                     <span class="footer_span color_999"></span>
                     <a href="#" class="footer_a color_999">浙公网安备 33010602002329号</a>
                     <b class="foot_b color_999"> | </b>
-    
+
                     <span class="footer_span color_999"></span>
                     <a href="#" class="footer_a color_999">互联网药品信息服务资格证书编号：（浙)-经营性-2018-0002</a>
                     <b class="foot_b color_999"> | </b>
-    
+
                     <span class="footer_span color_999"></span>
                     <a href="#" class="footer_a color_999">浙网食A33010003</a>
                     <b class="foot_b color_999"> | </b>
-    
+
                     <span class="footer_span color_999"></span>
                     <a href="#" class="footer_a color_999">出版物网络交易平台服务经营备案证</a>
                     <b class="foot_b color_999"> | </b>
-    
+
                     <span class="footer_span color_999"></span>
                     <a href="#" class="footer_a color_999">（浙）网械平台备字[2018]第00006号</a>
                     <b class="foot_b color_999"> | </b>
@@ -456,6 +456,6 @@
         </div>
     </div>
 
-    <script src="../js/header.js"></script>
+    <script src="/js/mogujie/header.js"></script>
 </body>
 </html>

@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::prefix('mogujie')->group(function () {
     Route::get('/', 'Mogujie\HomeController@index');
+    Route::match(['get', 'post'], 'register','Mogujie\IndexController@register');
+    Route::match(['get', 'post'], 'login','Mogujie\IndexController@login');
 //    Route::get('/', 'Mogujie\HomeController@index');
 //    Route::get('/', 'Mogujie\HomeController@index');
 //    Route::get('/', 'Mogujie\HomeController@index');

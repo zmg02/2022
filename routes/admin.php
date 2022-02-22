@@ -9,6 +9,7 @@ Route::group(['prefix'=>'mogujie'], function () {
     Route::get('/', 'HomeController@index');
 
     Route::get('index/{name?}', 'LyearController@index');
+    Route::get('user/list/{page?}', 'UserController@list');
 
 });
 

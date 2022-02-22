@@ -3,19 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>购物车</title>
-	<link rel="stylesheet" href="../css/trolley.css">
-	<script src="../js/jquery-1.11.1.js"></script>
-	 <script src="../js/trolley.js"></script> 
+	<link rel="stylesheet" href="/css/mogujie/trolley.css">
+	<script src="/js/mogujie/jquery-1.11.1.js"></script>
+	 <script src="/js/mogujie/trolley.js"></script>
 </head>
 <body>
 	<header>
 		<div>
-			<a href="index.html" class="inda">
+			<a href="{{ url('mogujie/index') }}" class="inda">
 				<span></span>
 				<span>蘑菇街首页</span>
 			</a>
 			<ul>
-				<li>	
+				<li>
 					<a href="#"><span class="sprite"></span> 商家后台 <span class="sprite"></span></a>
 					<ol class="business">
 						<li><a href="#">管理后台</a></li>
@@ -25,19 +25,19 @@
 					</ol>
 				</li>
 				<li class="tw">
-					<a href="#">客户服务 <span  class="sprite"></span></a>	
+					<a href="#">客户服务 <span  class="sprite"></span></a>
 					<ol class="customer">
 						<li><a href="customer.html">消费者服务</a></li>
 						<li><a href="#">商家服务</a></li>
 						<li><a href="#">规则中心</a></li>
 					</ol>
 				</li>
-				<li>			
+				<li>
 					<a  href="trolley.html"><span  class="sprite"></span> 购物车<b class="red">2</b>件</a>
 					<ol class="buy">
 						<!-- <li>购物车里没有商品！</li> -->
 						<li>
-							<a href="#" class="lef"><img src="../images/180910_8eeebk6fb1i5l4cb63ke1h1lk76b2_640x960.jpg_48x48.jpg" alt=""></a>
+							<a href="#" class="lef"><img src="/img/mogujie/180910_8eeebk6fb1i5l4cb63ke1h1lk76b2_640x960.jpg_48x48.jpg" alt=""></a>
 							<p class="mid">
 								<a href="#">2018秋季新款慵懒风气质甜</a>
 								<span>颜色：蓝色 尺码：M</span>
@@ -48,7 +48,7 @@
 							</p>
 						</li>
 						<li>
-							<a href="#" class="lef"><img src="../images/180815_1cl2916jjc0618j6dd71ke93fa3g0_800x800.jpg_48x48.jpg" alt=""></a>
+							<a href="#" class="lef"><img src="/img/mogujie/180815_1cl2916jjc0618j6dd71ke93fa3g0_800x800.jpg_48x48.jpg" alt=""></a>
 							<p class="mid">
 								<a href="#">女装秋装2018新款时尚潮宽松休闲慵懒风毛衣女网红开衫外套毛衣</a>
 								<span>颜色: 米色  尺码: 均码  </span>
@@ -63,7 +63,7 @@
 						</li>
 					</ol>
 				</li>
-				<li>	
+				<li>
 					<a  href="order.html"><span  class="sprite"></span> 我的订单</a>
 					<ol class="menu">
 						<li></li>
@@ -73,7 +73,7 @@
 					</ol>
 				</li>
 				<li class="five"><a href="login.html">登录</a></li>
-			</ul> 
+			</ul>
 		</div>
 	</header>
 	<div class="log-wrap">
@@ -102,10 +102,10 @@
 					<hr class="fir">
 					<b> </b><br>
 					<span>完成</span>
-				</aside>	
+				</aside>
 			</div>
 		</div>
-	</div>	
+	</div>
 	<section> <!--无商品时可添加类class:blank-->
 		<div class="title">
 			<span class="red">全部商品 <b>2</b></span>
@@ -131,7 +131,7 @@
 						<span class="shopnam"><a href="store.html">梦幻如一女装 </a></span>
 						<span><i></i>满108元减5</span>
 						<span>优惠券</span>
-						<a href="store.html">去店铺凑单></a> 
+						<a href="store.html">去店铺凑单></a>
 					</td>
 				</tr>
 				<tr class="pro">
@@ -139,7 +139,7 @@
 						<input type="checkbox">
 					</td>
 					<td class="sec">
-						<a href="goods.html"><img src="../images/180910_8eeebk6fb1i5l4cb63ke1h1lk76b2_640x960.jpg_48x48.jpg" alt=""></a>
+						<a href="goods.html"><img src="/img/mogujie/180910_8eeebk6fb1i5l4cb63ke1h1lk76b2_640x960.jpg_48x48.jpg" alt=""></a>
 						<a href="goods.html"><p>2018秋季新款慵懒风气质甜美小性感透视圆领休闲宽松马海毛毛衣学生长袖上衣</p></a>
 
 					</td>
@@ -169,7 +169,7 @@
 						<span class="shopnam nam2"><a href="store.html">漫巴黎衣橱 </a></span>
 						<span><i></i>满99元减5</span>
 						<span>优惠券</span>
-						<a href="store.html">去店铺凑单></a> 
+						<a href="store.html">去店铺凑单></a>
 					</td>
 				</tr>
 				<tr class="pro">
@@ -177,7 +177,7 @@
 						<input type="checkbox">
 					</td>
 					<td class="sec">
-						<a href="goods.html"><img src="../images/180815_1cl2916jjc0618j6dd71ke93fa3g0_800x800.jpg_48x48.jpg" alt=""></a>
+						<a href="goods.html"><img src="/img/mogujie/180815_1cl2916jjc0618j6dd71ke93fa3g0_800x800.jpg_48x48.jpg" alt=""></a>
 						<a href="goods.html"><p>女装秋装2018新款时尚潮宽松休闲慵懒风毛衣女网红开衫外套毛衣 </p></a>
 
 					</td>
@@ -200,7 +200,7 @@
 					<td  class="sevth">
 						<span>删除</span>
 					</td>
-				</tr>				
+				</tr>
 			</tbody>
 		</table>
 		<div class="pay">
@@ -250,9 +250,9 @@
 			<li class="four">
 				<b>-移动客户端下载-</b>
 				<ol>
-					<li>蘑菇街<img src="../images/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
-					<li>美丽说<img src="../images/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
-					<li>uni引力<img src="../images/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
+					<li>蘑菇街<img src="/img/mogujie/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
+					<li>美丽说<img src="/img/mogujie/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
+					<li>uni引力<img src="/img/mogujie/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
 				</ol>
 			</li>
 		</ul>
@@ -268,7 +268,7 @@
 			<a href="#">规则中心</a>
 			<a href="#">有害信息举报</a> <span>&copy;2018 Mogujie.com 杭州卷瓜网络有限公司</span>
 		</span>
-		<span class="spa2">		
+		<span class="spa2">
 			<span class="a1">营业执照：<a href="#" class="a1">913301065526808764</a></span>
 			<span class="a1">网络文化经营许可证：<a href="#">浙网文（2016）0349-219号</a></span>
 			<span class="a1">增值电信业务经营许可证：<a href="#">浙B2-20110349</a></span>
@@ -309,7 +309,7 @@
 		<div class="img">
 			<a href="#">
 				<span class="scan"></span>
-				<img src="../images/180521_73ibbgh52kj2dceg869h50b0bgfl6_181x200.png" alt="">
+				<img src="/img/mogujie/180521_73ibbgh52kj2dceg869h50b0bgfl6_181x200.png" alt="">
 			</a>
 		</div>
 		<div class="top">
