@@ -3,19 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>搜商品</title>
-	<link rel="stylesheet" href="../css/select.css">
-	<script src="../js/jquery-1.11.1.js"></script>
-	<script src="../js/select.js"></script>
+	<link rel="stylesheet" href="/css/mogujie/select.css">
+	<script src="/js/mogujie/jquery-1.11.1.js"></script>
+	<script src="/js/mogujie/select.js"></script>
 </head>
 <body>
 	<header>
 		<div>
-			<a href="index.html" class="inda">
+			<a href="{{ url('mogujie/index') }}" class="inda">
 				<span></span>
 				<span>蘑菇街首页</span>
 			</a>
 			<ul>
-				<li>	
+				<li>
 					<a href="#"><span class="sprite"></span> 商家后台 <span class="sprite"></span></a>
 					<ol class="business">
 						<li><a href="#">管理后台</a></li>
@@ -25,20 +25,20 @@
 					</ol>
 				</li>
 				<li class="tw">
-					<a href="#">客户服务 <span  class="sprite"></span></a>	
+					<a href="#">客户服务 <span  class="sprite"></span></a>
 					<ol class="customer">
 						<li><a href="customer.html">消费者服务</a></li>
 						<li><a href="#">商家服务</a></li>
 						<li><a href="#">规则中心</a></li>
 					</ol>
 				</li>
-				<li>			
+				<li>
 					<a  href="trolley.html"><span  class="sprite"></span> 购物车</a>
 					<ol class="buy">
 						<li>购物车里没有商品！</li>
 					</ol>
 				</li>
-				<li>	
+				<li>
 					<a  href="order.html"><span  class="sprite"></span> 我的订单</a>
 					<ol class="menu">
 						<li></li>
@@ -48,7 +48,7 @@
 					</ol>
 				</li>
 				<li class="five"><a href="login.html">登录</a></li>
-			</ul> 
+			</ul>
 		</div>
 	</header>
 	<div class="search">
@@ -133,14 +133,14 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/001.webp" alt=""><span>秋季新款中长款百搭宽松显瘦长袖复古外套撞色格子后背字母印花衬衣开衫韩版学生翻领排扣衬衫女</span></a></li>
-									<li><a href="#"><img src="../images/002.webp" alt=""><span>2018秋季新款韩版短款蝙蝠袖长袖牛仔酷外套女学生高显瘦百搭bf原宿宽松上衣</span></a></li>
-									<li><a href="#"><img src="../images/003.webp" alt=""><span>小个子风衣女中长款韩版宽松学生bf百搭2018春季新款开学季外套春秋</span></a></li>
-									<li><a href="#"><img src="../images/004.webp" alt=""><span>2018夏季新款原宿BF欧美风学院原宿港味潮印花大码中长款宽松黑色短袖T恤女套头上衣</span></a></li>
-									<li><a href="#"><img src="../images/005.webp" alt=""><span>2018秋冬新款黑色毛呢外套女韩版宽松中长款显瘦收腰呢子大衣</span></a></li>
-									<li><a href="#"><img src="../images/006.webp" alt=""><span>宽松显瘦气质黑色波点V领荷叶边衬衫2018夏季新款韩版女装喇叭袖长袖雪纺衫上衣女潮</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/001.webp" alt=""><span>秋季新款中长款百搭宽松显瘦长袖复古外套撞色格子后背字母印花衬衣开衫韩版学生翻领排扣衬衫女</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/002.webp" alt=""><span>2018秋季新款韩版短款蝙蝠袖长袖牛仔酷外套女学生高显瘦百搭bf原宿宽松上衣</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/003.webp" alt=""><span>小个子风衣女中长款韩版宽松学生bf百搭2018春季新款开学季外套春秋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/004.webp" alt=""><span>2018夏季新款原宿BF欧美风学院原宿港味潮印花大码中长款宽松黑色短袖T恤女套头上衣</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/005.webp" alt=""><span>2018秋冬新款黑色毛呢外套女韩版宽松中长款显瘦收腰呢子大衣</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/006.webp" alt=""><span>宽松显瘦气质黑色波点V领荷叶边衬衫2018夏季新款韩版女装喇叭袖长袖雪纺衫上衣女潮</span></a></li>
 								</ul>
-							</aside>    
+							</aside>
 						</div> <!--隐藏的div-->
 					</li>
 					<li>
@@ -201,7 +201,7 @@
 											<a href="#">PU皮裙</a>
 											<a href="#">A字裙</a>
 											<a href="#">针织裙</a>
-											
+
 										</div>
 									</li>
 								</ul>
@@ -209,12 +209,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/021.webp" alt=""><span>秋季新款韩版文艺撞色复古气质露肩个性拉链两穿中长款慵懒风修身显瘦A字裙针织连衣裙女潮</span></a></li>
-									<li><a href="#"><img src="../images/022.webp" alt=""><span>2018秋季女装新品韩版chic港味开叉毛边牛仔裙子女百搭中长款高腰显瘦破洞半身裙A字裙潮</span></a></li>
-									<li><a href="#"><img src="../images/023.webp" alt=""><span>吊带连衣裙女夏2018新款复古通勤高腰显瘦长款裙子中长款收腰薄荷绿A字裙</span></a></li>
-									<li><a href="#"><img src="../images/024.webp" alt=""><span>韩版气质新款V领五分袖纯色高腰褶皱松紧腰百搭短裙雪纺连衣裙</span></a></li>
-									<li><a href="#"><img src="../images/025.webp" alt=""><span>裙子秋装2018新款sukol裙黑色开叉长裙收腰显瘦复古冷淡风连衣裙</span></a></li>
-									<li><a href="#"><img src="../images/026.webp" alt=""><span>小清新学院风连衣裙女夏时尚俏皮减龄娃娃裙韩版宽松T恤裙女夏撞色翻领气质连衣裙显瘦初恋裙子</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/021.webp" alt=""><span>秋季新款韩版文艺撞色复古气质露肩个性拉链两穿中长款慵懒风修身显瘦A字裙针织连衣裙女潮</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/022.webp" alt=""><span>2018秋季女装新品韩版chic港味开叉毛边牛仔裙子女百搭中长款高腰显瘦破洞半身裙A字裙潮</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/023.webp" alt=""><span>吊带连衣裙女夏2018新款复古通勤高腰显瘦长款裙子中长款收腰薄荷绿A字裙</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/024.webp" alt=""><span>韩版气质新款V领五分袖纯色高腰褶皱松紧腰百搭短裙雪纺连衣裙</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/025.webp" alt=""><span>裙子秋装2018新款sukol裙黑色开叉长裙收腰显瘦复古冷淡风连衣裙</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/026.webp" alt=""><span>小清新学院风连衣裙女夏时尚俏皮减龄娃娃裙韩版宽松T恤裙女夏撞色翻领气质连衣裙显瘦初恋裙子</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -246,7 +246,7 @@
 											<a href="#">小脚裤</a>
 											<a href="#">背带裤</a>
 											<a href="#">短裤</a>
-										
+
 										</div>
 									</li>
 									<li>
@@ -272,7 +272,7 @@
 											<a href="#">连体裤</a>
 											<a href="#">雪纺裤</a>
 											<a href="#">裙裤</a>
-											
+
 										</div>
 									</li>
 								</ul>
@@ -280,12 +280,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/031.webp" alt=""><span>牛仔裤女ins港味高腰韩版纯色洋气灰色新款长裤子时尚百搭学生chic紧身弹力显瘦牛仔小脚裤</span></a></li>
-									<li><a href="#"><img src="../images/032.webp" alt=""><span>秋季女装韩版字母修身显瘦打底裤小脚裤高腰外穿运动九分裤休闲裤</span></a></li>
-									<li><a href="#"><img src="../images/033.webp" alt=""><span>2018高腰牛仔裤短裤女春夏阔腿裤胖mm宽松大码女装显瘦a字热裤子</span></a></li>
-									<li><a href="#"><img src="../images/034.webp" alt=""><span>ZQ直播 春季新款韩国魔术裤女大码打底裤外穿弹力显瘦黑色裤子</span></a></li>
-									<li><a href="#"><img src="../images/035.webp" alt=""><span>破洞牛仔裤女秋季新款女装韩版ins学生个性百搭高腰不规则小脚裤修身弹力侧开叉毛边九分直筒裤</span></a></li>
-									<li><a href="#"><img src="../images/036.webp" alt=""><span>夏装2018新款女装韩版港味复古休闲百搭原宿风学生显瘦纯色小脚哈伦裤松紧腰休闲九分长裤子潮</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/031.webp" alt=""><span>牛仔裤女ins港味高腰韩版纯色洋气灰色新款长裤子时尚百搭学生chic紧身弹力显瘦牛仔小脚裤</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/032.webp" alt=""><span>秋季女装韩版字母修身显瘦打底裤小脚裤高腰外穿运动九分裤休闲裤</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/033.webp" alt=""><span>2018高腰牛仔裤短裤女春夏阔腿裤胖mm宽松大码女装显瘦a字热裤子</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/034.webp" alt=""><span>ZQ直播 春季新款韩国魔术裤女大码打底裤外穿弹力显瘦黑色裤子</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/035.webp" alt=""><span>破洞牛仔裤女秋季新款女装韩版ins学生个性百搭高腰不规则小脚裤修身弹力侧开叉毛边九分直筒裤</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/036.webp" alt=""><span>夏装2018新款女装韩版港味复古休闲百搭原宿风学生显瘦纯色小脚哈伦裤松紧腰休闲九分长裤子潮</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -321,7 +321,7 @@
 											<a href="#">穆勒鞋</a>
 											<a href="#">厚底鞋</a>
 											<a href="#">跑步鞋</a>
-										
+
 										</div>
 									</li>
 									<li>
@@ -359,7 +359,7 @@
 											<a href="#">系带款</a>
 											<a href="#">原宿风</a>
 											<a href="#">欧美范</a>
-										
+
 										</div>
 									</li>
 								</ul>
@@ -367,12 +367,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/041.webp" alt=""><span>秋季2018新款蝴蝶结平底鞋仙女方头一字扣百搭低跟软妹后空单鞋子</span></a></li>
-									<li><a href="#"><img src="../images/042.webp" alt=""><span>小脏鞋女明星同款小白鞋新款女学院风韩国做旧星星平底休闲鞋女鞋</span></a></li>
-									<li><a href="#"><img src="../images/043.webp" alt=""><span>【偏小一码】韩版风甜美拼色厚底系带运动鞋简便款学生中跟拼接女鞋休闲款跑步鞋增高小白鞋老爹鞋</span></a></li>
-									<li><a href="#"><img src="../images/044.webp" alt=""><span>ins帆布鞋女2018新款学生韩版小白鞋原宿百搭ulzzang板鞋chic鞋子女鞋</span></a></li>
-									<li><a href="#"><img src="../images/045.webp" alt=""><span>学生小白鞋女2018秋季新款甜美刺绣猫咪系带休闲鞋百搭圆头平底懒人鞋ins女鞋</span></a></li>
-									<li><a href="#"><img src="../images/046.webp" alt=""><span>2018韩版百搭跑步鞋ulzzang原宿ins超火运动鞋女zipper老爹鞋小白鞋网红款</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/041.webp" alt=""><span>秋季2018新款蝴蝶结平底鞋仙女方头一字扣百搭低跟软妹后空单鞋子</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/042.webp" alt=""><span>小脏鞋女明星同款小白鞋新款女学院风韩国做旧星星平底休闲鞋女鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/043.webp" alt=""><span>【偏小一码】韩版风甜美拼色厚底系带运动鞋简便款学生中跟拼接女鞋休闲款跑步鞋增高小白鞋老爹鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/044.webp" alt=""><span>ins帆布鞋女2018新款学生韩版小白鞋原宿百搭ulzzang板鞋chic鞋子女鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/045.webp" alt=""><span>学生小白鞋女2018秋季新款甜美刺绣猫咪系带休闲鞋百搭圆头平底懒人鞋ins女鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/046.webp" alt=""><span>2018韩版百搭跑步鞋ulzzang原宿ins超火运动鞋女zipper老爹鞋小白鞋网红款</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -443,12 +443,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/051.webp" alt=""><span>韩版单肩托特包大包包简约斜挎包购物袋韩国学生休闲女包大容量潮</span></a></li>
-									<li><a href="#"><img src="../images/052.webp" alt=""><span>日系软妹可爱卡通猫咪少女萌妹小浣熊毛绒珍珠链条斜挎包手机包女</span></a></li>
-									<li><a href="#"><img src="../images/053.webp" alt=""><span>迷你双肩包女2018新品日系小清新皮质多功能小背包潮简约休闲单肩斜挎小包</span></a></li>
-									<li><a href="#"><img src="../images/054.webp" alt=""><span>复古文艺大包包女2018新款潮韩版简约百搭斜挎时尚大容量风琴包单肩包</span></a></li>
-									<li><a href="#"><img src="../images/055.webp" alt=""><span>2018年新款旅行化妆包韩国小号便携女化妆袋手拿大容量简约随身化妆品收纳包</span></a></li>
-									<li><a href="#"><img src="../images/056.webp" alt=""><span>2017新款女包单肩包韩版时尚休闲大包包女大容量手提包磨砂托</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/051.webp" alt=""><span>韩版单肩托特包大包包简约斜挎包购物袋韩国学生休闲女包大容量潮</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/052.webp" alt=""><span>日系软妹可爱卡通猫咪少女萌妹小浣熊毛绒珍珠链条斜挎包手机包女</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/053.webp" alt=""><span>迷你双肩包女2018新品日系小清新皮质多功能小背包潮简约休闲单肩斜挎小包</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/054.webp" alt=""><span>复古文艺大包包女2018新款潮韩版简约百搭斜挎时尚大容量风琴包单肩包</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/055.webp" alt=""><span>2018年新款旅行化妆包韩国小号便携女化妆袋手拿大容量简约随身化妆品收纳包</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/056.webp" alt=""><span>2017新款女包单肩包韩版时尚休闲大包包女大容量手提包磨砂托</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -521,12 +521,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/061.webp" alt=""><span>人字拖男夏防滑平底跟男女情侣女凉拖休闲夹脚拖鞋男士沙滩鞋</span></a></li>
-									<li><a href="#"><img src="../images/062.webp" alt=""><span>【四季款】高帮帆布鞋女情侣款小白鞋男休闲鞋男生鞋子韩版潮流男鞋夏季透气板鞋学生潮鞋</span></a></li>
-									<li><a href="#"><img src="../images/063.webp" alt=""><span>2018秋季新品男士修身牛仔裤男复古黑色时尚百搭青年松紧腰系抽绳休闲韩版长裤子潮</span></a></li>
-									<li><a href="#"><img src="../images/064.webp" alt=""><span>秋季新款男士长袖T恤韩版潮流圆领帅修身衣服学生卫衣男上衣男装薄款男T恤2018秋衣打底衫</span></a></li>
-									<li><a href="#"><img src="../images/065.webp" alt=""><span>夏季短袖白衬衫男士修身纯色商务工装职业正装衬衣加大码男装寸衫</span></a></li>
-									<li><a href="#"><img src="../images/066.webp" alt=""><span>春夏新款潮流韩版裤子男士夏季韩版潮流运动裤九分裤小脚裤哈伦裤修身休闲裤</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/061.webp" alt=""><span>人字拖男夏防滑平底跟男女情侣女凉拖休闲夹脚拖鞋男士沙滩鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/062.webp" alt=""><span>【四季款】高帮帆布鞋女情侣款小白鞋男休闲鞋男生鞋子韩版潮流男鞋夏季透气板鞋学生潮鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/063.webp" alt=""><span>2018秋季新品男士修身牛仔裤男复古黑色时尚百搭青年松紧腰系抽绳休闲韩版长裤子潮</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/064.webp" alt=""><span>秋季新款男士长袖T恤韩版潮流圆领帅修身衣服学生卫衣男上衣男装薄款男T恤2018秋衣打底衫</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/065.webp" alt=""><span>夏季短袖白衬衫男士修身纯色商务工装职业正装衬衣加大码男装寸衫</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/066.webp" alt=""><span>春夏新款潮流韩版裤子男士夏季韩版潮流运动裤九分裤小脚裤哈伦裤修身休闲裤</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -540,7 +540,7 @@
 							<a href="#">运动套装 </a>
 							<span class="pic"></span>
 						</span>
-						<span class="bla">运动鞋</span>	
+						<span class="bla">运动鞋</span>
 						<span class="bla">小白鞋</span>
 						<div class="hid-div">
 							<aside class="left">
@@ -556,7 +556,7 @@
 											<a href="#">帆布鞋</a>
 											<a href="#">小白鞋</a>
 											<a href="#">情侣款</a>
-										
+
 										</div>
 									</li>
 									<li>
@@ -577,7 +577,7 @@
 											<a href="#">小型装备</a>
 											<a href="#">大型装备</a>
 											<a href="#">拉力器</a>
-										
+
 										</div>
 									</li>
 									<li>
@@ -603,16 +603,16 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/071.webp" alt=""><span>Vans范斯男鞋女鞋2018新款黑白棋低帮轻便滑板休闲鞋VN0A38EMQ9B</span></a></li>
-									<li><a href="#"><img src="../images/072.webp" alt=""><span>森茂秋季新品ins鞋子女鞋休闲跑步鞋老爹鞋原宿厚底运动鞋韩版百搭</span></a></li>
-									<li><a href="#"><img src="../images/073.webp" alt=""><span>新款瑜伽服运动套装女时尚休闲服专业健身服速干训练跑步五件套</span></a></li>
-									<li><a href="#"><img src="../images/074.webp" alt=""><span>Vans范斯春夏季女鞋明星款滑板鞋百搭运动休闲马龙色板鞋</span></a></li>
-									<li><a href="#"><img src="../images/075.webp" alt=""><span>Nike Air M2K Tekno耐克男女鞋跑鞋复古老爹鞋AO3108-001</span></a></li>
-									<li><a href="#"><img src="../images/076.webp" alt=""><span>ins超火小白鞋女2018夏季新款原宿百搭平底系带帆布鞋透气低帮学生鞋韩版街拍港风休闲板鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/071.webp" alt=""><span>Vans范斯男鞋女鞋2018新款黑白棋低帮轻便滑板休闲鞋VN0A38EMQ9B</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/072.webp" alt=""><span>森茂秋季新品ins鞋子女鞋休闲跑步鞋老爹鞋原宿厚底运动鞋韩版百搭</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/073.webp" alt=""><span>新款瑜伽服运动套装女时尚休闲服专业健身服速干训练跑步五件套</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/074.webp" alt=""><span>Vans范斯春夏季女鞋明星款滑板鞋百搭运动休闲马龙色板鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/075.webp" alt=""><span>Nike Air M2K Tekno耐克男女鞋跑鞋复古老爹鞋AO3108-001</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/076.webp" alt=""><span>ins超火小白鞋女2018夏季新款原宿百搭平底系带帆布鞋透气低帮学生鞋韩版街拍港风休闲板鞋</span></a></li>
 								</ul>
 							</aside>
 						</div>
-		
+
 					</li>
 					<li>   <!--第八部分-->
 						<span>
@@ -682,12 +682,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/081.webp" alt=""><span>【180个】发饰发卡发夹边夹头饰黑色一字刘海发箍夹子卡子顶夹</span></a></li>
-									<li><a href="#"><img src="../images/082.webp" alt=""><span>2018新款韩版手表女士防水时尚款皮带潮流女款水钻休闲女表</span></a></li>
-									<li><a href="#"><img src="../images/083.webp" alt=""><span>帕森偏光太阳镜 女士个性金属猫眼炫彩膜大框潮墨镜 圆脸墨镜太阳镜</span></a></li>
-									<li><a href="#"><img src="../images/084.webp" alt=""><span>韩版全框复古眼镜框女潮圆形大框文艺金属圆脸防辐射平光镜架男</span></a></li>
-									<li><a href="#"><img src="../images/085.webp" alt=""><span>威龙时尚潮流皮带学生手表韩版简约休闲男士手表大表盘防水石英表</span></a></li>
-									<li><a href="#"><img src="../images/086.webp" alt=""><span>石榴石圆珠手链纯银简约甜美森林系学生手环清新生日礼物饰品</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/081.webp" alt=""><span>【180个】发饰发卡发夹边夹头饰黑色一字刘海发箍夹子卡子顶夹</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/082.webp" alt=""><span>2018新款韩版手表女士防水时尚款皮带潮流女款水钻休闲女表</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/083.webp" alt=""><span>帕森偏光太阳镜 女士个性金属猫眼炫彩膜大框潮墨镜 圆脸墨镜太阳镜</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/084.webp" alt=""><span>韩版全框复古眼镜框女潮圆形大框文艺金属圆脸防辐射平光镜架男</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/085.webp" alt=""><span>威龙时尚潮流皮带学生手表韩版简约休闲男士手表大表盘防水石英表</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/086.webp" alt=""><span>石榴石圆珠手链纯银简约甜美森林系学生手环清新生日礼物饰品</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -725,7 +725,7 @@
 											<a href="#">护肤套装</a>
 											<a href="#">防晒</a>
 											<a href="#">男士护肤</a>
-											
+
 										</div>
 									</li>
 									<li>
@@ -766,12 +766,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/091.webp" alt=""><span>杨幂同款CC棒抖音同款气垫bb霜气垫cc正品棒bb霜cc棒遮瑕持久防水遮瑕粉妆棒遮瑕修容棒</span></a></li>
-									<li><a href="#"><img src="../images/092.webp" alt=""><span>素萃温和护肤品套装学生美白祛斑锁水保湿滋润提亮细致毛孔乳液爽肤水化妆品套装</span></a></li>
-									<li><a href="#"><img src="../images/093.webp" alt=""><span>自然堂面膜补水保湿亮润面膜贴收缩毛孔滋润免洗面膜10片</span></a></li>
-									<li><a href="#"><img src="../images/094.webp" alt=""><span>10片送2片】正品蒸汽眼膜缓解眼疲劳温热敷眼罩薰衣草去黑眼圈去细纹紧致补水学生护眼膜贴片装</span></a></li>
-									<li><a href="#"><img src="../images/095.webp" alt=""><span>【送眉卡】眉笔双头自动正品防汗防水防脱妆眉粉初学者棕色带眉刷</span></a></li>
-									<li><a href="#"><img src="../images/096.webp" alt=""><span>买一支送一支！卖狗抖音颜九雅邦粉管口红保湿不掉色姑奶奶限量学生山款君不离平价替代少女不沾杯</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/091.webp" alt=""><span>杨幂同款CC棒抖音同款气垫bb霜气垫cc正品棒bb霜cc棒遮瑕持久防水遮瑕粉妆棒遮瑕修容棒</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/092.webp" alt=""><span>素萃温和护肤品套装学生美白祛斑锁水保湿滋润提亮细致毛孔乳液爽肤水化妆品套装</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/093.webp" alt=""><span>自然堂面膜补水保湿亮润面膜贴收缩毛孔滋润免洗面膜10片</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/094.webp" alt=""><span>10片送2片】正品蒸汽眼膜缓解眼疲劳温热敷眼罩薰衣草去黑眼圈去细纹紧致补水学生护眼膜贴片装</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/095.webp" alt=""><span>【送眉卡】眉笔双头自动正品防汗防水防脱妆眉粉初学者棕色带眉刷</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/096.webp" alt=""><span>买一支送一支！卖狗抖音颜九雅邦粉管口红保湿不掉色姑奶奶限量学生山款君不离平价替代少女不沾杯</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -840,7 +840,7 @@
 											<a href="#">脏衣篓</a>
 											<a href="#">毛巾/浴巾</a>
 											<a href="#">情趣用品</a>
-										
+
 										</div>
 									</li>
 								</ul>
@@ -848,12 +848,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/101.webp" alt=""><span>仿藤编桌面多格化妆品遥控器收纳盒 办公桌面杂物分类塑料整理盒</span></a></li>
-									<li><a href="#"><img src="../images/102.webp" alt=""><span>植护 手帕纸小包纸巾餐巾纸抽纸面纸3条30包</span></a></li>
-									<li><a href="#"><img src="../images/103.webp" alt=""><span>【27包18包8包】佳益本色抽纸整箱批发3层300张/包纸巾不漂白餐巾纸面巾纸家庭装卫生纸</span></a></li>
-									<li><a href="#"><img src="../images/104.webp" alt=""><span>实木欧式穿衣镜试衣镜服装店镜子全身镜落地镜壁挂镜两用特价包邮</span></a></li>
-									<li><a href="#"><img src="../images/105.webp" alt=""><span>分层抽屉式文胸内裤袜子内衣大收纳盒布艺 宿舍内衣裤收纳箱子</span></a></li>
-									<li><a href="#"><img src="../images/106.webp" alt=""><span>清新可爱立体猫咪耳朵束发带洗脸头带化妆敷面膜发套卖萌发饰包邮</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/101.webp" alt=""><span>仿藤编桌面多格化妆品遥控器收纳盒 办公桌面杂物分类塑料整理盒</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/102.webp" alt=""><span>植护 手帕纸小包纸巾餐巾纸抽纸面纸3条30包</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/103.webp" alt=""><span>【27包18包8包】佳益本色抽纸整箱批发3层300张/包纸巾不漂白餐巾纸面巾纸家庭装卫生纸</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/104.webp" alt=""><span>实木欧式穿衣镜试衣镜服装店镜子全身镜落地镜壁挂镜两用特价包邮</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/105.webp" alt=""><span>分层抽屉式文胸内裤袜子内衣大收纳盒布艺 宿舍内衣裤收纳箱子</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/106.webp" alt=""><span>清新可爱立体猫咪耳朵束发带洗脸头带化妆敷面膜发套卖萌发饰包邮</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -912,12 +912,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/111.webp" alt=""><span>美人无痕薄款束腰束胸收腹连体塑身衣产后减肚子弹力美体瘦身衣收腹带减肥女</span></a></li>
-									<li><a href="#"><img src="../images/112.webp" alt=""><span>【5双】袜子女隐形浅口船袜全棉百搭纯色女船袜布标纯棉日系短袜</span></a></li>
-									<li><a href="#"><img src="../images/113.webp" alt=""><span>美背抹胸夏天运动吊带背心女降落伞无缝内衣带胸垫字母无钢圈打底防走光学生少女文胸</span></a></li>
-									<li><a href="#"><img src="../images/114.webp" alt=""><span>仿真丝睡衣女士夏秋季纯色V领性感休闲套装两件套韩版宽松长袖长裤家居服丝绸女-可外穿</span></a></li>
-									<li><a href="#"><img src="../images/115.webp" alt=""><span>【七条装】礼盒装 纯棉女士内裤 糖果色纯色 全棉三角裤</span></a></li>
-									<li><a href="#"><img src="../images/116.webp" alt=""><span>3双装袜子潮流女韩国高腰个性中长款街头韩版夏天学院风堆堆袜百搭</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/111.webp" alt=""><span>美人无痕薄款束腰束胸收腹连体塑身衣产后减肚子弹力美体瘦身衣收腹带减肥女</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/112.webp" alt=""><span>【5双】袜子女隐形浅口船袜全棉百搭纯色女船袜布标纯棉日系短袜</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/113.webp" alt=""><span>美背抹胸夏天运动吊带背心女降落伞无缝内衣带胸垫字母无钢圈打底防走光学生少女文胸</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/114.webp" alt=""><span>仿真丝睡衣女士夏秋季纯色V领性感休闲套装两件套韩版宽松长袖长裤家居服丝绸女-可外穿</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/115.webp" alt=""><span>【七条装】礼盒装 纯棉女士内裤 糖果色纯色 全棉三角裤</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/116.webp" alt=""><span>3双装袜子潮流女韩国高腰个性中长款街头韩版夏天学院风堆堆袜百搭</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -982,11 +982,11 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/121.webp" alt=""><span>【80-130】儿童套装春秋装2018新款韩版女童卡通眼镜两件套宝宝衣服小女孩童装</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/121.webp" alt=""><span>【80-130】儿童套装春秋装2018新款韩版女童卡通眼镜两件套宝宝衣服小女孩童装</span></a></li>
 									<li><a href="#"><img src="" alt=""><span>【限时特卖 买一赠十二】袋鼠妈妈 孕妇BB霜套装孕期护肤品化妆品专用天然裸妆遮瑕隔离</span></a></li>
-									<li><a href="#"><img src="../images/123.webp" alt=""><span>【99元任选两双】蜡比小星童鞋儿童运动鞋男童鞋子2018新款秋季小白鞋女童运动鞋板鞋休闲鞋</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/123.webp" alt=""><span>【99元任选两双】蜡比小星童鞋儿童运动鞋男童鞋子2018新款秋季小白鞋女童运动鞋板鞋休闲鞋</span></a></li>
 									<li><a href="#"><img src="" alt=""><span>韩国孕妇裤孕妇打底裤春秋薄款外穿孕妇装秋装裤子托腹长裤小脚裤孕妇装夏秋装时尚</span></a></li>
-									<li><a href="#"><img src="../images/125.webp" alt=""><span>女童风衣外套中长款春秋装2018新款潮儿童春季休闲上衣</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/125.webp" alt=""><span>女童风衣外套中长款春秋装2018新款潮儿童春季休闲上衣</span></a></li>
 									<li><a href="#"><img src="" alt=""><span>专利款孕妇裤秋装时尚孕妇打底裤春秋薄款外穿孕妇装夏装裤子托腹长裤小脚秋季新款</span></a></li>
 								</ul>
 							</aside>
@@ -1059,12 +1059,12 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/131.webp" alt=""><span>可爱清新usb小风扇迷你可充电便携学生宿舍桌面随身手拿小型锂电池手持风扇可折叠</span></a></li>
-									<li><a href="#"><img src="../images/132.webp" alt=""><span>小熊DDZ-B08C1电炖锅隔水BB宝宝煲汤煮粥燕窝0.8升</span></a></li>
-									<li><a href="#"><img src="../images/133.webp" alt=""><span>吴昕orfila泰国sa.ad.na小飞象电动洁面仪硅胶洗脸电动毛孔清洁器</span></a></li>
-									<li><a href="#"><img src="../images/134.webp" alt=""><span>【买一送七】顺丹家用宿舍大功率冷热风负离子电吹风机</span></a></li>
-									<li><a href="#"><img src="../images/135.webp" alt=""><span>兜兜妈直播送电池送盒子保修一年脸部精华导入仪紧致嫩肤眼部去黑眼圈美容仪器家用美白祛皱</span></a></li>
-									<li><a href="#"><img src="../images/136.webp" alt=""><span>雅诗2400瓦3000瓦吹风机家用大功率小功率学生宿舍冷热风负离子飞达科技电吹风</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/131.webp" alt=""><span>可爱清新usb小风扇迷你可充电便携学生宿舍桌面随身手拿小型锂电池手持风扇可折叠</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/132.webp" alt=""><span>小熊DDZ-B08C1电炖锅隔水BB宝宝煲汤煮粥燕窝0.8升</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/133.webp" alt=""><span>吴昕orfila泰国sa.ad.na小飞象电动洁面仪硅胶洗脸电动毛孔清洁器</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/134.webp" alt=""><span>【买一送七】顺丹家用宿舍大功率冷热风负离子电吹风机</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/135.webp" alt=""><span>兜兜妈直播送电池送盒子保修一年脸部精华导入仪紧致嫩肤眼部去黑眼圈美容仪器家用美白祛皱</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/136.webp" alt=""><span>雅诗2400瓦3000瓦吹风机家用大功率小功率学生宿舍冷热风负离子飞达科技电吹风</span></a></li>
 								</ul>
 							</aside>
 						</div>
@@ -1109,7 +1109,7 @@
 											<a href="#">进口糖巧</a>
 											<a href="#">进口水饮</a>
 											<a href="#">泰国</a>
-										
+
 										</div>
 									</li>
 									<li>
@@ -1133,19 +1133,19 @@
 							<aside class="right">
 								<b>/猜你喜欢/</b>
 								<ul>
-									<li><a href="#"><img src="../images/141.webp" alt=""><span>杂粮先生 多种坚果水果麦片500g/600g（买2送碗勺）8种美味即食免煮营养早餐燕麦片粥</span></a></li>
-									<li><a href="#"><img src="../images/142.webp" alt=""><span>悦谷百味紫米夹心面包110g*7袋早餐糕点心</span></a></li>
-									<li><a href="#"><img src="../images/143.webp" alt=""><span>禾糖叶色焦糖色黑珍珠粉圆900g黄金琥珀焖煮珍珠0.8cm奶茶原料</span></a></li>
-									<li><a href="#"><img src="../images/144.webp" alt=""><span>大麦若叶青汁粉30杯 营养食品代餐粉食品</span></a></li>
-									<li><a href="#"><img src="../images/145.webp" alt=""><span>【小王子呆不二薯片】饼干小吃膨化零食大礼包礼盒装包邮 好吃的办公室休闲食品生日礼物送女友</span></a></li>
-									<li><a href="#"><img src="../images/146.webp" alt=""><span>【第二盒9.9元】懒人小火锅 四川速食冒菜火锅面麻辣烫超大分量超辣食品</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/141.webp" alt=""><span>杂粮先生 多种坚果水果麦片500g/600g（买2送碗勺）8种美味即食免煮营养早餐燕麦片粥</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/142.webp" alt=""><span>悦谷百味紫米夹心面包110g*7袋早餐糕点心</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/143.webp" alt=""><span>禾糖叶色焦糖色黑珍珠粉圆900g黄金琥珀焖煮珍珠0.8cm奶茶原料</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/144.webp" alt=""><span>大麦若叶青汁粉30杯 营养食品代餐粉食品</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/145.webp" alt=""><span>【小王子呆不二薯片】饼干小吃膨化零食大礼包礼盒装包邮 好吃的办公室休闲食品生日礼物送女友</span></a></li>
+									<li><a href="#"><img src="/img/mogujie/146.webp" alt=""><span>【第二盒9.9元】懒人小火锅 四川速食冒菜火锅面麻辣烫超大分量超辣食品</span></a></li>
 								</ul>
 							</aside>
 						</div>
 					</li>
-				</ol>			
+				</ol>
 
-				
+
 			</div>
 		 	<form class="middle">
 		 		<span class="big">
@@ -1154,7 +1154,7 @@
 		 		</span>
 				<input type="text">
 				<a href="#"><button>搜索</button></a>
-			</form> 
+			</form>
 		</aside>
 	</div>
 	<div class="no">
@@ -1173,7 +1173,7 @@
 		 		</span>
 				<input type="text">
 				<a href=""><button>搜索</button></a>
-			</form> 
+			</form>
 			<div class="small">
 				<a href="#">睡衣</a>
 				<a href="#">牛仔裤</a>
@@ -1206,7 +1206,7 @@
 							<span>女装上装毛衣套装/学生校服/工作制服</span>
 							<span>时尚套装</span>
 							<span>针织衫</span>
-							<span>男装</span>	
+							<span>男装</span>
 						</div>
 					</div>
 				</div>
@@ -1236,16 +1236,16 @@
 							<aside>
 								<b class="wen">多选</b>
 								<b class="sj"><i></i></b>
-							</aside>							
+							</aside>
 						</div>
 						<form action="#">
 							<input type="submit" value="确定">
 							<button>取消</button>
 						</form>
 					</div>
-				
+
 				</div>
-			</li>	
+			</li>
 			<li>
 				<p>图案</p>
 				<div class="div-wrap">
@@ -1278,7 +1278,7 @@
 						</form>
 					</div>
 				</div>
-			</li>	
+			</li>
 			<li class="color">
 				<p>颜色</p>
 				<div class="div-wrap">
@@ -1344,7 +1344,7 @@
 						</form>
 					</div>
 				</div>
-			</li>	
+			</li>
 			<li class="shai">
 				<p>筛选</p>
 				<div class="div-wrap">
@@ -1407,7 +1407,7 @@
 								<li>一字领</li>
 								<li>半开领</li>
 							</ol>
-						</span>	
+						</span>
 						<span>袖型
 							<i></i>
 							<ol>
@@ -1421,7 +1421,7 @@
 								<li>荷叶袖</li>
 								<li>衬衫袖</li>
 							</ol>
-						</span>	
+						</span>
 						<span>衣门襟
 							<i></i>
 							<ol>
@@ -1434,7 +1434,7 @@
 								<li>系带</li>
 								<li>牛角扣</li>
 							</ol>
-						</span>	
+						</span>
 						<span>衣长
 							<i></i>
 							<ol>
@@ -1446,7 +1446,7 @@
 								<li>超短款（30-40cm）</li>
 								<li>短款</li>
 							</ol>
-						</span>	
+						</span>
 						<span>季节
 							<i></i>
 							<ol>
@@ -1458,11 +1458,11 @@
 								<li>夏季</li>
 								<li>四季</li>
 							</ol>
-						</span>																					
-					
+						</span>
+
 					</div>
 				</div>
-			</li>									
+			</li>
 		</ul>
 		<div class="a-link">
 			<span>您可能还想搜：</span>
@@ -1499,7 +1499,7 @@
 				<ul>
 					<li>
 						<a href="goods.html">
-							<img src="../images/gs1.webp" alt="">
+							<img src="/img/mogujie/gs1.webp" alt="">
 							<aside class="bottom">
 								<p>2018秋季青少年男装套装时尚韩版休闲卫衣男士套装新款男生运动两件套</p>
 								<p>
@@ -1513,7 +1513,7 @@
 					</li>
 					<li>
 						<a href="goods.html">
-							<img src="../images/gs2.webp" alt="">
+							<img src="/img/mogujie/gs2.webp" alt="">
 							<aside class="bottom">
 								<p>秋装新款翻领风衣女秋2018韩版小个子抽绳收腰外套中长款工装服潮款上衣外套女</p>
 								<p>
@@ -1527,7 +1527,7 @@
 					</li>
 					<li>
 						<a href="goods.html">
-							<img src="../images/gs1.webp" alt="">
+							<img src="/img/mogujie/gs1.webp" alt="">
 							<aside class="bottom">
 								<p>2018秋季青少年男装套装时尚韩版休闲卫衣男士套装新款男生运动两件套</p>
 								<p>
@@ -1541,7 +1541,7 @@
 					</li>
 					<li>
 						<a href="goods.html">
-							<img src="../images/gs2.webp" alt="">
+							<img src="/img/mogujie/gs2.webp" alt="">
 							<aside class="bottom">
 								<p>秋装新款翻领风衣女秋2018韩版小个子抽绳收腰外套中长款工装服潮款上衣外套女</p>
 								<p>
@@ -1555,7 +1555,7 @@
 					</li>
 					<li>
 						<a href="goods.html">
-							<img src="../images/gs2.webp" alt="">
+							<img src="/img/mogujie/gs2.webp" alt="">
 							<aside class="bottom">
 								<p>秋装新款翻领风衣女秋2018韩版小个子抽绳收腰外套中长款工装服潮款上衣外套女</p>
 								<p>
@@ -1569,7 +1569,7 @@
 					</li>
 					<li>
 						<a href="goods.html">
-							<img src="../images/gs2.webp" alt="">
+							<img src="/img/mogujie/gs2.webp" alt="">
 							<aside class="bottom">
 								<p>秋装新款翻领风衣女秋2018韩版小个子抽绳收腰外套中长款工装服潮款上衣外套女</p>
 								<p>
@@ -1582,7 +1582,7 @@
 						</a>
 					</li>
 				</ul>
-			</div>			
+			</div>
 	</section>
 	<footer>
 		<ul>
@@ -1615,9 +1615,9 @@
 			<li class="four">
 				<b>-移动客户端下载-</b>
 				<ol>
-					<li>蘑菇街<img src="../images/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
-					<li>美丽说<img src="../images/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
-					<li>uni引力<img src="../images/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
+					<li>蘑菇街<img src="/img/mogujie/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
+					<li>美丽说<img src="/img/mogujie/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
+					<li>uni引力<img src="/img/mogujie/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
 				</ol>
 			</li>
 		</ul>
@@ -1633,7 +1633,7 @@
 			<a href="#">规则中心</a>
 			<a href="#">有害信息举报</a> <span>&copy;2018 Mogujie.com 杭州卷瓜网络有限公司</span>
 		</span>
-		<span class="spa2">		
+		<span class="spa2">
 			<span class="a1">营业执照：<a href="#" class="a1">913301065526808764</a></span>
 			<span class="a1">网络文化经营许可证：<a href="#">浙网文（2016）0349-219号</a></span>
 			<span class="a1">增值电信业务经营许可证：<a href="#">浙B2-20110349</a></span>
@@ -1674,7 +1674,7 @@
 		<div class="img">
 			<a href="#">
 				<span class="scan"></span>
-				<img src="../images/180521_73ibbgh52kj2dceg869h50b0bgfl6_181x200.png" alt="">
+				<img src="/img/mogujie/180521_73ibbgh52kj2dceg869h50b0bgfl6_181x200.png" alt="">
 			</a>
 		</div>
 		<div class="top">
@@ -1682,6 +1682,6 @@
 				<span class="nav-sprite"></span>
 			</a>
 		</div>
-	</aside>	
+	</aside>
 </body>
 </html>

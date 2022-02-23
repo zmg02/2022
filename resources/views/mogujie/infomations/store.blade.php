@@ -3,19 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>店铺详情</title>
-	<link rel="stylesheet" href="../css/store.css">
-	<script src="../js/jquery-1.11.1.js"></script>
-	<script src="../js/store.js"></script>
+	<link rel="stylesheet" href="/css/mogujie/store.css">
+	<script src="/js/mogujie/jquery-1.11.1.js"></script>
+	<script src="/js/mogujie/store.js"></script>
 </head>
 <body>
 	<header>
 		<div>
-			<a href="index.html" class="inda">
+			<a href="{{ url('mogujie/index') }}" class="inda">
 				<span></span>
 				<span>蘑菇街首页</span>
 			</a>
 			<ul>
-				<li>	
+				<li>
 					<a href="#"><span class="sprite"></span> 商家后台 <span class="sprite"></span></a>
 					<ol class="business">
 						<li><a href="#">管理后台</a></li>
@@ -25,20 +25,20 @@
 					</ol>
 				</li>
 				<li class="tw">
-					<a href="#">客户服务 <span  class="sprite"></span></a>	
+					<a href="#">客户服务 <span  class="sprite"></span></a>
 					<ol class="customer">
 						<li><a href="customer.html">消费者服务</a></li>
 						<li><a href="#">商家服务</a></li>
 						<li><a href="#">规则中心</a></li>
 					</ol>
 				</li>
-				<li>			
+				<li>
 					<a  href="trolley.html"><span  class="sprite"></span> 购物车</a>
 					<ol class="buy">
 						<li>购物车里没有商品！</li>
 					</ol>
 				</li>
-				<li>	
+				<li>
 					<a  href="order.html"><span  class="sprite"></span> 我的订单</a>
 					<ol class="menu">
 						<li></li>
@@ -48,22 +48,22 @@
 					</ol>
 				</li>
 				<li class="tw cang">
-					<a href="#">我的收藏 <span  class="sprite"></span></a>	
+					<a href="#">我的收藏 <span  class="sprite"></span></a>
 					<ol class="customer">
 						<li><a href="#">收藏的商品</a></li>
 						<li><a href="#">收藏的小店</a></li>
 						<li><a href="#">浏览足迹</a></li>
 					</ol>
 				</li>
-			 	<li class="five"><a href="#">消息</a></li> 
+			 	<li class="five"><a href="#">消息</a></li>
 			 	<li class="tw cang">
-					<a href="#">账号名 <span  class="sprite"></span></a>	
+					<a href="#">账号名 <span  class="sprite"></span></a>
 					<ol class="customer">
 						<li><a href="personal.html">个人设置</a></li>
 						<li><a href="#">退出</a></li>
 					</ol>
 				</li>
-			</ul> 
+			</ul>
 		</div>
 	</header>
 	<div class="special-div">
@@ -71,7 +71,7 @@
 			<div class="left">
 				<div class="head">
 					<div class="mei">
-						<a href="#" class="img"><img src="../images/170729_5930h37f9fickc8e0l43c1bg83bbe_500x500.jpg_100x100.jpg" alt="" title="诗素美衣"></a>
+						<a href="#" class="img"><img src="/img/mogujie/170729_5930h37f9fickc8e0l43c1bg83bbe_500x500.jpg_100x100.jpg" alt="" title="诗素美衣"></a>
 						<span>
 							<a href="#">诗素美衣</a>
 							<p class="star">
@@ -89,8 +89,8 @@
 							<a href="#" class="news"></a>
 							<a href="#" class="sj"></a>
 						</div>
-					</div>	
-				
+					</div>
+
 					<div class="intro">
 						<aside class="left">
 							<ul>
@@ -98,7 +98,7 @@
 									<span>所在地区：</span>广东省广东市
 								</li>
 								<li>
-									<span>商品数：</span>325		
+									<span>商品数：</span>325
 								</li>
 								<li>
 									<span>收藏数：</span>19259
@@ -118,13 +118,13 @@
 								<li>
 									<span>工商执照: </span>
 									<a href="#">
-										<img src="../images/upload_ifrtezlgmzsgmolbguzdambqhayde_25x25.png" alt="">
+										<img src="/img/mogujie/upload_ifrtezlgmzsgmolbguzdambqhayde_25x25.png" alt="">
 									</a>
 								</li>
 							</ul>
 							<p><a href="#">查看详情</a></p>
 						</aside>
-						<aside class="right"> 
+						<aside class="right">
 							<ul class="fir">
 								<li><span>动态评分</span><span class="compre">比同行平均</span></li>
 								<li>
@@ -184,7 +184,7 @@
 					</div>
 				</form>
 			</div>
-		</div>		
+		</div>
 	</div>
 	<div class="back-div">
 		<div class="back"></div>
@@ -446,9 +446,9 @@
 			<li class="four">
 				<b>-移动客户端下载-</b>
 				<ol>
-					<li>蘑菇街<img src="../images/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
-					<li>美丽说<img src="../images/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
-					<li>uni引力<img src="../images/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
+					<li>蘑菇街<img src="/img/mogujie/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
+					<li>美丽说<img src="/img/mogujie/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
+					<li>uni引力<img src="/img/mogujie/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
 				</ol>
 			</li>
 		</ul>
@@ -464,7 +464,7 @@
 			<a href="#">规则中心</a>
 			<a href="#">有害信息举报</a> <span>&copy;2018 Mogujie.com 杭州卷瓜网络有限公司</span>
 		</span>
-		<span class="spa2">		
+		<span class="spa2">
 			<span class="a1">营业执照：<a href="#" class="a1">913301065526808764</a></span>
 			<span class="a1">网络文化经营许可证：<a href="#">浙网文（2016）0349-219号</a></span>
 			<span class="a1">增值电信业务经营许可证：<a href="#">浙B2-20110349</a></span>
@@ -505,7 +505,7 @@
 		<div class="img">
 			<a href="#">
 				<span class="scan"></span>
-				<img src="../images/180521_73ibbgh52kj2dceg869h50b0bgfl6_181x200.png" alt="">
+				<img src="/img/mogujie/180521_73ibbgh52kj2dceg869h50b0bgfl6_181x200.png" alt="">
 			</a>
 		</div>
 		<div class="top">

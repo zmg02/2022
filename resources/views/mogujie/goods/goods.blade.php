@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>商品详情</title>
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/rightbar.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/foot.css">
-    <link rel="stylesheet" href="../css/goods.css">
-    <link rel="stylesheet" href="../css/goods-body.css">
+    <link rel="stylesheet" href="/css/mogujie/base.css">
+    <link rel="stylesheet" href="/css/mogujie/rightbar.css">
+    <link rel="stylesheet" href="/css/mogujie/header.css">
+    <link rel="stylesheet" href="/css/mogujie/foot.css">
+    <link rel="stylesheet" href="/css/mogujie/goods.css">
+    <link rel="stylesheet" href="/css/mogujie/goods-body.css">
 
-    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="/js/mogujie/jquery-1.11.1.min.js"></script>
 </head>
 <body>
     <!--右侧导航栏-->
@@ -46,7 +46,7 @@
         <div class="img sidebar">
 			<a href="#">
 				<span class="scan"></span>
-				<img src="../images/biger.png" alt="">
+				<img src="/img/mogujie/biger.png" alt="">
 			</a>
 		</div>
         <div class="mgj-my-top sidebar">
@@ -59,7 +59,7 @@
     <!-- 头部 -->
     <div id="header" class="site-top-nav J_sitenav" data-ptp="_head">
         <div class="wrap">
-            <a href="index.html" class="home">蘑菇街首页</a>
+            <a href="{{ url('mogujie/index') }}" class="home">蘑菇街首页</a>
             <ul class="header-top">
                 <li><a href="login.html">登录</a></li>
                 <li class="myorder">
@@ -74,7 +74,7 @@
                         <li><a href="customer.html">消费者服务</a></li>
                         <li>商家服务</li>
                         <li>规则中心</li>
-                    </ol>  
+                    </ol>
                 </li>
                 <li class="store">
                     <a><i class="icon"></i>商家后台&nbsp;<i class="delta"></i></a>
@@ -94,7 +94,7 @@
 			<div class="left">
 				<div class="head">
 					<div class="mei">
-						<a href="#" class="img"><img src="../images/goods-store.jpg" alt="" title="千衣佳库"></a>
+						<a href="#" class="img"><img src="/img/mogujie/goods-store.jpg" alt="" title="千衣佳库"></a>
 						<span>
 							<a href="store.html">千衣佳库</a>
 							<p class="star">
@@ -112,8 +112,8 @@
 							<a href="#" class="news"></a>
 							<a href="#" class="sj"></a>
 						</div>
-					</div>	
-				
+					</div>
+
 					<div class="intro">
 						<aside class="left">
 							<ul>
@@ -121,7 +121,7 @@
 									<span>所在地区：</span>广东省广东市
 								</li>
 								<li>
-									<span>商品数：</span>325		
+									<span>商品数：</span>325
 								</li>
 								<li>
 									<span>收藏数：</span>19259
@@ -140,13 +140,13 @@
 								</li>
 								<li>
 									<a href="#">
-										<img src="../images/renz.png" alt="">
+										<img src="/img/mogujie/renz.png" alt="">
 									</a>
 								</li>
 							</ul>
 							<p><a href="store.html">查看详情</a></p>
 						</aside>
-						<aside class="right"> 
+						<aside class="right">
 							<ul class="fir">
 								<li><span>动态评分</span><span class="compre">比同行平均</span></li>
 								<li>
@@ -206,7 +206,7 @@
 					</div>
 				</form>
 			</div>
-		</div>		
+		</div>
 	</div>
 	<div class="back-div">
 		<div class="back"></div>
@@ -216,7 +216,7 @@
 	<div class="nav">
 		<ul>
 			<li>
-				<a href="index.html">首页</a>
+				<a href="{{ url('mogujie/index') }}">首页</a>
 			</li>
 			<li class="wei">
 				<a href="#">全部商品<i></i></a>
@@ -261,7 +261,7 @@
 			</li>
 		</ul>
 	</div>
-	
+
     <!-- 内容 -->
     <div id="body-wrap">
         <div class="shop-detail">
@@ -303,27 +303,27 @@
                                     </div>
                                     <div class="content">
                                         <div class="promotions-list">
-                                            <div class="promotions-needget">  
-                                                <div class="promotions-card no-get"> 
-                                                    <span class="promotions-card-text">满129元立减5元</span> 
-                                                    <span class="promotions-card-get">领取</span> 
-                                                </div>  
-                                                <div class="promotions-card no-get"> 
-                                                    <span class="promotions-card-text">满199元立减10元</span> 
-                                                    <span class="promotions-card-get">领取</span> 
-                                                </div>  
-                                                <div class="promotions-card no-get"> 
-                                                    <span class="promotions-card-text">满299元立减20元</span> 
-                                                    <span class="promotions-card-get">领取</span> 
-                                                </div>  
+                                            <div class="promotions-needget">
+                                                <div class="promotions-card no-get">
+                                                    <span class="promotions-card-text">满129元立减5元</span>
+                                                    <span class="promotions-card-get">领取</span>
+                                                </div>
+                                                <div class="promotions-card no-get">
+                                                    <span class="promotions-card-text">满199元立减10元</span>
+                                                    <span class="promotions-card-get">领取</span>
+                                                </div>
+                                                <div class="promotions-card no-get">
+                                                    <span class="promotions-card-text">满299元立减20元</span>
+                                                    <span class="promotions-card-get">领取</span>
+                                                </div>
                                             </div>
-                                            <div class="promotions-normal">  
-                                                <div class="promotions-card"> 
-                                                    <span class="promotions-card-text">▪&nbsp;满2件立减5元</span> 
-                                                </div>  
-                                                <div class="promotions-card"> 
+                                            <div class="promotions-normal">
+                                                <div class="promotions-card">
+                                                    <span class="promotions-card-text">▪&nbsp;满2件立减5元</span>
+                                                </div>
+                                                <div class="promotions-card">
                                                     <span class="promotions-card-text">▪&nbsp;满3件立减10元</span>
-                                                </div>  
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="promotions-more">
@@ -348,11 +348,11 @@
                                     <dd>
                                         <ol>
                                             <li>
-                                                <img  class="img-c" src="../images/gcolor1.jpg" alt="">
+                                                <img  class="img-c" src="/img/mogujie/gcolor1.jpg" alt="">
                                                 <span class="span-c"></span>
                                             </li>
                                             <li>
-                                                <img class="" src="../images/gcolor2.jpg" alt="">
+                                                <img class="" src="/img/mogujie/gcolor2.jpg" alt="">
                                                 <span></span>
                                             </li>
                                     </dd>
@@ -395,7 +395,7 @@
                                 <div class="fav item">
                                     <span class="isfav"></span>
                                     <span class="fav-num">2348</span>
-                              
+
                                 </div>
                                 <div class="share item">
                                     <b></b>
@@ -412,31 +412,31 @@
                                     <ul class="list">
                                         <li>
                                             <a href="#">
-                                                <img src="../images/baoyou.png" alt="">
+                                                <img src="/img/mogujie/baoyou.png" alt="">
                                                 全国包邮
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img src="../images/7day.png" alt="">
+                                                <img src="/img/mogujie/7day.png" alt="">
                                                 7天无理由退货
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img src="../images/72hours.png" alt="">
+                                                <img src="/img/mogujie/72hours.png" alt="">
                                                 72小时发货
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img src="../images/time.png" alt="">
+                                                <img src="/img/mogujie/time.png" alt="">
                                                 延误必赔
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img src="../images/tuihuo.png" alt="">
+                                                <img src="/img/mogujie/tuihuo.png" alt="">
                                                 退货补运费
                                             </a>
                                         </li>
@@ -451,26 +451,26 @@
                     </div>
                     <div class="goods-topimg">
                         <div class="big-img">
-                            <img src="../images/big-img.jpg" alt="">
+                            <img src="/img/mogujie/big-img.jpg" alt="">
                         </div>
                         <div class="small-img">
                             <div class="box">
                                 <div class="list">
                                     <ul>
                                         <li>
-                                            <img src="../images/s1.jpg" alt="">
+                                            <img src="/img/mogujie/s1.jpg" alt="">
                                             <i></i>
                                         </li>
                                         <li class="">
-                                            <img src="../images/s2.jpg" alt="">
+                                            <img src="/img/mogujie/s2.jpg" alt="">
                                             <i></i>
                                         </li>
                                         <li>
-                                            <img src="../images/s3.jpg" alt="">
+                                            <img src="/img/mogujie/s3.jpg" alt="">
                                             <i></i>
                                         </li>
                                         <li>
-                                            <img src="../images/s4.jpg" alt="">
+                                            <img src="/img/mogujie/s4.jpg" alt="">
                                             <i></i>
                                         </li>
                                     </ul>
@@ -491,19 +491,19 @@
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            <img src="../images/goodslide1.jpg" alt="" width="120">
+                                            <img src="/img/mogujie/goodslide1.jpg" alt="" width="120">
                                         </a>
                                         <div>￥79</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../images/goodslide2.jpg" alt="" width="120">
+                                            <img src="/img/mogujie/goodslide2.jpg" alt="" width="120">
                                         </a>
                                         <div>￥88.99</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../images/goodslide3.jpg" alt="" width="120">
+                                            <img src="/img/mogujie/goodslide3.jpg" alt="" width="120">
                                         </a>
                                         <div>￥98</div>
                                     </li>
@@ -524,7 +524,7 @@
                                 <a href="#">累计评价
                                     <em>54</em>
                                 </a>
-                                
+
                             </li>
                             <li>
                                 <a href="javascript:;">本店同类商品</a>
@@ -535,47 +535,47 @@
                         <!-- 图文详情 -->
                         <div class="split-image">
                             <!-- 商品描述 -->
-                            <div id="J_Graphic_desc"> 
-                                <div class="panel-title"> 
-                                    <h1>商品描述</h1> 
-                                </div> 
-                                <!-- 描述 -->  
+                            <div id="J_Graphic_desc">
+                                <div class="panel-title">
+                                    <h1>商品描述</h1>
+                                </div>
+                                <!-- 描述 -->
                                 <div class="graphic-text">
                                     网红两件套 俏皮晚晚风 毛呢套装短裙
-                                </div> 
+                                </div>
                             </div>
                             <!-- 产品参数 -->
-                            <div id="J_Graphic_产品参数"> 
-                                <div class="panel-title"> 
-                                    <h1>产品参数</h1> 
-                                </div> 
-                                
-                                <div class="graphic-block"> 
-                                    <table class="parameter-table m" id="J_ParameterTable"> 
-                                        <tbody>    
-                                            <tr class="">    
-                                                <td>图案: 色块</td>         
-                                                <td>厚薄: 普通</td>          
-                                                <td>颜色: 蓝白,藏蓝</td>    
-                                            </tr>      
-                                            <tr class="">    
-                                                <td>尺码: S,XL,L,M,XXL</td>          
-                                                <td>衣长: 短款（41-50cm）</td>          
-                                                <td>季节: 秋季</td>    
-                                            </tr>      
-                                            <tr class="">    
-                                                <td>材质: 聚酯纤维</td>          
-                                                <td>领型: 其他领型</td>          
-                                                <td>元素: 贴袋</td>    
-                                            </tr>      
-                                            <tr class="">    
-                                                <td>袖长: 长袖</td>          
-                                                <td>款式: 衣裙套装</td>          
-                                                <td>风格: 小清新</td>    
-                                            </tr>    
-                                        </tbody> 
-                                    </table>    
-                                </div> 
+                            <div id="J_Graphic_产品参数">
+                                <div class="panel-title">
+                                    <h1>产品参数</h1>
+                                </div>
+
+                                <div class="graphic-block">
+                                    <table class="parameter-table m" id="J_ParameterTable">
+                                        <tbody>
+                                            <tr class="">
+                                                <td>图案: 色块</td>
+                                                <td>厚薄: 普通</td>
+                                                <td>颜色: 蓝白,藏蓝</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>尺码: S,XL,L,M,XXL</td>
+                                                <td>衣长: 短款（41-50cm）</td>
+                                                <td>季节: 秋季</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>材质: 聚酯纤维</td>
+                                                <td>领型: 其他领型</td>
+                                                <td>元素: 贴袋</td>
+                                            </tr>
+                                            <tr class="">
+                                                <td>袖长: 长袖</td>
+                                                <td>款式: 衣裙套装</td>
+                                                <td>风格: 小清新</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <!-- 穿着效果 -->
                             <div>
@@ -583,20 +583,20 @@
                                     <h1>穿着效果</h1>
                                 </div>
                                 <div class="pic-box">
-                                    <img src="../images/180813_1lf8f9112hcg5i7ij29457i81e9a6_790x826.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_38g92i4774527cgjik6f3l5ijad45_790x1188.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_2d409hhfc8l0g1b4ie77f7269gheg_790x955.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_7h0g8e6f2aljc56183k4ebblfl2j2_790x985.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_7346b543d0jh2e3ka77e2abb033h4_790x1167.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_05e130808a0fl1c975al580cf2el0_790x984.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_87gjfc1c30gegk6dk8be6b50f25cd_790x1272.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_8f1cd9a075chig16jlgiabl4aj853_790x958.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_0jbl6lbkabff54ae93051g3848kb0_790x1245.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_7ffeldk56gh1abd2g071kbhj55c7b_790x1102.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_759le0e36hdf1lae4h4ad033bgba0_790x1084.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_7af6h8591f76ek7484eehee07igf8_790x1245.jpg_750x999.jpg" alt="">
-                                    <img src="../images/180813_324l8f6a7l01fbkf746lgf8lecflb_790x1226.jpg_750x999.jpg" alt="">
-                                    <img src="../images/77101615_6f3ak83kkl00329ged9249aa93ifb_1125x285.jpg_750x999.jpg" alt="">    
+                                    <img src="/img/mogujie/180813_1lf8f9112hcg5i7ij29457i81e9a6_790x826.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_38g92i4774527cgjik6f3l5ijad45_790x1188.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_2d409hhfc8l0g1b4ie77f7269gheg_790x955.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_7h0g8e6f2aljc56183k4ebblfl2j2_790x985.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_7346b543d0jh2e3ka77e2abb033h4_790x1167.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_05e130808a0fl1c975al580cf2el0_790x984.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_87gjfc1c30gegk6dk8be6b50f25cd_790x1272.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_8f1cd9a075chig16jlgiabl4aj853_790x958.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_0jbl6lbkabff54ae93051g3848kb0_790x1245.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_7ffeldk56gh1abd2g071kbhj55c7b_790x1102.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_759le0e36hdf1lae4h4ad033bgba0_790x1084.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_7af6h8591f76ek7484eehee07igf8_790x1245.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/180813_324l8f6a7l01fbkf746lgf8lecflb_790x1226.jpg_750x999.jpg" alt="">
+                                    <img src="/img/mogujie/77101615_6f3ak83kkl00329ged9249aa93ifb_1125x285.jpg_750x999.jpg" alt="">
                                 </div>
                             </div>
                             <!-- 尺码说明 -->
@@ -684,7 +684,7 @@
                             <div class="recommend-list m">
                                 <ul>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -698,7 +698,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -712,7 +712,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -726,7 +726,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -740,7 +740,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -754,7 +754,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -768,7 +768,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -782,7 +782,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -796,7 +796,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -810,7 +810,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -824,7 +824,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -838,7 +838,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -852,7 +852,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -866,7 +866,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -880,7 +880,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -894,7 +894,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#" class="pic"><img src="../images/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
+                                        <a href="#" class="pic"><img src="/img/mogujie/180401_84d8eh39ifkk39j26ekd6jl68h00e_640x960.jpg_220x330.jpg" alt=""></a>
                                         <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                         <div class="info">
                                             <div class="price">
@@ -967,7 +967,7 @@
                         <div class="ui-bd">
                             <ul>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/181008_82cegff76jk48442jhdh61d30af11_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/181008_82cegff76jk48442jhdh61d30af11_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                     <div class="info">
                                         <div class="price">
@@ -981,7 +981,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/180912_6dbf2llc2kili2k2h2eeb3187f195_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/180912_6dbf2llc2kili2k2h2eeb3187f195_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">秋装女chic早秋时尚网红格纹上衣百褶半身裙蝴蝶结白色衬衣西装港味俏皮学生三件套</a>
                                     <div class="info">
                                         <div class="price">
@@ -995,7 +995,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/180729_39d0704494icgb807g2kj8ekjf665_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/180729_39d0704494icgb807g2kj8ekjf665_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">2018初秋新款红色bf原宿宽松单排扣中长牛仔外套</a>
                                     <div class="info">
                                         <div class="price">
@@ -1009,7 +1009,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/181005_55b820581g3kc816ld6cbk0ifb9f6_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/181005_55b820581g3kc816ld6cbk0ifb9f6_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">条纹针织连衣裙女早秋装2018年新款韩版宽松中长款毛衣裙子</a>
                                     <div class="info">
                                         <div class="price">
@@ -1023,7 +1023,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/180810_6bgdlig8hl6b3b3iel8egcb26icif_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/180810_6bgdlig8hl6b3b3iel8egcb26icif_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">pphome紫色复古中长款格子连衣裙女秋季新款长袖sukol裙系带收腰修身学生衬衫裙子</a>
                                     <div class="info">
                                         <div class="price">
@@ -1037,7 +1037,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/181008_82cegff76jk48442jhdh61d30af11_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/181008_82cegff76jk48442jhdh61d30af11_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">秋装新款时尚复古气质小清新少女学院风百搭拼接格子V领短款针织开衫外套</a>
                                     <div class="info">
                                         <div class="price">
@@ -1051,7 +1051,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/180912_6dbf2llc2kili2k2h2eeb3187f195_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/180912_6dbf2llc2kili2k2h2eeb3187f195_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">秋装女chic早秋时尚网红格纹上衣百褶半身裙蝴蝶结白色衬衣西装港味俏皮学生三件套</a>
                                     <div class="info">
                                         <div class="price">
@@ -1065,7 +1065,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/180729_39d0704494icgb807g2kj8ekjf665_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/180729_39d0704494icgb807g2kj8ekjf665_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">2018初秋新款红色bf原宿宽松单排扣中长牛仔外套</a>
                                     <div class="info">
                                         <div class="price">
@@ -1079,7 +1079,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/181005_55b820581g3kc816ld6cbk0ifb9f6_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/181005_55b820581g3kc816ld6cbk0ifb9f6_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">条纹针织连衣裙女早秋装2018年新款韩版宽松中长款毛衣裙子</a>
                                     <div class="info">
                                         <div class="price">
@@ -1093,7 +1093,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/180810_6bgdlig8hl6b3b3iel8egcb26icif_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/180810_6bgdlig8hl6b3b3iel8egcb26icif_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">pphome紫色复古中长款格子连衣裙女秋季新款长袖sukol裙系带收腰修身学生衬衫裙子</a>
                                     <div class="info">
                                         <div class="price">
@@ -1107,7 +1107,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/180912_6dbf2llc2kili2k2h2eeb3187f195_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/180912_6dbf2llc2kili2k2h2eeb3187f195_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">秋装女chic早秋时尚网红格纹上衣百褶半身裙蝴蝶结白色衬衣西装港味俏皮学生三件套</a>
                                     <div class="info">
                                         <div class="price">
@@ -1121,7 +1121,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="pic"><img src="../images/180729_39d0704494icgb807g2kj8ekjf665_640x960.jpg_220x330.jpg" alt=""></a>
+                                    <a href="#" class="pic"><img src="/img/mogujie/180729_39d0704494icgb807g2kj8ekjf665_640x960.jpg_220x330.jpg" alt=""></a>
                                     <a href="#" class="title">2018初秋新款红色bf原宿宽松单排扣中长牛仔外套</a>
                                     <div class="info">
                                         <div class="price">
@@ -1143,7 +1143,7 @@
                     <div class="qrcode">
                         <div class="qrcode-togger">手机扫码下单</div>
                         <div class="qrcode-pic">
-                            <img src="../images/181013_0jegl9dhf8a30lk021ae85eaj4653_200x200.png">
+                            <img src="/img/mogujie/181013_0jegl9dhf8a30lk021ae85eaj4653_200x200.png">
                         </div>
                         <i class="qrcode-mini"></i>
                         <i class="qrcode-arrow"></i>
@@ -1247,15 +1247,15 @@
                         <ul>
                             <li class="helper_item item_last">
                                 <div class="color_999">蘑菇街</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                             <li class="helper_item item_last">
                                 <div class="color_999">美丽说</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                             <li class="helper_item item_last">
                                 <div class="color_999">uni引力</div>
-                                <img class="foot_img" src="../images/foot_img.png" alt="">
+                                <img class="foot_img" src="/img/mogujie/foot_img.png" alt="">
                             </li>
                         </ul>
                     </div>
@@ -1303,7 +1303,7 @@
                     <span class="footer_span color_999">网络文化经营许可证：</span>
                     <a href="#" class="footer_a color_999">浙网文（2016）0349-219号</a>
                     <b class="foot_b color_999"> | </b>
-                    
+
                     <span class="footer_span color_999">增值电信业务经营许可证：</span>
                     <a href="#" class="footer_a color_999">浙B2-20110349</a>
                     <b class="foot_b color_999"> | </b>
@@ -1335,8 +1335,8 @@
             </div>
         </div>
     </div>
-    
 
-    <script src="../js/header.js"></script>
+
+    <script src="/js/mogujie/header.js"></script>
 </body>
 </html>

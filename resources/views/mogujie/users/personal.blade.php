@@ -3,19 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>优惠券</title>
-	<link rel="stylesheet" href="../css/personal.css">
-	<script src="../js/jquery-1.11.1.js"></script>
-	<script src="../js/personal.js"></script>
+	<link rel="stylesheet" href="/css/mogujie/personal.css">
+	<script src="/js/mogujie/jquery-1.11.1.js"></script>
+	<script src="/js/mogujie/personal.js"></script>
 </head>
 <body>
 	<header>
 		<div>
-			<a href="index.html" class="inda">
+			<a href="{{ url('mogujie/index') }}" class="inda">
 				<span></span>
 				<span>蘑菇街首页</span>
 			</a>
 			<ul>
-				<li>	
+				<li>
 					<a href="#"><span class="sprite"></span> 商家后台 <span class="sprite"></span></a>
 					<ol class="business">
 						<li><a href="#">管理后台</a></li>
@@ -25,20 +25,20 @@
 					</ol>
 				</li>
 				<li class="tw">
-					<a href="#">客户服务 <span  class="sprite"></span></a>	
+					<a href="#">客户服务 <span  class="sprite"></span></a>
 					<ol class="customer">
 						<li><a href="customer.html">消费者服务</a></li>
 						<li><a href="#">商家服务</a></li>
 						<li><a href="#">规则中心</a></li>
 					</ol>
 				</li>
-				<li>			
+				<li>
 					<a  href="trolley.html"><span  class="sprite"></span> 购物车</a>
 					<ol class="buy">
 						<li>购物车里没有商品！</li>
 					</ol>
 				</li>
-				<li>	
+				<li>
 					<a  href="order.html"><span  class="sprite"></span> 我的订单</a>
 					<ol class="menu">
 						<li></li>
@@ -48,24 +48,24 @@
 					</ol>
 				</li>
 				<li class="tw cang">
-					<a href="#">我的收藏 <span  class="sprite"></span></a>	
+					<a href="#">我的收藏 <span  class="sprite"></span></a>
 					<ol class="customer">
 						<li><a href="#">收藏的商品</a></li>
 						<li><a href="#">收藏的小店</a></li>
 						<li><a href="#">浏览足迹</a></li>
 					</ol>
 				</li>
-			 	<li class="five"><a href="#">消息</a></li> 
+			 	<li class="five"><a href="#">消息</a></li>
 			 	<li class="tw cang">
-					<a href="#">账号名 <span  class="sprite"></span></a>	
+					<a href="#">账号名 <span  class="sprite"></span></a>
 					<ol class="customer">
 						<li><a href="personal.html">个人设置</a></li>
 						<li><a href="#">退出</a></li>
 					</ol>
 				</li>
-			</ul> 
+			</ul>
 		</div>
-	</header>	
+	</header>
 	<div class="no">
 		<aside>
 			<span class="left"></span>
@@ -82,7 +82,7 @@
 		 		</span>
 				<input type="text" value="毛衣">
 				<a href=""><button>搜索</button></a>
-			</form> 
+			</form>
 			<div class="small">
 				<a href="select.html">睡衣</a>
 				<a href="select.html">牛仔裤</a>
@@ -105,7 +105,7 @@
 					<span class="san"></span><!--有类fir-->
 					<ol>
 						<li>
-							<a href="#">全部订单</a>					
+							<a href="#">全部订单</a>
 						</li>
 						<li>
 							<a href="#">待付款</a>
@@ -133,7 +133,7 @@
 					<span class="san"></span>
 					<ol>
 						<li>
-							<a href="#">会员中心</a>			
+							<a href="#">会员中心</a>
 						</li>
 						<li>
 							<a href="#">店铺优惠券</a>
@@ -144,19 +144,19 @@
 						<li>
 							<a href="#">活动优惠券</a>
 						</li>
-						
+
 					</ol>
-				</li>	
+				</li>
 				<li>
 					<a href="#" class="title">地址管理</a>
 					<span class="san"></span>
-				</li>	
+				</li>
 				<li>
 					<a href="#" class="title">安全设置</a>
 					<span class="san"></span>
 					<ol>
 						<li>
-							<a href="#">设置密码</a>			
+							<a href="#">设置密码</a>
 						</li>
 						<li>
 							<a href="#">绑定手机</a>
@@ -168,31 +168,31 @@
 							<a href="#">账号锁定</a>
 						</li>
 					</ol>
-				</li>	
+				</li>
 				<li>
 					<a href="#" class="title">维权管理</a>
 					<span class="san"></span>
 					<ol>
 						<li>
-							<a href="#">投诉管理</a>			
+							<a href="#">投诉管理</a>
 						</li>
 						<li>
 							<a href="#">举报管理</a>
 						</li>
 					</ol>
-				</li>	
+				</li>
 				<li>
 					<a href="#" class="title">账号设置</a>
 					<span class="san"></span>
 					<ol>
 						<li>
-							<a href="#">基本信息</a>			
+							<a href="#">基本信息</a>
 						</li>
 						<li>
 							<a href="#">修改头像</a>
 						</li>
 					</ol>
-				</li>					
+				</li>
 			</ul>
 		</aside>
 		<aside class="right_wrap">
@@ -231,7 +231,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 							<li>
@@ -251,7 +251,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 							<li>
@@ -271,7 +271,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 							<li>
@@ -291,7 +291,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 							<li>
@@ -311,7 +311,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 							<li>
@@ -331,7 +331,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 							<li>
@@ -351,7 +351,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 								<li>
@@ -371,7 +371,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 								<li>
@@ -391,7 +391,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 								<li>
@@ -411,7 +411,7 @@
 									<p class="five">使用平台：全平台</p>
 								</aside>
 								<aside class="re_rg">
-									<p>立即领取</p>	
+									<p>立即领取</p>
 								</aside>
 							</li>
 						</ul>
@@ -451,9 +451,9 @@
 			<li class="four">
 				<b>-移动客户端下载-</b>
 				<ol>
-					<li>蘑菇街<img src="../images/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
-					<li>美丽说<img src="../images/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
-					<li>uni引力<img src="../images/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
+					<li>蘑菇街<img src="/img/mogujie/171023_3ef94c11e31g34lghgbac75k2e4fb_1000x1000.png" alt=""></li>
+					<li>美丽说<img src="/img/mogujie/upload_5ii9f90fdide17hj3jkj3bfd121e3_280x280.png" alt=""></li>
+					<li>uni引力<img src="/img/mogujie/upload_892b80cj47j51h95f44cai2e0b002_280x280.png" alt=""></li>
 				</ol>
 			</li>
 		</ul>
@@ -469,7 +469,7 @@
 			<a href="select.html">规则中心</a>
 			<a href="select.html">有害信息举报</a> <span>&copy;2018 Mogujie.com 杭州卷瓜网络有限公司</span>
 		</span>
-		<span class="spa2">		
+		<span class="spa2">
 			<span class="a1">营业执照：<a href="select.html" class="a1">913301065526808764</a></span>
 			<span class="a1">网络文化经营许可证：<a href="select.html">浙网文（2016）0349-219号</a></span>
 			<span class="a1">增值电信业务经营许可证：<a href="select.html">浙B2-20110349</a></span>
@@ -510,7 +510,7 @@
 		<div class="img">
 			<a href="select.html">
 				<span class="scan"></span>
-				<img src="../images/180521_73ibbgh52kj2dceg869h50b0bgfl6_181x200.png" alt="">
+				<img src="/img/mogujie/180521_73ibbgh52kj2dceg869h50b0bgfl6_181x200.png" alt="">
 			</a>
 		</div>
 		<div class="top">

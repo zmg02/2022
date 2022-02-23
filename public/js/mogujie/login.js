@@ -15,11 +15,16 @@ $(function(){
 		}
 	});
 
+    $('.content div.head span').on('click', '.tab', function(e){
+        $('.tab').removeClass('active');
+        $(this).addClass('active');
+    });
+
 	$('.content div.head span').click(function(event) {
 		$('div.fir span.warn').css('display', 'none');
-		$(this).css('color', '#fe617a').siblings('span').css('color', '#333');;
-		$(this).css('border-color', '#ff4066').siblings('span').css('border-color', 'transparent');;
-		if($(this).hasClass('one')){
+		$(this).css('color', '#fe617a').siblings('span').css('color', '#333');
+		$(this).css('border-color', '#ff4066').siblings('span').css('border-color', 'transparent');
+		if($(this).hasClass('active')){
 			$('div.fir .nomal').css('display', 'inline-block');
 			$('div.fir .mobile').css('display', 'none');
 		}

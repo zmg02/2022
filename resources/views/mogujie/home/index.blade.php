@@ -2310,10 +2310,10 @@
 		<div class="banner">
 			<ul class="pic">
 				<li>
-					<a href="pcindex.html"><img src="/img/mogujie/banner02.jpg" alt=""></a>
+					<a href="pc{{ url('mogujie/index') }}"><img src="/img/mogujie/banner02.jpg" alt=""></a>
 				</li>
 				<li>
-					<a href="pcindex.html"><img src="/img/mogujie/banner03.jpg" alt=""></a>
+					<a href="pc{{ url('mogujie/index') }}"><img src="/img/mogujie/banner03.jpg" alt=""></a>
 				</li>
 			</ul>
 

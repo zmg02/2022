@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\User;
+use App\Model\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -19,10 +19,26 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'name' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
+        'phone' => $faker->phoneNumber,
+//        'email_verified_at' => now(),
+        'password' => md5($faker->password), // password
+        'icon' => $faker->imageUrl($width = 500, $height = 500),
+        'session_id' => Str::random(25),
+        'is_admin' => $faker->boolean(1),
+        'is_vip' => $faker->boolean(1),
+        'is_active' => $faker->boolean(1),
+        'is_verify' => $faker->boolean(99),
+        'status' => $faker->boolean(99),
+        'order_count' => rand(0,1000),
+        'payment_count' => rand(0,10000),
+        'payment_price' => rand(0,8000),
+        'come_from' => 'PC',
+        'login_count' => rand(0,1000),
+        'last_login_time' => $faker->unixTime,
+        'last_login_ip' => $faker->ipv4,
+        'create_time'   => $faker->unixTime,
+        'update_time'   => $faker->unixTime,
     ];
 });
