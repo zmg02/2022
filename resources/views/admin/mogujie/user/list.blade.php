@@ -1,282 +1,83 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>用户列表</title>
-<link rel="icon" href="favicon.ico" type="image/ico">
-<meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
-<meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
-<meta name="author" content="yinqi">
-<link href="/css/mogujie/admin/bootstrap.min.css" rel="stylesheet">
-<link href="/css/mogujie/admin/materialdesignicons.min.css" rel="stylesheet">
-<link href="/css/mogujie/admin/style.min.css" rel="stylesheet">
-</head>
+    @include('admin.mogujie.layouts.head')
+    <!--时间选择插件-->
+    <link rel="stylesheet" href="/js/mogujie/admin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <!--日期选择插件-->
+    <link rel="stylesheet" href="/js/mogujie/admin/bootstrap-datepicker/bootstrap-datepicker3.min.css">
 
-<body>
-<div class="lyear-layout-web">
-  <div class="lyear-layout-container">
+    <style>
+      #alert_info {
+        position: fixed;
+        left: 60%;
+        top: 40%;
+        width: 300px;
+      }
+      #set_info {
+        position: fixed;
+        left: 50%;
+        top: 40%;
+        width: 500px;
+      }
+    </style>
     <!--左侧导航-->
-    <aside class="lyear-layout-sidebar">
-
-      <!-- logo -->
-      <div id="logo" class="sidebar-header">
-        <a href="{{ url('admin/mogujie') }}"><img src="/img/mogujie/admin/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
-      </div>
-      <div class="lyear-layout-sidebar-scroll">
-
-        <nav class="sidebar-main">
-          <ul class="nav nav-drawer">
-            <li class="nav-item"> <a href="{{ url('admin/mogujie') }}"><i class="mdi mdi-home"></i> 后台首页</a> </li>
-            <li class="nav-item nav-item-has-subnav active open">
-              <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> UI 元素</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="{{ url('admin/mogujie/index/buttons') }}">按钮</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/cards') }}">卡片</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/grid') }}">格栅</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/icons') }}">图标</a> </li>
-                <li class="active"> <a href="{{ url('admin/mogujie/index/tables') }}">表格</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/modals') }}">模态框</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/popover') }}">提示 / 弹出框</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/alerts') }}">警告框</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/pagination') }}">分页</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/progress') }}">进度条</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/tabs') }}">标签页</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/typography') }}">排版</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/step') }}">步骤</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/other') }}">其他</a> </li>
-              </ul>
-            </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 表单</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="{{ url('admin/mogujie/index/elements') }}">基本元素</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/radio') }}">单选框</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/checkbox') }}">复选框</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/switch') }}">开关</a> </li>
-              </ul>
-            </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="{{ url('admin/mogujie/index/doc') }}">文档列表</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/gallery') }}">图库列表</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/config') }}">网站配置</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/rabc') }}">设置权限</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/add_doc') }}">新增文档</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/guide') }}">表单向导</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/login') }}">登录页面</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/login2') }}">登录页面2</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/login3') }}">登录页面3</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/login4') }}">登录页面4</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/error') }}">错误页面</a> </li>
-              </ul>
-            </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-language-javascript"></i> JS 插件</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="{{ url('admin/mogujie/index/datepicker') }}">日期选取器</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/sliders') }}">滑块</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/colorpicker') }}">选色器</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/chartjs') }}">Chart.js</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/jconfirm') }}">对话框</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/input') }}">标签插件</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/notify') }}">通知消息</a> </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-          <p class="copyright">Copyright &copy; 2019. <a target="_blank" href="http://lyear.itshubao.com">IT书包</a> All rights reserved.</p>
-        </div>
-      </div>
-
-    </aside>
+    @include('admin.mogujie.layouts.sidebar')
     <!--End 左侧导航-->
 
     <!--头部信息-->
-    <header class="lyear-layout-header">
-
-      <nav class="navbar navbar-default">
-        <div class="topbar">
-
-          <div class="topbar-left">
-            <div class="lyear-aside-toggler">
-              <span class="lyear-toggler-bar"></span>
-              <span class="lyear-toggler-bar"></span>
-              <span class="lyear-toggler-bar"></span>
-            </div>
-            <span class="navbar-page-title"> 用户列表 </span>
-          </div>
-
-          <ul class="topbar-right">
-            <li class="dropdown dropdown-profile">
-              <a href="javascript:void(0)" data-toggle="dropdown">
-                <img class="img-avatar img-avatar-48 m-r-10" src="/img/mogujie/admin/users/avatar.jpg" alt="笔下光年" />
-                <span>笔下光年 <span class="caret"></span></span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li> <a href="{{ url('admin/mogujie/index/profile') }}"><i class="mdi mdi-account"></i> 个人信息</a> </li>
-                <li> <a href="{{ url('admin/mogujie/index/pwd') }}"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
-                <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
-                <li class="divider"></li>
-                <li> <a href="{{ url('admin/mogujie/index/login') }}"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
-              </ul>
-            </li>
-            <!--切换主题配色-->
-		    <li class="dropdown dropdown-skin">
-			  <span data-toggle="dropdown" class="icon-palette"><i class="mdi mdi-palette"></i></span>
-			  <ul class="dropdown-menu dropdown-menu-right" data-stopPropagation="true">
-                <li class="drop-title"><p>主题</p></li>
-                <li class="drop-skin-li clearfix">
-                  <span class="inverse">
-                    <input type="radio" name="site_theme" value="default" id="site_theme_1" checked>
-                    <label for="site_theme_1"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="site_theme" value="dark" id="site_theme_2">
-                    <label for="site_theme_2"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="site_theme" value="translucent" id="site_theme_3">
-                    <label for="site_theme_3"></label>
-                  </span>
-                </li>
-			    <li class="drop-title"><p>LOGO</p></li>
-				<li class="drop-skin-li clearfix">
-                  <span class="inverse">
-                    <input type="radio" name="logo_bg" value="default" id="logo_bg_1" checked>
-                    <label for="logo_bg_1"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="logo_bg" value="color_2" id="logo_bg_2">
-                    <label for="logo_bg_2"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="logo_bg" value="color_3" id="logo_bg_3">
-                    <label for="logo_bg_3"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="logo_bg" value="color_4" id="logo_bg_4">
-                    <label for="logo_bg_4"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="logo_bg" value="color_5" id="logo_bg_5">
-                    <label for="logo_bg_5"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="logo_bg" value="color_6" id="logo_bg_6">
-                    <label for="logo_bg_6"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="logo_bg" value="color_7" id="logo_bg_7">
-                    <label for="logo_bg_7"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="logo_bg" value="color_8" id="logo_bg_8">
-                    <label for="logo_bg_8"></label>
-                  </span>
-				</li>
-				<li class="drop-title"><p>头部</p></li>
-				<li class="drop-skin-li clearfix">
-                  <span class="inverse">
-                    <input type="radio" name="header_bg" value="default" id="header_bg_1" checked>
-                    <label for="header_bg_1"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="header_bg" value="color_2" id="header_bg_2">
-                    <label for="header_bg_2"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="header_bg" value="color_3" id="header_bg_3">
-                    <label for="header_bg_3"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="header_bg" value="color_4" id="header_bg_4">
-                    <label for="header_bg_4"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="header_bg" value="color_5" id="header_bg_5">
-                    <label for="header_bg_5"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="header_bg" value="color_6" id="header_bg_6">
-                    <label for="header_bg_6"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="header_bg" value="color_7" id="header_bg_7">
-                    <label for="header_bg_7"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="header_bg" value="color_8" id="header_bg_8">
-                    <label for="header_bg_8"></label>
-                  </span>
-				</li>
-				<li class="drop-title"><p>侧边栏</p></li>
-				<li class="drop-skin-li clearfix">
-                  <span class="inverse">
-                    <input type="radio" name="sidebar_bg" value="default" id="sidebar_bg_1" checked>
-                    <label for="sidebar_bg_1"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="sidebar_bg" value="color_2" id="sidebar_bg_2">
-                    <label for="sidebar_bg_2"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="sidebar_bg" value="color_3" id="sidebar_bg_3">
-                    <label for="sidebar_bg_3"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="sidebar_bg" value="color_4" id="sidebar_bg_4">
-                    <label for="sidebar_bg_4"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="sidebar_bg" value="color_5" id="sidebar_bg_5">
-                    <label for="sidebar_bg_5"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="sidebar_bg" value="color_6" id="sidebar_bg_6">
-                    <label for="sidebar_bg_6"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="sidebar_bg" value="color_7" id="sidebar_bg_7">
-                    <label for="sidebar_bg_7"></label>
-                  </span>
-                  <span>
-                    <input type="radio" name="sidebar_bg" value="color_8" id="sidebar_bg_8">
-                    <label for="sidebar_bg_8"></label>
-                  </span>
-				</li>
-			  </ul>
-			</li>
-            <!--切换主题配色-->
-          </ul>
-
-        </div>
-      </nav>
-
-    </header>
+    @include('admin.mogujie.layouts.header')
     <!--End 头部信息-->
 
     <!--页面主要内容-->
     <main class="lyear-layout-content">
-
       <div class="container-fluid">
-
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
-              <div class="card-header">
-                  <div class="col-lg-3">
+              <form action="" method="get">
+                <div class="card-header">
+                  <div class="col-xs-1">
+                    <select class="form-control" style="height: 38px" id="example-select" name="is_vip" size="1">
+                      <option value="">是否会员</option>
+                      <option value="1" @if (Request('is_vip') == 1) selected @endif>是</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-1">
+                    <select class="form-control" style="height: 38px" id="example-select" name="is_active" size="1">
+                      <option value="">是否活跃</option>
+                      <option value="1" @if (Request('is_active') == 1) selected @endif>是</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-1">
+                    <select class="form-control" style="height: 38px" id="example-select" name="is_admin" size="1">
+                      <option value="">是否管理员</option>
+                      <option value="1" @if (Request('is_admin') == 1) selected @endif>是</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-1">
+                    <select class="form-control" style="height: 38px" id="example-select" name="status" size="1">
+                      <option value="all">所有状态</option>
+{{--                      <option value="0" @if (Request('status') == 0) selected @endif>删除</option>--}}
+                      <option value="1" @if (Request('status') == 1) selected @endif>正常</option>
+                      <option value="2" @if (Request('status') == 2) selected @endif>禁用</option>
+                      <option value="3" @if (Request('status') == 3) selected @endif>申请恢复中</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-2">
+                    <div class="input-daterange input-group js-datepicker" data-auto-close="false" data-date-format="yyyy-mm-dd">
+                      <input class="form-control" type="text" id="example-daterange1" name="start_date_time" value="{{Request('start_date_time')}}" placeholder="从">
+                      <span class="input-group-addon"><i class="mdi mdi-chevron-right"></i></span>
+                      <input class="form-control" type="text" id="example-daterange2" name="end_date_time" value="{{Request('end_date_time')}}" placeholder="至">
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
                       <div class="input-group">
-                          <input type="text" class="form-control" placeholder="请输入关键词...">
+                          <input type="text" name="account" class="form-control" value="{{request('account')}}" placeholder="姓名|邮箱|手机">
                           <span class="input-group-btn">
-                          <button class="btn btn-default" type="button">搜索</button>
+                          <button class="btn btn-default" type="submit">搜索</button>
                         </span>
                       </div>
                   </div>
-              </div>
+                </div>
+              </form>
               <div class="card-body">
 
                 <table class="table table-hover">
@@ -286,6 +87,7 @@
                       <th>姓名</th>
                       <th>邮箱</th>
                       <th>手机</th>
+                      <th>是否管理员</th>
                       <th>是否会员</th>
                       <th>是否活跃</th>
                       <th>状态</th>
@@ -304,6 +106,9 @@
                       <td>{{ $user->email }}</td>
                       <td>{{ $user->phone }}</td>
                       <td>
+                        @if(empty($user->is_admin))否@else是@endif
+                      </td>
+                      <td>
                         @if(empty($user->is_vip))
                         否
                         @else
@@ -311,7 +116,7 @@
                         @endif
                       </td>
                       <td>
-                        @if(empty($user->active))
+                        @if(empty($user->is_active))
                         否
                         @else
                         是
@@ -322,7 +127,10 @@
                       <td>{{ $user->payment_count }}</td>
                       <td>${{ $user->payment_price }}</td>
                       <td>{{ date('Y-m-d H:i', $user->last_login_time) }}</td>
-                      <td><button>aaaa</button></td>
+                      <td>
+                        <button class="btn btn-label btn-danger" btn-value="{{ $user->id }}"><label><i class="mdi mdi-close"></i></label> 删除</button>
+                        <button class="btn btn-info btn-set" type="button" btn-value="id:{{$user->id}},is_vip:{{$user->is_vip}},is_admin:{{$user->is_admin}},status:{{ $user->status }}">设置</button>
+                      </td>
                     </tr>
                     @endforeach
                   </tbody>
@@ -333,16 +141,147 @@
           </div>
         </div>
 
+        <div id="alert_info" class="alert alert-info alert-dismissible" role="alert" style="display: none">
+          <h4>确定要删除该用户吗？</h4>
+          <p style="margin-top: 100px;text-align: right">
+            <button type="button" class="btn btn-danger-delete" btn-value="">确定删除</button>
+            <button type="button" class="btn btn-cancel">取消</button>
+          </p>
+        </div>
+
+        <div id="set_info" class="alert alert-info alert-dismissible" role="alert" style="display: none">
+          <h4 style="text-align: center">设 置</h4>
+          <div class="form-group row m-b-10" style="margin-top: 50px">
+            <div class="col-xs-3">会员：</div>
+            <div class="col-xs-9">
+              <label class="lyear-switch switch-solid switch-success">
+                <input id="vip-input" type="checkbox" >
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group row m-b-10">
+            <div class="col-xs-3">管理员：</div>
+            <div class="col-xs-9">
+              <label class="lyear-switch switch-solid switch-success">
+                <input id="admin-input" type="checkbox" >
+                <span></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group row m-b-10">
+            <div class="col-xs-3">用户状态：</div>
+            <div class="col-xs-9">
+              <select class="form-control" style="height: 38px;display: inline-block;width: 70%;" id="status-select" name="status" size="1">
+                <option value="1">正常</option>
+                <option value="2">禁用</option>
+                <option value="3">申请恢复中</option>
+              </select>
+            </div>
+          </div>
+          <p style="margin-top: 100px;text-align: right">
+            <button type="button" class="btn btn-set-confirm" btn-value="">确定修改</button>
+            <button type="button" class="btn btn-cancel">取消</button>
+          </p>
+        </div>
       </div>
 
     </main>
     <!--End 页面主要内容-->
-  </div>
-</div>
+    @include('admin.mogujie.layouts.foot')
 
-<script type="text/javascript" src="/js/mogujie/admin/jquery.min.js"></script>
-<script type="text/javascript" src="/js/mogujie/admin/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/mogujie/admin/perfect-scrollbar.min.js"></script>
-<script type="text/javascript" src="/js/mogujie/admin/main.min.js"></script>
-</body>
-</html>
+    <!--时间选择插件-->
+    <script src="/js/mogujie/admin/bootstrap-datetimepicker/moment.min.js"></script>
+    <script src="/js/mogujie/admin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="/js/mogujie/admin/bootstrap-datetimepicker/locale/zh-cn.js"></script>
+    <!--日期选择插件-->
+    <script src="/js/mogujie/admin/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="/js/mogujie/admin/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script>
+      //用户删除确认弹框显示
+      $('.btn-danger').click(function () {
+        $('#alert_info').css('display','block');
+        $('#set_info').css('display','none');
+        var id = $(this).attr('btn-value');
+        $('.btn-danger-delete').attr('btn-value',id);
+      });
+      //用户删除操作
+      $('.btn-danger-delete').click(function () {
+          var id = $(this).attr('btn-value');
+          $.ajax({
+            type: 'get',
+            url: '{{ route("user.delete") }}',
+            data: {
+              id:id
+            },
+            success: function (data) {
+              location.href="{{ route("user.list") }}"
+            },
+            error: function (data) {
+              alert(data);
+            }
+          });
+      });
+      //弹框隐藏
+      $('.btn-cancel').click(function () {
+        $('#alert_info').css('display','none');
+        $('#set_info').css('display','none');
+      });
+      //修改弹框显示
+      $('.btn-set').click(function () {
+        $('#set_info').css('display', 'block');
+        $('#alert_info').css('display','none');
+        var data = $(this).attr('btn-value');
+        // $('.btn-set-confirm').attr('btn-value',data);
+        var arr1 = data.split(',');
+        var newArr = [];
+        for (val in arr1) {
+          arr2 = arr1[val].split(':');
+          newArr[arr2[0]] = arr2[1];
+
+          if (newArr['status']) {
+            $('#status-select>option[value="'+newArr['status']+'"]').attr('selected','selected');
+          }
+
+          if (newArr['is_vip'] == 1) {
+            $('#vip-input').attr('checked','checked');
+          }
+          if (newArr['is_admin'] == 1) {
+            $('#admin-input').attr('checked','checked');
+          }
+          $('.btn-set-confirm').attr('btn-value',newArr['id']);
+        }
+
+      });
+      //用户状态修改
+      $('.btn-set-confirm').click(function () {
+        var is_vip = is_admin = 0;
+        if ($('#vip-input').is(':checked')) {
+          is_vip = 1;
+        }
+        if ($('#admin-input').is(':checked')) {
+          is_admin = 1;
+        }
+        var status = parseInt($('#status-select').val());
+        var id = $('.btn-set-confirm').attr('btn-value');
+
+        $.ajax({
+          type: 'post',
+          url: '{{ route("user.set") }}',
+          data: {
+            id:id,
+            is_vip:is_vip,
+            is_admin:is_admin,
+            status:status
+          },
+          success: function (data) {
+            // console.log(data)
+            location.href="{{ route("user.list") }}"
+          },
+          error: function (data) {
+            alert(data);
+          }
+        });
+      });
+
+    </script>

@@ -46,16 +46,38 @@ class IndexController extends Controller
 
     public function login(Request $request)
     {
-        if (isset($request)) {
-            $request->validate([
+        $loginError = [];
+        if (isset($request['submit'])) {
+            $validateData = $request->validate([
                'account' => [
-
+                    'required'
                ],
                'password' =>[
-
+                    'required'
                ]
             ]);
+            $userInfo = User::where('email',$validateData['account'])->orWhere('phone',$validateData['account'])->first();
+            if (empty($userInfo->toArray())) {
+                $loginError['code'] = 4001;
+                $loginError['message'] = '未找到用户，请确认填写的邮箱或手机号码正确！';
+                return view('mogujie/index/login',compact('loginError'));
+            }
+            if (md5($validateData['password']) !== $userInfo['password']) {
+                $loginError['code'] = 4002;
+                $loginError['message'] = '密码错误，请重新输入！';
+                return view('mogujie/index/login',compact('loginError'));
+            }
+            $key = 'user'.$validateData['account'];
+//            $request->session()->put($key, json_encode($validateData));
+            session([$key=>json_encode($validateData)]);
+            return redirect(url('mogujie'));
         }
+        return view('mogujie/index/login');
+    }
+
+    public function logout()
+    {
+        session()->flush();
         return view('mogujie/index/login');
     }
 }

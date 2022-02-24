@@ -9,21 +9,27 @@
       <div class="head register">
         登 录
       </div>
-      <form action="{{ url('mogujie/register') }}" method="post">
+      <form action="{{ url('mogujie/login') }}" method="post">
         @csrf
 {{--        错误信息<span class="warn">请输入邮箱/手机号</span>--}}
         <input type="text" id="account" name="account" placeholder="邮箱/手机号" class="nomal @error('phone') is-invalid @enderror">
+        @if (!empty($loginError) && $loginError['code'] == 4001)
+          <div class="alert alert-danger">{{ $loginError['message'] }}</div>
+        @endif
         @error('account')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
         <input type="password" id="password" name="password" placeholder="密码" class="nomal @error('password') is-invalid @enderror">
+        @if (!empty($loginError) && $loginError['code'] == 4002)
+          <div class="alert alert-danger">{{ $loginError['message'] }}</div>
+        @endif
         @error('password')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
         <input type="hidden" name="submit" value="submit">
-        <input type="submit" value="注册">
+        <input type="submit" value="登 录">
       </form>
       <ul>
         <li><a href="#"> QQ登录</a></li>
