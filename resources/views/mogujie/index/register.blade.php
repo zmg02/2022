@@ -34,7 +34,7 @@
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <input type="hidden" name="submit" value="submit">
-        <input type="submit" value="注册">
+        <input type="submit" value="注 册">
       </form>
       <ul>
         <li><a href="#"> QQ登录</a></li>

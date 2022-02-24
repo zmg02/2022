@@ -10,4 +10,10 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function __construct()
+    {
+        if (!session()->exists('user')) {
+            return redirect()->action('Mogujie\IndexController@login');
+        }
+    }
 }

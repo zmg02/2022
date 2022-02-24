@@ -9,7 +9,9 @@ Route::group(['prefix'=>'mogujie'], function () {
     Route::get('/', 'HomeController@index');
 
     Route::get('index/{name?}', 'LyearController@index');
-    Route::get('user/list/{page?}', 'UserController@list');
+    Route::get('user/list/{page?}', 'UserController@lists')->name('user.list');
+    Route::get('user/delete', 'UserController@delete')->name('user.delete');
+    Route::post('user/set', 'UserController@set')->name('user.set');
 
 });
 
