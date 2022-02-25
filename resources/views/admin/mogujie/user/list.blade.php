@@ -218,7 +218,7 @@
               id:id
             },
             success: function (data) {
-              location.href="{{ route("user.list") }}"
+              location.href="{{ route("user") }}"
             },
             error: function (data) {
               alert(data);
@@ -279,7 +279,7 @@
           },
           success: function (data) {
             // console.log(data)
-            location.href="{{ route("user.list") }}"
+            location.href="{{ route("user") }}"
           },
           error: function (data) {
             alert(data);
