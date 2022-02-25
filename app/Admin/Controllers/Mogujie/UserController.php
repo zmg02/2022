@@ -22,6 +22,8 @@ class UserController extends Controller
 
     public function lists(Request $request)
     {
+//        addUsers(5000);
+
         $user = new User();
         $query = $user->query();
 

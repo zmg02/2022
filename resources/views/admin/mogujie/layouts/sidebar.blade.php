@@ -9,13 +9,20 @@
       <ul class="nav nav-drawer">
         <li class="nav-item"> <a href="{{ url('admin/mogujie') }}"><i class="mdi mdi-home"></i> 后台首页</a> </li>
         <li class="nav-item nav-item-has-subnav active open">
+          <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 用户</a>
+          <ul class="nav nav-subnav">
+            <li class="active"> <a href="{{ url('admin/mogujie/user/list') }}">用户列表</a> </li>
+
+          </ul>
+        </li>
+        <li class="nav-item nav-item-has-subnav">
           <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> UI 元素</a>
           <ul class="nav nav-subnav">
             <li> <a href="{{ url('admin/mogujie/index/buttons') }}">按钮</a> </li>
             <li> <a href="{{ url('admin/mogujie/index/cards') }}">卡片</a> </li>
             <li> <a href="{{ url('admin/mogujie/index/grid') }}">格栅</a> </li>
             <li> <a href="{{ url('admin/mogujie/index/icons') }}">图标</a> </li>
-            <li class="active"> <a href="{{ url('admin/mogujie/index/tables') }}">表格</a> </li>
+            <li> <a href="{{ url('admin/mogujie/index/tables') }}">表格</a> </li>
             <li> <a href="{{ url('admin/mogujie/index/modals') }}">模态框</a> </li>
             <li> <a href="{{ url('admin/mogujie/index/popover') }}">提示 / 弹出框</a> </li>
             <li> <a href="{{ url('admin/mogujie/index/alerts') }}">警告框</a> </li>

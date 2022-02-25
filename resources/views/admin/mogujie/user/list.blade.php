@@ -130,6 +130,9 @@
                       <td>
                         <button class="btn btn-label btn-danger" btn-value="{{ $user->id }}"><label><i class="mdi mdi-close"></i></label> 删除</button>
                         <button class="btn btn-info btn-set" type="button" btn-value="id:{{$user->id}},is_vip:{{$user->is_vip}},is_admin:{{$user->is_admin}},status:{{ $user->status }}">设置</button>
+                        <div class="col-md-4">
+                          <button class="btn btn-primary btn-block example-p-6">警告/黄色 对话框</button>
+                        </div>
                       </td>
                     </tr>
                     @endforeach
@@ -284,4 +287,62 @@
         });
       });
 
+    </script>
+
+    <script type="text/javascript">
+
+      $('.example-p-3').on('click', function () {
+        $.confirm({
+          title: '提示',
+          content: '' +
+            '<form action="" class="formName">' +
+            '<div class="form-group">' +
+            '<label>请输入您的姓名</label>' +
+            '<input type="text" placeholder="姓名" class="name form-control" required />' +
+            '</div>' +
+            '</form>',
+          buttons: {
+            formSubmit: {
+              text: '提交',
+              btnClass: 'btn-blue',
+              action: function () {
+                var name = this.$content.find('.name').val();
+                if(!name){
+                  $.alert('请您输入您的姓名');
+                  return false;
+                }
+                $.alert('您的姓名是： ' + name);
+              }
+            },
+            cancel: {
+              text: '取消'
+            },
+          },
+          onContentReady: function () {
+            var jc = this;
+            this.$content.find('form').on('submit', function (e) {
+              e.preventDefault();
+              jc.$$formSubmit.trigger('click');
+            });
+          }
+        });
+      });
+
+      $('.example-p-6').on('click', function () {
+        $.confirm({
+          title: '警告',
+          content: '把剑凄然望，无处招归舟。明日天涯路远，问谁留楚佩，弄影中洲？数英雄儿女，俯仰古今愁。',
+          type: 'orange',
+          typeAnimated: false,
+          buttons: {
+            omg: {
+              text: '重试',
+              btnClass: 'btn-orange',
+            },
+            close: {
+              text: '关闭',
+            }
+          }
+        });
+      });
     </script>
