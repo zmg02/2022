@@ -10,6 +10,7 @@
   <meta name="author" content="yinqi">
   <link href="/css/mogujie/admin/bootstrap.min.css" rel="stylesheet">
   <link href="/css/mogujie/admin/materialdesignicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/js/mogujie/admin/jconfirm/jquery-confirm.min.css">
   <link href="/css/mogujie/admin/style.min.css" rel="stylesheet">
 </head>
 
