@@ -7,13 +7,14 @@
 
     <nav class="sidebar-main">
       <ul class="nav nav-drawer">
+        <?php echo $menus;?>
+
         <li class="nav-item"> <a href="{{ url('admin/mogujie') }}"><i class="mdi mdi-home"></i> 后台首页</a> </li>
         <li class="nav-item nav-item-has-subnav active open">
           <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 用户</a>
           <ul class="nav nav-subnav">
             <li class="active"> <a href="{{ url('admin/mogujie/user/list') }}">用户列表</a> </li>
             <li> <a href="{{ url('admin/mogujie/menu') }}">菜单</a> </li>
-{{var_dump($menus)}}
           </ul>
         </li>
         <li class="nav-item nav-item-has-subnav">

@@ -46,29 +46,68 @@ function getTree($list,$pid=0,$level=0) {
      return $tree;
 }
 
-function menuTreeHtml($menus, $pid=0)
-{
-//<<<HTML
-//        <li class="nav-item nav-item-has-subnav active open">
-//          <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 用户</a>
-//          <ul class="nav nav-subnav">
-//            <li class="active"> <a href="{{ url('admin/mogujie/user/list') }}">用户列表</a> </li>
-//            <li> <a href="{{ url('admin/mogujie/menu') }}">菜单</a> </li>
-//{{var_dump($menus)}}
-//          </ul>
-//        </li>
-//HTML;
-    foreach ($menus as $item) {
-
+//菜单列表视图
+function getMenuList($menus, &$html = ''){
+    foreach ($menus as $v){
+        if (isset($v['children'])) {
+            $html .= '<li class="dd-item dd3-item" data-id="'.$v['id'].'"><div class="dd-handle dd3-handle"> </div><div class="dd3-content"> '.$v['title'].' </div><ol class="dd-list">';
+            $html .= getMenuList($v['children']);
+            $html .= '</ol></li>';
+        } else {
+            $html .= '<li class="dd-item dd3-item" data-id="'.$v['id'].'"><div class="dd-handle dd3-handle"> </div><div class="dd3-content"> '.$v['title'].' </div> </li>';
+        }
     }
-    return $menus;
+    return $html;
 }
 
-//返回空格
-function nbsp($number) {
-    $str = '';
-    for ($i=0; $i<$number; $i++) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;";
+//菜单列表视图
+function getMenuLists($menus, &$html = ''){
+    foreach ($menus as $v){
+        if (isset($v['children'])) {
+            $html .= '<li class="dd-item dd3-item" data-id="'.$v['id'].'"><div class="dd-handle dd3-handle"> </div><div class="dd3-content"> '. nbsp($v['level']) . $v['title'].' </div></li>';
+            $html .= getMenuLists($v['children']);
+        } else {
+            $html .= '<li class="dd-item dd3-item" data-id="'.$v['id'].'"><div class="dd-handle dd3-handle"> </div><div class="dd3-content"> '. nbsp($v['level']) . $v['title'].' </div> </li>';
+        }
     }
-    echo $str;
+    return $html;
+}
+
+//后台左侧菜单
+function getMenuUl($menus, &$html=''){
+    $active = '';
+    foreach ($menus as $v){
+        if (isset($v['children'])) {
+            $html .= '<li class="nav-item nav-item-has-subnav '.$active.'" data-uri="'.$v['uri'].'"><a href="#"><i class="mdi '. $v['icon'] .'"></i> '.$v["title"].'</a><ul class="nav nav-subnav">';
+            $html .= getMenuUl($v['children']);
+            $html .= '</ul></li>';
+        } else {
+            $html .= '<li class="nav-item"> <a href="'. url("{$v['uri']}") .'"><i class="mdi '. $v['icon'] .'"></i> '.$v["title"].'</a> </li>';
+        }
+    }
+    return $html;
+}
+
+function nbsp($multiple)
+{
+    $nbsp = '';
+    for ($i=0; $i<=$multiple; $i++) {
+        $nbsp .= "&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    return $nbsp;
+}
+
+//regexHtml('upload/icons.blade.php', 'upload/icons.json');
+function regexHtml($path, $pathTo)
+{
+    if (is_file($path)) {
+        $html = file_get_contents($path);
+//        $regexStr = '/<i\s+class=\"mdi\s+(.*?)\"><\/i>/Ss';
+        $regexStr = '/<\/code><span>(.*?)<\/span><\/div>/Ss';
+        preg_match_all($regexStr, $html, $matches);
+        $iconsJson = json_encode($matches[1]);
+        file_put_contents($pathTo,$iconsJson);
+        return true;
+    }
+    return false;
 }

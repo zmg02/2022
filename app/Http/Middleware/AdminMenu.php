@@ -20,7 +20,9 @@ class AdminMenu
         //权限判断
         $menuM = new ModelAdminMenu();
         $menus = $menuM->get()->toArray();
-        $menus = menuTree($menus);
+
+        $menus = getMenuUl(menuTree(getTree($menus)));
+//        dd($menus);
         view()->share('menus',$menus);
 
         return $next($request);
