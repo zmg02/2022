@@ -26,7 +26,11 @@ class MenuController extends Controller
 
     public function post(Request $request)
     {
-        dd($request);
+        $menuM = new AdminMenu();
+        $validateData = $menuM->validate($request);
+
+        dd($validateData);
+
         return 'success';
     }
 

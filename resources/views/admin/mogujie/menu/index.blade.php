@@ -29,7 +29,6 @@
     border:1px solid #ebebeb;
   }
   .set,.setIcon {
-    background:url(images/btn_2.png) 165px 10px no-repeat;
     width: 100%;
     height: 38px;
     -webkit-border-radius: 2px;
@@ -41,12 +40,10 @@
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-  .select {
-    background:url(images/btn_1.png) 165px 10px no-repeat;
-  }
+
   .new {
     /*width:198px;*/
-    width: 95%;
+    width: 92%;
     max-height: 200px;
     overflow-y: auto;
     position:absolute;
@@ -95,7 +92,7 @@
   }
 
   .Icons {
-    width: 95%;
+    width: 91%;
     max-height: 200px;
     overflow-y: auto;
     position:absolute;
@@ -147,7 +144,7 @@
             <h3 class="box-title">New</h3>
           </div>
           <div class="card-body">
-            <form action="" method="post">
+            <form action="{{ route('menu.post') }}" method="post">
               <div class="form-body">
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>Parent</span></div>
@@ -156,6 +153,7 @@
                     <div class="nav">
                       <p class="set">Parent</p>
                       <ul class="new">
+                        <li class="dd-item dd3-item" data-id="0"><div class="dd-handle dd3-handle"> </div><div class="dd3-content">Root</div></li>
                         <?php echo $menusHtml;?>
                       </ul>
                     </div>
@@ -166,14 +164,14 @@
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>Title</span></div>
                   <div class="col-md-9">
-                    <input class="form-control" type="text" id="example-text-input" name="example-text-input" placeholder="Title">
+                    <input class="form-control" type="text" name="title" placeholder="Title">
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>Icon</span></div>
                   <div class="col-md-9">
-                    <input type="hidden" id="icon" name="icon_class">
+                    <input type="hidden" id="icon" name="icon">
                     <div class="nav">
                       <div class="row">
                         <div class="col-md-1">
@@ -198,18 +196,24 @@
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>URI</span></div>
                   <div class="col-md-9">
-                    <input class="form-control" type="text" id="example-text-input" name="example-text-input" placeholder="URI">
+                    <input class="form-control" type="text" name="uri" placeholder="URI">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-2 control-label"><span>Order</span></div>
+                  <div class="col-md-9">
+                    <input class="form-control" type="number" name="order" placeholder="Order">
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>Roles</span></div>
                   <div class="col-md-9">
-                    <input type="hidden" name="parent_id">
-                    <select class="form-control"  style="height: 38px" name="parent_id" size="1">
+                    <select class="form-control"  style="height: 38px" name="roles_id" size="1">
                       <option value="1">Admin</option>
-                      <option value="2">选项 #2</option>
-                      <option value="3">选项 #3</option>
+                      <option value="2">zmg</option>
+                      <option value="3">test3</option>
                     </select>
                   </div>
                 </div>
@@ -218,7 +222,7 @@
                   <div class="col-md-2 control-label"><span>Permission</span></div>
                   <div class="col-md-9">
                     <div class="input-group">
-                      <input type="hidden" name="permissions">
+                      <input type="hidden" name="permissions[]">
                       <div class="tree">
                         <div class="d-flex">
                           <label class="lyear-checkbox checkbox-inline checkbox-primary">
@@ -246,7 +250,7 @@
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-9">
                   <button class="btn btn-default btn-w-md" type="button">重 置</button>
-                  <button class="btn btn-primary btn-w-md" type="button">提 交</button>
+                  <button class="btn btn-primary btn-w-md" type="submit">提 交</button>
                 </div>
               </div>
             </form>
@@ -263,6 +267,18 @@
 <!--End 页面主要内容-->
 @include('admin.mogujie.layouts.foot')
 <script type="text/javascript">
+
+  $(document).click(function (e) {
+    var $target = $(e.target);
+    //点击选择器及选择以外的地方隐藏选择器
+    if (!$target.is('.set') && !$target.is('ul.new > li.dd-item')) {
+      $('.new').hide();
+    }
+    if (!$target.is('.setIcon') && !$target.is('div.Icons > a.iconpicker-item')) {
+      $(".Icons").hide();
+    }
+  });
+
   $(function() {
     //选择上级
     $(".nav p.set").click(function() {

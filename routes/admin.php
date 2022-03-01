@@ -13,6 +13,7 @@ Route::group(['prefix'=>'mogujie', 'middleware' => ['admin']], function () {
     Route::get('user/delete', 'UserController@delete')->name('user.delete');
     Route::post('user/set', 'UserController@set')->name('user.set');
     Route::get('menu', 'MenuController@index')->name('menu');
+    Route::post('menu/post', 'MenuController@post')->name('menu.post');
 });;
 
 
