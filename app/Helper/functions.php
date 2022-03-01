@@ -13,62 +13,27 @@ function addUsers($number) {
     dd($user);
 }
 
-//返回菜单
-function menuTree($menu, $pk = 'id', $pid = 'parent_id', $child = 'children', $root = 0)
+
+function nbsp($multiple)
 {
-    $tree     = array();
-    $packData = array();
-    foreach ($menu as $data) {
-        $packData[$data[$pk]] = $data;
+    $nbsp = '';
+    for ($i=0; $i<=$multiple; $i++) {
+        $nbsp .= "&nbsp;&nbsp;&nbsp;&nbsp;";
     }
-    foreach ($packData as $key => $val) {
-        if ($val[$pid] == $root) {
-            //代表跟节点
-            $tree[] = &$packData[$key];
-        } else {
-            //找到其父类
-            $packData[$val[$pid]][$child][] = &$packData[$key];
-        }
-    }
-
-    return $tree;
+    return $nbsp;
 }
 
-function getTree($list,$pid=0,$level=0) {
-     static $tree = array();
-     foreach($list as $row) {
-         if($row['parent_id']==$pid) {
-             $row['level'] = $level;
-             $tree[] = $row;
-             getTree($list, $row['id'], $level + 1);
-         }
-     }
-     return $tree;
-}
-
-function menuTreeHtml($menus, $pid=0)
+//regexHtml('upload/icons.blade.php', 'upload/icons.json');
+function regexHtml($path, $pathTo)
 {
-//<<<HTML
-//        <li class="nav-item nav-item-has-subnav active open">
-//          <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 用户</a>
-//          <ul class="nav nav-subnav">
-//            <li class="active"> <a href="{{ url('admin/mogujie/user/list') }}">用户列表</a> </li>
-//            <li> <a href="{{ url('admin/mogujie/menu') }}">菜单</a> </li>
-//{{var_dump($menus)}}
-//          </ul>
-//        </li>
-//HTML;
-    foreach ($menus as $item) {
-
+    if (is_file($path)) {
+        $html = file_get_contents($path);
+//        $regexStr = '/<i\s+class=\"mdi\s+(.*?)\"><\/i>/Ss';
+        $regexStr = '/<\/code><span>(.*?)<\/span><\/div>/Ss';
+        preg_match_all($regexStr, $html, $matches);
+        $iconsJson = json_encode($matches[1]);
+        file_put_contents($pathTo,$iconsJson);
+        return true;
     }
-    return $menus;
-}
-
-//返回空格
-function nbsp($number) {
-    $str = '';
-    for ($i=0; $i<$number; $i++) {
-        $str .= "&nbsp;&nbsp;&nbsp;&nbsp;";
-    }
-    echo $str;
+    return false;
 }

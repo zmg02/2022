@@ -21,4 +21,20 @@ class AdminMenu extends Model
         $relateModel = new AdminPermissions();
         return $this->belongsToMany($relateModel, 'admin_permissions', 'menu_id', 'permission_id');
     }
+
+    public function validate($request)
+    {
+        return $request->validate([
+            'parent_id' => [
+                'required',
+            ],
+            'order' => [
+                'required',
+            ],
+            'title' => [
+                'required',
+                'max:255',
+            ]
+        ]);
+    }
 }
