@@ -143,9 +143,18 @@
   span.dd-nodrag i{
     font-size: 18px;
   }
+  .progress {
+    display: none;position: fixed;top: 0;right: 0;bottom: 0;left: 0;z-index: 1052;
+  }
 
 </style>
 <main class="lyear-layout-content">
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+      <span class="sr-only">15% Complete</span>
+    </div>
+  </div>
+
   <div class="container-fluid">
     <div class="row">
 
@@ -191,11 +200,11 @@
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>Parent</span></div>
                   <div class="col-md-9">
-                    <input type="hidden" id="parent" name="parent_id" class="@error('parent_id') is-invalid @enderror">
+                    <input type="hidden" name="parent_id" class="parent @error('parent_id') is-invalid @enderror">
                     <div class="nav">
                       <p class="set">Parent</p>
                       <ul class="new">
-                        <li class="dd-item dd3-item" data-id="0"><div class="dd-handle dd3-handle"> </div><div class="dd3-content">Root</div></li>
+                        <li class="dd-item dd3-item" data-id="0"><div class="dd3-content">Root</div></li>
                         <?php echo $menusHtml;?>
                       </ul>
                     </div>
@@ -304,40 +313,143 @@
               </div>
             </form>
 
-
-            <h5>变更模态框内容</h5>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">打开模态框 for @mdo</button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exampleModalLabel">新消息</h4>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="recipient-name" class="control-label">收件人：</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                      </div>
-                      <div class="form-group">
-                        <label for="message-text" class="control-label">消息内容：</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">发送消息</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
 
+
+      <div class="modal fade" id="editMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="exampleModalLabel">Edit</h4>
+            </div>
+            <div class="card-body">
+              <form action="{{ route('menu') }}" method="post">
+                @csrf
+                <div class="form-body">
+                  <div class="form-group row">
+                    <div class="col-md-2 control-label"><span>Parent</span></div>
+                    <div class="col-md-9">
+                      <input type="hidden" id="_id" name="id">
+                      <input type="hidden" name="parent_id" class="parent @error('parent_id') is-invalid @enderror">
+                      <div class="nav">
+                        <p class="set">Parent</p>
+                        <ul class="new">
+                          <li class="dd-item dd3-item" data-id="0"><div class="dd3-content">Root</div></li>
+                          <?php echo $menusHtml;?>
+                        </ul>
+                      </div>
+                      @error('parent_id')
+                      <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
+
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-2 control-label"><span>Title</span></div>
+                    <div class="col-md-9">
+                      <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" placeholder="Title">
+                      @error('title')
+                      <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-2 control-label"><span>Icon</span></div>
+                    <div class="col-md-9">
+                      <input type="hidden" id="icon" name="icon">
+                      <div class="nav">
+                        <div class="row">
+                          <div class="col-md-1">
+                            <p class="p-input icon" style="width: 38px;height: 38px">
+                              <i class="mdi"></i>
+                            </p>
+                          </div>
+                          <div class="col-md-11">
+                            <p class="p-input setIcon">Icon</p>
+
+                            <div class="Icons">
+                              @foreach($icons as $icon)
+                                <a role="button" href="#" class="iconpicker-item" title="{{ $icon }}"><i class="mdi {{ $icon }}"></i></a>
+                              @endforeach
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-2 control-label"><span>URI</span></div>
+                    <div class="col-md-9">
+                      <input class="form-control" type="text" name="uri" placeholder="URI">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-2 control-label"><span>Order</span></div>
+                    <div class="col-md-9">
+                      <input class="form-control" type="number" name="order" placeholder="Order" value="0">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-2 control-label"><span>Roles</span></div>
+                    <div class="col-md-9">
+                      <select class="form-control"  style="height: 38px" name="roles_id" size="1">
+                        <option value="1">Admin</option>
+                        <option value="2">zmg</option>
+                        <option value="3">test3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-2 control-label"><span>Permission</span></div>
+                    <div class="col-md-9">
+                      <div class="input-group">
+                        <input type="hidden" name="permissions[]">
+                        <div class="tree">
+                          <div class="d-flex">
+                            <label class="lyear-checkbox checkbox-inline checkbox-primary">
+                              <input type="checkbox"><span>Select All</span>
+                            </label>
+
+                            <label class="lyear-checkbox checkbox-inline checkbox-primary">
+                              <input type="checkbox"><span>Expand</span>
+                            </label>
+                          </div>
+                          <div class="dd-tree">
+                            <ul>
+                              <li>aaaa</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="form-footer row">
+                  <div class="col-md-2">&nbsp;</div>
+                  <div class="col-md-9">
+                    <input type="hidden" name="submit">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button class="btn btn-primary btn-w-md" type="submit">提 交</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -387,11 +499,11 @@
         }
       }
     });
-    $(".nav li.dd-item").click(function() {
+    $(".new li.dd-item").click(function() {
       var li = $(this).text();
       var id = $(this).attr('data-id');
       $(".nav p.set").html(li);
-      $('#parent').val(id);
+      $('.parent').val(id);
       $(".new").hide();
       /*$(".set").css({background:'none'});*/
       $("p").removeClass("select");
@@ -427,54 +539,100 @@
       $("p").removeClass("select");
     });
 
-  })
-
-  //打开或关闭菜单
-  $('button.show-dd-list').click(function (){
-    var ol = $(this).siblings('ol').css('display');
-    if (ol == 'block') {
-      $(this).siblings('ol').css({'display':'none'})
-    } else {
-      $(this).siblings('ol').css({'display':'block'})
-    }
-  });
-  //关闭菜单
-  $('button.btn-collapse').click(function () {
-    $('li.dd-item ol.dd-list').css({'display':'none'})
-  })
-  //打开菜单
-  $('button.btn-expand').click(function () {
-    $('li.dd-item ol.dd-list').css({'display':'block'})
-  })
-  //刷新页面
-  $('button.btn-refresh').click(function(){
-    location.reload();
-  })
-
-  //删除菜单（假删）
-  $('a.menu-delete').click(function(){
-    var id = $(this).data('id');
-
-    $.ajaxSetup({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      method:'get',
-      url: "{{ route('menu.delete', 'id') }}".replace(/id/,id),
-      success:function(result){
-        if (result == 'success') {
-          lightyear.notify('删除成功，页面即将自动跳转~', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , '{{ route('menu') }}');
-        } else {
-          lightyear.notify('删除失败，请稍后再试~', 'danger', 100);
-        }
-      },
-      error:function(result){
-        lightyear.notify('服务器错误，请稍后再试~', 'danger', 100);
+    //打开或关闭菜单
+    $('button.show-dd-list').click(function (){
+      var ol = $(this).siblings('ol').css('display');
+      if (ol == 'block') {
+        $(this).siblings('ol').css({'display':'none'})
+      } else {
+        $(this).siblings('ol').css({'display':'block'})
       }
     });
-    $.ajax();
+    //关闭菜单
+    $('button.btn-collapse').click(function () {
+      $('li.dd-item ol.dd-list').css({'display':'none'})
+    })
+    //打开菜单
+    $('button.btn-expand').click(function () {
+      $('li.dd-item ol.dd-list').css({'display':'block'})
+    })
+    //刷新页面
+    $('button.btn-refresh').click(function(){
+      location.reload();
+    })
+
+    //删除菜单（假删）
+    $('a.menu-delete').click(function(){
+      var id = $(this).data('id');
+
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        method:'get',
+        url: "{{ route('menu.delete', 'id') }}".replace(/id/,id),
+        success:function(result){
+          if (result == 'success') {
+            lightyear.notify('删除成功，页面即将自动跳转~', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , '{{ route('menu') }}');
+          } else {
+            lightyear.notify('删除失败，请稍后再试~', 'danger', 100);
+          }
+        },
+        error:function(result){
+          lightyear.notify('服务器错误，请稍后再试~', 'danger', 100);
+        }
+      });
+      $.ajax();
+    });
+
+    //修改菜单获取数据
+    $('#editMenu').on('show.bs.modal', function (event) {
+      showProgress()
+      var a = $(event.relatedTarget)
+      var id = a.data('id')
+      var modal = $(this)
+      $.ajax({
+        url:"{{ route('menu.get', 'id') }}".replace(/id/,id),
+        async:true,          //异步
+        success:function (result) {
+          hideProgress()
+          modal.find('#_id').val(result.id)
+          modal.find('#parent').val(result.parent_id)
+          modal.find('.nav p.set').text(result.parent_title)
+          modal.find('input[name="title"]').val(result.title)
+          modal.find('p.setIcon').text(result.icon)
+          modal.find('p.icon i').addClass(result.icon)
+          modal.find('input[name="uri"]').val(result.uri)
+          modal.find('input[name="order"]').val(result.order)
+        }
+      })
+    })
+
+    //修改菜单内容
+
 
   })
+function showProgress() {
+  var percentage = 0;
+  var interval = setInterval(function () {
+    if (percentage < 10000) {
+      percentage+=60;
+      var widthTemp = (percentage / 100).toFixed(1) + '%';
+
+      $('.progress').css({'display':'block'});
+      $('.progress').css('width', widthTemp);
+      $('.sr-only').text(widthTemp);
+    } else {
+      // clearInterval(interval);
+
+    }
+  }, 1);
+}
+
+  function hideProgress() {
+    $('.progress').css({'display':'none'});
+  }
+
 
 </script>
 

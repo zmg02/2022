@@ -14,6 +14,8 @@ Route::group(['prefix'=>'mogujie', 'middleware' => ['admin','web']], function ()
     Route::post('user/set', 'UserController@set')->name('user.set');
     Route::any('menu', 'MenuController@index')->name('menu');
     Route::get('menu/delete/{id}', 'MenuController@delete')->name('menu.delete');
+    Route::get('menu/get_menu/{id}', 'MenuController@getMenuInfo')->name('menu.get');
+    Route::post('menu/post', 'MenuController@post')->name('menu.post');
 });;
 
 
