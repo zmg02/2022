@@ -2,12 +2,14 @@
 
 namespace App\Http\Middleware;
 
+use App\Helper\Tree;
 use App\Model\Admin\AdminMenu as ModelAdminMenu;
 use App\Model\User;
 use Closure;
 
 class AdminMenu
 {
+    use Tree;
     /**
      * Handle an incoming request.
      *
@@ -19,8 +21,10 @@ class AdminMenu
     {
         //权限判断
         $menuM = new ModelAdminMenu();
-        $menus = $menuM->get()->toArray();
-        $menus = menuTree($menus);
+        $menus = $menuM->orderBy('order','DESC')->get()->toArray();
+
+        $menus = $this->getMenuUl($this->menuTree($this->getTree($menus)));
+
         view()->share('menus',$menus);
 
         return $next($request);
