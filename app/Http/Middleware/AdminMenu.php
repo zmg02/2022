@@ -21,7 +21,7 @@ class AdminMenu
     {
         //权限判断
         $menuM = new ModelAdminMenu();
-        $menus = $menuM->get()->toArray();
+        $menus = $menuM->orderBy('order','DESC')->get()->toArray();
 
         $menus = $this->getMenuUl($this->menuTree($this->getTree($menus)));
 

@@ -8,7 +8,7 @@
           <span class="lyear-toggler-bar"></span>
           <span class="lyear-toggler-bar"></span>
         </div>
-        <span class="navbar-page-title"> 用户列表 </span>
+        <span class="navbar-page-title"> {{ $title }} </span>
       </div>
 
       <ul class="topbar-right">

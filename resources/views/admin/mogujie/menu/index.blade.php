@@ -1,11 +1,11 @@
-@include('admin.mogujie.layouts.head')
+@include('admin.mogujie.layouts.head',['title'=>'菜单列表'])
 
 <!--左侧导航-->
 @include('admin.mogujie.layouts.sidebar')
 <!--End 左侧导航-->
 
 <!--头部信息-->
-@include('admin.mogujie.layouts.header')
+@include('admin.mogujie.layouts.header',['title'=>'菜单'])
 <!--End 头部信息-->
 
 <!--页面主要内容-->
@@ -117,6 +117,32 @@
 
   }
 
+  .dd { position: relative; display: block; margin: 10px; padding: 0; list-style: none; font-size: 13px; line-height: 20px; }
+
+  .dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; }
+  .dd-list .dd-list { padding-left: 30px; }
+  .dd-collapsed .dd-list { display: none; }
+
+  .dd-item,
+  .dd-empty,
+  .dd-placeholder { display: block; position: relative; margin: 0; padding: 0;}
+
+  .dd-handle {
+    display: block;
+
+    margin: 1px 0;
+    padding: 8px 10px;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+  .dd-handle:hover { color: var(--primary); background: #fff; }
+
+  .dd-item > button { display: block; position: relative; right: 40px; top: 5px; cursor: pointer; float: left; width: 25px; height: 20px; margin: 5px 0; padding: 0; text-indent: 100%; white-space: nowrap; border: 0; background: transparent; font-size: 20px; line-height: 1; text-align: center; font-weight: bold; }
+  span.dd-nodrag i{
+    font-size: 18px;
+  }
 
 </style>
 <main class="lyear-layout-content">
@@ -126,14 +152,29 @@
       <div class="col-md-7">
         <div class="card">
           <div class="card-header">
-            <button>aaaa</button>
-            <button>aaaa</button>
-            <button>aaaa</button>
+            <div>
+              <div class="btn-group" style="margin-right:3px">
+                <button class="btn btn-primary btn-expand">
+                  <i class="mdi mdi-plus-circle-outline"></i>  Expand
+                </button>
+                <button class="btn btn-primary btn-collapse">
+                  <i class="mdi mdi-minus-circle-outline"></i>  Collapse
+                </button>
+              </div>
+
+
+              <div class="btn-group" style="margin-right:3px">
+                <button class="btn btn-outline-primary btn-refresh" style="border: 1px solid #33cabb"><i class="mdi mdi-refresh"></i> Refresh</button>
+              </div>
+
+            </div>
           </div>
           <div class="card-body">
-            <ol class="dd-list">
-              <?php echo $menusArr;?>
-            </ol>
+            <div class="dd">
+              <ol class="dd-list">
+                <?php echo $menusArr;?>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
@@ -144,12 +185,13 @@
             <h3 class="box-title">New</h3>
           </div>
           <div class="card-body">
-            <form action="{{ route('menu.post') }}" method="post">
+            <form action="{{ route('menu') }}" method="post">
+              @csrf
               <div class="form-body">
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>Parent</span></div>
                   <div class="col-md-9">
-                    <input type="hidden" id="parent" name="parent_id">
+                    <input type="hidden" id="parent" name="parent_id" class="@error('parent_id') is-invalid @enderror">
                     <div class="nav">
                       <p class="set">Parent</p>
                       <ul class="new">
@@ -157,6 +199,9 @@
                         <?php echo $menusHtml;?>
                       </ul>
                     </div>
+                    @error('parent_id')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
 
                   </div>
                 </div>
@@ -164,7 +209,10 @@
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>Title</span></div>
                   <div class="col-md-9">
-                    <input class="form-control" type="text" name="title" placeholder="Title">
+                    <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" placeholder="Title">
+                    @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                   </div>
                 </div>
 
@@ -203,7 +251,7 @@
                 <div class="form-group row">
                   <div class="col-md-2 control-label"><span>Order</span></div>
                   <div class="col-md-9">
-                    <input class="form-control" type="number" name="order" placeholder="Order">
+                    <input class="form-control" type="number" name="order" placeholder="Order" value="0">
                   </div>
                 </div>
 
@@ -249,11 +297,43 @@
               <div class="form-footer row">
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-9">
+                  <input type="hidden" name="submit">
                   <button class="btn btn-default btn-w-md" type="button">重 置</button>
                   <button class="btn btn-primary btn-w-md" type="submit">提 交</button>
                 </div>
               </div>
             </form>
+
+
+            <h5>变更模态框内容</h5>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">打开模态框 for @mdo</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">新消息</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="recipient-name" class="control-label">收件人：</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="form-group">
+                        <label for="message-text" class="control-label">消息内容：</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">发送消息</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -266,6 +346,11 @@
 
 <!--End 页面主要内容-->
 @include('admin.mogujie.layouts.foot')
+
+<!--消息提示-->
+<script src="/js/mogujie/admin/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="/js/mogujie/admin/lightyear.js"></script>
+
 <script type="text/javascript">
 
   $(document).click(function (e) {
@@ -341,6 +426,53 @@
       $(".Icons").hide();
       $("p").removeClass("select");
     });
+
+  })
+
+  //打开或关闭菜单
+  $('button.show-dd-list').click(function (){
+    var ol = $(this).siblings('ol').css('display');
+    if (ol == 'block') {
+      $(this).siblings('ol').css({'display':'none'})
+    } else {
+      $(this).siblings('ol').css({'display':'block'})
+    }
+  });
+  //关闭菜单
+  $('button.btn-collapse').click(function () {
+    $('li.dd-item ol.dd-list').css({'display':'none'})
+  })
+  //打开菜单
+  $('button.btn-expand').click(function () {
+    $('li.dd-item ol.dd-list').css({'display':'block'})
+  })
+  //刷新页面
+  $('button.btn-refresh').click(function(){
+    location.reload();
+  })
+
+  //删除菜单（假删）
+  $('a.menu-delete').click(function(){
+    var id = $(this).data('id');
+
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      method:'get',
+      url: "{{ route('menu.delete', 'id') }}".replace(/id/,id),
+      success:function(result){
+        if (result == 'success') {
+          lightyear.notify('删除成功，页面即将自动跳转~', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , '{{ route('menu') }}');
+        } else {
+          lightyear.notify('删除失败，请稍后再试~', 'danger', 100);
+        }
+      },
+      error:function(result){
+        lightyear.notify('服务器错误，请稍后再试~', 'danger', 100);
+      }
+    });
+    $.ajax();
 
   })
 

@@ -9,30 +9,55 @@ use Illuminate\Http\Request;
 class MenuController extends Controller
 {
     use Tree;
-    public function index()
+    public function index(Request $request)
     {
         $menuM = new AdminMenu();
-        $menus = $menuM->get()->toArray();
 
-        $menusHtml = $this->getMenuLists($this->menuTree($this->getTree($menus)));
+        if (isset($request['submit'])) {
+            $menuM->validate($request);
+            $result = $menuM->addMenu($request);
+            if ($result) {
+                return redirect(route('menu'));
+            }
+        } else {
 
-        $menusArr  = getMenuList($this->menuTree($this->getTree($menus)));
+            $menus = $menuM->orderBy('order','DESC')->get()->toArray();
 
-//        $a = getMenuUl(menuTree(getTree($menus)));
-//        dd($menusHtml);
-        $icons = json_decode(file_get_contents('upload/icons.json'),true);
-        return view('admin\mogujie\menu\index', compact('menusArr','menusHtml','icons'));
+            $menusHtml = $this->getMenuSelect($this->menuTree($this->getTree($menus)));
+
+            $menusArr  = $this->getMenulists($this->menuTree($this->getTree($menus)));
+
+            $icons = json_decode(file_get_contents('upload/icons.json'),true);
+            return view('admin\mogujie\menu\index', compact('menusArr','menusHtml','icons'));
+        }
+
     }
 
-    public function post(Request $request)
+//    public function post(Request $request)
+//    {
+//        $menuM = new AdminMenu();
+//        $validateData = $menuM->validate($request);
+//
+//        dd($validateData);
+//
+//        return 'success';
+//    }
+    public function delete($id)
     {
         $menuM = new AdminMenu();
-        $validateData = $menuM->validate($request);
+        $idString = $menuM->getChildernId($id);
+        $idArray = explode(',', $idString);
+        array_pop($idArray);
 
-        dd($validateData);
-
-        return 'success';
+        if ($idArray) {
+            $res = AdminMenu::withoutGlobalScope('status')->whereIn('id',$idArray)->update(['status' => 2]);
+            if ($res) {
+                return 'success';
+            } else {
+                return ['code'=>0,'message'=>'error'];
+            }
+        }
+        return ['code'=>0,'message'=>'error'];
     }
-
 
 }
