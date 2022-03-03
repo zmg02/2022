@@ -1,4 +1,4 @@
-    @include('admin.mogujie.layouts.head')
+    @include('admin.mogujie.layouts.head',['title'=>'用户列表'])
     <!--时间选择插件-->
     <link rel="stylesheet" href="/js/mogujie/admin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
     <!--日期选择插件-->
@@ -23,7 +23,7 @@
     <!--End 左侧导航-->
 
     <!--头部信息-->
-    @include('admin.mogujie.layouts.header')
+    @include('admin.mogujie.layouts.header',['title'=>'用户列表'])
     <!--End 头部信息-->
 
     <!--页面主要内容-->

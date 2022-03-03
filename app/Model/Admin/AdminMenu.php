@@ -2,10 +2,11 @@
 
 namespace App\Model\Admin;
 
+use App\Model\BaseModel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
-class AdminMenu extends Model
+class AdminMenu extends BaseModel
 {
     protected $table = 'admin_menu';
 
@@ -15,7 +16,7 @@ class AdminMenu extends Model
      *
      * @var bool
      */
-    public $timestamps = false;
+//    public $timestamps = false;
 
     /**
      * 模型的「booted」方法
@@ -60,10 +61,17 @@ class AdminMenu extends Model
         $this->title = $request->title;
         $this->icon = $request->icon ?? '';
         $this->uri = $request->uri ?? '';
-        $this->create_time = time();
-        $this->update_time = time();
 
-        $sqlRes = $this->save();
+        if (isset($request->id)) {
+//            $this->id = $request->id;
+            $icon = $request->icon ?? '';
+            $uri =$request->uri ?? '';
+            $update = ['parent_id' => $request->parent_id,'order' => $request->order,'title' => $request->title,'icon' => $icon,'uri' => $uri];
+            $sqlRes = $this->where('id',$request->id)->update($update);
+        } else {
+            $sqlRes = $this->save();
+        }
+
         return $sqlRes;
     }
 

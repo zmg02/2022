@@ -22,10 +22,10 @@ class MenuController extends Controller
         } else {
 
             $menus = $menuM->orderBy('order','DESC')->get()->toArray();
+            $tree = $this->menuTree($this->getTree($menus));
+            $menusHtml = $this->getMenuSelect($tree);
 
-            $menusHtml = $this->getMenuSelect($this->menuTree($this->getTree($menus)));
-
-            $menusArr  = $this->getMenulists($this->menuTree($this->getTree($menus)));
+            $menusArr  = $this->getMenulists($tree);
 
             $icons = json_decode(file_get_contents('upload/icons.json'),true);
             return view('admin\mogujie\menu\index', compact('menusArr','menusHtml','icons'));
@@ -33,15 +33,26 @@ class MenuController extends Controller
 
     }
 
-//    public function post(Request $request)
-//    {
-//        $menuM = new AdminMenu();
-//        $validateData = $menuM->validate($request);
-//
-//        dd($validateData);
-//
-//        return 'success';
-//    }
+    public function post(Request $request)
+    {
+        $menuM = new AdminMenu();
+
+        if (isset($request['submit'])) {
+            $menuM->validate($request);
+var_dump($request);
+        }
+    }
+    public function getMenuInfo($id)
+    {
+        $menu = AdminMenu::withoutGlobalScope('status')->where('id', $id)->first();
+
+        $menuInfo = $menu->toArray();
+        $pTitle = AdminMenu::withoutGlobalScope('status')->where('id', $menuInfo['parent_id'])->value('title');
+        $menuInfo['parent_title'] = $pTitle ?? 'Root';
+
+        return $menuInfo;
+    }
+
     public function delete($id)
     {
         $menuM = new AdminMenu();
