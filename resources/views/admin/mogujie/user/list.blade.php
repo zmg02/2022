@@ -55,7 +55,7 @@
                   <div class="col-xs-1">
                     <select class="form-control" style="height: 38px" id="example-select" name="status" size="1">
                       <option value="all">所有状态</option>
-{{--                      <option value="0" @if (Request('status') == 0) selected @endif>删除</option>--}}
+<!-- {{--                      <option value="0" @if (Request('status') == 0) selected @endif>删除</option>--}} -->
                       <option value="1" @if (Request('status') == 1) selected @endif>正常</option>
                       <option value="2" @if (Request('status') == 2) selected @endif>禁用</option>
                       <option value="3" @if (Request('status') == 3) selected @endif>申请恢复中</option>

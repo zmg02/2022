@@ -33,15 +33,6 @@ class MenuController extends Controller
 
     }
 
-    public function post(Request $request)
-    {
-        $menuM = new AdminMenu();
-
-        if (isset($request['submit'])) {
-            $menuM->validate($request);
-var_dump($request);
-        }
-    }
     public function getMenuInfo($id)
     {
         $menu = AdminMenu::withoutGlobalScope('status')->where('id', $id)->first();
