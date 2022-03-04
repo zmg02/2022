@@ -3,9 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix'=>'mogujie', 'middleware' => ['admin','web']], function () {
-    Route::get('test', function() {
-        return 'test';
-    });
     Route::get('/', 'HomeController@index');
 
     Route::get('index/{name?}', 'LyearController@index');
@@ -16,10 +13,9 @@ Route::group(['prefix'=>'mogujie', 'middleware' => ['admin','web']], function ()
     Route::get('menu/delete/{id}', 'MenuController@delete')->name('menu.delete');
     Route::get('menu/get_menu/{id}', 'MenuController@getMenuInfo')->name('menu.get');
     Route::post('menu/post', 'MenuController@post')->name('menu.post');
-    // Route::get('role', 'RoleController@index')->name('role');
-    // Route::get('role/{id}', 'RoleController@getRole')->name('role.get');
-    // Route::put('role/{id}', 'RoleController@update')->name('role.put');
+
     Route::resource('role', 'RoleController');
+    Route::resource('permission', 'PermissionController');
 });
 
 

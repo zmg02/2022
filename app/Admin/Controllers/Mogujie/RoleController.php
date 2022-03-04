@@ -2,8 +2,6 @@
 
 namespace App\Admin\Controllers\Mogujie;
 
-use App\Helper\Tree;
-use App\Model\Admin\AdminMenu;
 use App\Model\Admin\AdminRoles;
 use Illuminate\Http\Request;
 

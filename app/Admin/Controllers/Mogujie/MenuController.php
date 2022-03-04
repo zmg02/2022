@@ -21,16 +21,15 @@ class MenuController extends Controller
             }
         } else {
 
-            $menus = $menuM->orderBy('order','DESC')->get()->toArray();
-            $tree = $this->menuTree($this->getTree($menus));
+            $menus = $menuM->orderBy('order', 'DESC')->get()->toArray();
+            $tree = $this->treeArray($this->getTreeLevel($menus));
             $menusHtml = $this->getMenuSelect($tree);
 
             $menusArr  = $this->getMenulists($tree);
 
-            $icons = json_decode(file_get_contents('upload/icons.json'),true);
-            return view('admin\mogujie\menu\index', compact('menusArr','menusHtml','icons'));
+            $icons = json_decode(file_get_contents('upload/icons.json'), true);
+            return view('admin\mogujie\menu\index', compact('menusArr', 'menusHtml', 'icons'));
         }
-
     }
 
     public function getMenuInfo($id)
@@ -52,14 +51,13 @@ class MenuController extends Controller
         array_pop($idArray);
 
         if ($idArray) {
-            $res = AdminMenu::withoutGlobalScope('status')->whereIn('id',$idArray)->update(['status' => 2]);
+            $res = AdminMenu::withoutGlobalScope('status')->whereIn('id', $idArray)->update(['status' => 2]);
             if ($res) {
                 return 'success';
             } else {
-                return ['code'=>0,'message'=>'error'];
+                return ['code' => 0, 'message' => 'error'];
             }
         }
-        return ['code'=>0,'message'=>'error'];
+        return ['code' => 0, 'message' => 'error'];
     }
-
 }
