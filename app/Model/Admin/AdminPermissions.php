@@ -25,13 +25,24 @@ class AdminPermissions extends BaseModel
             'slug.required' => '请填写Slug',
             'slug.unique' => 'Slug已被使用',
             'name.max' => '名称超出了最多长度',
-            'slug.max' => 'Slug超出了最多长度',
+            'slug.max' => 'Slug超出了最多长度'
         ];
-        $request->validate([
-            'name'      => 'required|max:255',
-            'slug'      => 'required|unique:admin_permissions|max:255',
+
+        return $request->validate([
+            'slug' => 'required|unique:admin_permissions|max:255',
+            'name' => 'required|max:255'
         ], $message);
     }
 
+    public function addPermission($request)
+    {
+        $this->name = $request->name;
+        $this->slug = $request->slug;
+        $this->http_method = $request->http_method ?? '';
+        $this->http_path = $request->http_path ?? '';
+        $this->order = $request->order ?? 1;
+        $this->parent_id = $request->parent_id ?? 0;
+        return $this->save();
+    }
 
 }

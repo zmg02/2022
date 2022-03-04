@@ -16,27 +16,45 @@ class PermissionController extends Controller
         $tree = $this->treeArray($this->getTreeLevel($permissionArray));
 
         $permissions  = $this->getPermissionlists($tree);
-        // dd($permissions);
+
+
         return view('admin/mogujie/permission/index', compact('permissions'));
     }
 
     public function create()
     {
+        $permissionModel = new AdminPermissions();
+        $permissionArray = $permissionModel->get()->toArray();
+        $tree = $this->treeArray($this->getTreeLevel($permissionArray));
 
-        return view('admin/mogujie/permission/create');
+        $permissionSelect = $this->getPermissionSelect($tree);
+        return view('admin/mogujie/permission/create', compact('permissionSelect'));
     }
 
     public function store(Request $request)
     {
 
-        return $request;
+        $permissionModel = new AdminPermissions();
+        $permissionModel->validate($request);
+        $result = $permissionModel->addPermission($request);
+        if ($result) {
+            $message = '创建成功！';
+        } else {
+            $message = '创建失败！';
+        }
+        return back()->with([
+            'message'  => $message,
+            'url'      => route('permission.index'),
+            'jumpTime' => 1,
+            'pageName' => '权限'
+        ]);
     }
 
-    public function show($id)
-    {
+    // public function show($id)
+    // {
 
-        return view('admin/mogujie/permission/show');
-    }
+    //     return view('admin/mogujie/permission/show');
+    // }
 
     public function edit($id)
     {
