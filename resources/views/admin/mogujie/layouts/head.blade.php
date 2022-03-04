@@ -13,6 +13,9 @@
   <link href="/css/mogujie/admin/materialdesignicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/js/mogujie/admin/jconfirm/jquery-confirm.min.css">
   <link href="/css/mogujie/admin/style.min.css" rel="stylesheet">
+  <style>
+      #applyFor{ position:fixed; top:0; right:0; bottom:0; left:0; z-index:1050; text-align:center; width:500px; margin:100px auto;}
+  </style>
 </head>
 
 <body>

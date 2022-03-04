@@ -21,11 +21,11 @@ class AdminMenu
     {
         //权限判断
         $menuM = new ModelAdminMenu();
-        $menus = $menuM->orderBy('order','DESC')->get()->toArray();
+        $menus = $menuM->orderBy('order', 'DESC')->get()->toArray();
 
-        $menus = $this->getMenuUl($this->menuTree($this->getTree($menus)));
+        $menus = $this->getMenuUl($this->treeArray($this->getTreeLevel($menus)));
 
-        view()->share('menus',$menus);
+        view()->share('menus', $menus);
 
         return $next($request);
     }
