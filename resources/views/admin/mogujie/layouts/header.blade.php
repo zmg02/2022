@@ -157,3 +157,13 @@
     </div>
   </nav>
 </header>
+
+@if (Session::has('message'))
+  <div id="applyFor">
+    <div class="alert alert-info" role="alert">
+      {{Session::get('message')}}将在
+      <span class="loginTime" style="color:#bd4147">{{Session::get('jumpTime')}}</span>秒后跳转至
+      <a href="{{Session::get('url')}}" style="color:#bd4147;">{{Session::get('pageName')}}</a>页面~~~
+    </div>
+  </div>
+@endif

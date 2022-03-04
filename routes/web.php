@@ -25,4 +25,3 @@ Route::prefix('mogujie')->group(function () {
 //    Route::get('/', 'Mogujie\HomeController@index');
 //    Route::get('/', 'Mogujie\HomeController@index');
 });
-

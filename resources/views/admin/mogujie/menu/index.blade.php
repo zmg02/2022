@@ -573,7 +573,7 @@
         url: "{{ route('menu.delete', 'id') }}".replace(/id/,id),
         success:function(result){
           if (result == 'success') {
-            lightyear.notify('删除成功，页面即将自动跳转~', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , '{{ route('menu') }}');
+            lightyear.notify('删除成功，页面即将自动跳转~', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , "{{ route('menu') }}");
           } else {
             lightyear.notify('删除失败，请稍后再试~', 'danger', 100);
           }
