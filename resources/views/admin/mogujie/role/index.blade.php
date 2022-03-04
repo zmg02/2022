@@ -38,7 +38,7 @@
                 </div>
               </div>
               <div class="col-xs-1" style="float: right;">
-                <a class="btn btn-label btn-primary" href="{{ route('role.create') }}"><label><i class="mdi mdi-table-edit"></i></label> 新增角色</a>
+                <a class="btn btn-label btn-primary" href="{{ route('role.create') }}"><label><i class="mdi mdi-plus"></i></label> 新增角色</a>
               </div>
             </div>
           </form>

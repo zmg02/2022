@@ -140,6 +140,7 @@
   .dd-handle:hover { color: var(--primary); background: #fff; }
 
   .dd-item > button { display: block; position: relative; right: 40px; top: 5px; cursor: pointer; float: left; width: 25px; height: 20px; margin: 5px 0; padding: 0; text-indent: 100%; white-space: nowrap; border: 0; background: transparent; font-size: 20px; line-height: 1; text-align: center; font-weight: bold; }
+  
   span.dd-nodrag i{
     font-size: 18px;
   }
