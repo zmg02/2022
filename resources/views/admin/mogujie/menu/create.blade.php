@@ -1,204 +1,14 @@
-@include('admin.mogujie.layouts.head',['title'=>'权限'])
+@include('admin.mogujie.layouts.head',['title'=>'菜单'])
 
 <!--左侧导航-->
 @include('admin.mogujie.layouts.sidebar')
 <!--End 左侧导航-->
 
 <!--头部信息-->
-@include('admin.mogujie.layouts.header',['title'=>'新增权限'])
+@include('admin.mogujie.layouts.header',['title'=>'新增菜单'])
 <!--End 头部信息-->
 
-<style>
-  .control-label {
-    text-align: right;
-  }
-
-  .mdi-asterisk {
-    color: #bd4147;
-  }
-
-  ul li,
-  ol li {
-    list-style-type: none;
-  }
-
-  .nav {
-    width: 100%;
-    /*margin:20px auto;*/
-
-  }
-
-  .nav p {
-    display: block;
-    padding-left: 10px;
-    line-height: 30px;
-    border: 1px solid #ebebeb;
-  }
-
-  .set,
-  .setIcon {
-    width: 100%;
-    height: 38px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    padding: 5px 12px;
-    line-height: inherit;
-    -webkit-transition: 0.2s linear;
-    transition: 0.2s linear;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
-  .new {
-    /*width:198px;*/
-    width: 92%;
-    max-height: 200px;
-    overflow-y: auto;
-    position: absolute;
-    border: 1px solid #CCC;
-    display: none;
-    z-index: 999;
-    background: white;
-    padding: 0;
-  }
-
-  .nav ul li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-    line-height: 30px;
-    cursor: pointer;
-    padding: 6px 10px !important;
-  }
-
-  .nav ul li.dd-item:hover {
-    background: #CCC;
-    color: #FFF;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .nav>p.set:after,
-  .col-md-11>p.setIcon:after {
-    transform: rotate(90deg);
-    position: absolute;
-    right: 16px;
-    font-family: 'Material Design icons';
-    font-size: 20px;
-    line-height: 1.55;
-    content: '\f142';
-    -webkit-transition: -webkit-transform 0.3s linear;
-    transition: -webkit-transform 0.3s linear;
-    transition: transform 0.3s linear;
-    transition: transform 0.3s linear, -webkit-transform 0.3s linear;
-  }
-
-  .icons {
-    width: 91%;
-    max-height: 200px;
-    overflow-y: auto;
-    position: absolute;
-    border: 1px solid #CCC;
-    display: none;
-    z-index: 999;
-    background: white;
-    padding: 12px 0 0 12px;
-  }
-
-  .icons a {
-    float: left;
-    width: 50px;
-    height: 50px;
-    padding: 12px;
-    margin: 0 12px 12px 0;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 20px;
-    box-shadow: 0 0 0 1px #ddd;
-    color: inherit;
-
-  }
-
-  .dd {
-    position: relative;
-    display: block;
-    margin: 10px;
-    padding: 0;
-    list-style: none;
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  .dd-list {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .dd-list .dd-list {
-    padding-left: 30px;
-  }
-
-  .dd-collapsed .dd-list {
-    display: none;
-  }
-
-  .dd-item,
-  .dd-empty,
-  .dd-placeholder {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-  }
-
-  .dd-handle {
-    display: block;
-
-    margin: 1px 0;
-    padding: 8px 10px;
-    color: #333;
-    text-decoration: none;
-    border: 1px solid #ddd;
-    background: #fff;
-  }
-
-  .dd-handle:hover {
-    color: var(--primary);
-    background: #fff;
-  }
-
-  .dd-item>button {
-    display: block;
-    position: relative;
-    right: 40px;
-    top: 5px;
-    cursor: pointer;
-    float: left;
-    width: 25px;
-    height: 20px;
-    margin: 5px 0;
-    padding: 0;
-    text-indent: 100%;
-    white-space: nowrap;
-    border: 0;
-    background: transparent;
-    font-size: 20px;
-    line-height: 1;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .search_icon {
-    position: relative;
-    right: 30px;
-    color: #666;
-  }
-</style>
+<link rel="stylesheet" href="/css/mogujie/admin/menu.css">
 
 <!--页面主要内容-->
 <main class="lyear-layout-content">
@@ -207,10 +17,15 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="box-title">New</h3>
+            <div class="col-xs-1">
+              <h3>Create</h3>
+            </div>
+            <div class="col-xs-1" style="float: right;">
+              <a class="btn btn-label btn-primary" href="{{route('menu.index')}}"><label><i class="mdi mdi-keyboard-return"></i></label> List</a>
+            </div>
           </div>
           <div class="card-body">
-            <form action="{{ route('menu.store') }}" method="post">
+            <form action="{{ route('menu.store') }}" method="post" id="create_menu">
               @csrf
               <div class="form-body">
                 <div class="form-group row">
@@ -250,13 +65,12 @@
                     <div class="nav">
                       <div class="row">
                         <div class="col-md-1">
-                          <p class="p-input icon" style="width: 38px;height: 38px">
+                          <p class="p-input icon" style="width: 38px;height: 38px;line-height:38px;">
                             <i class="mdi"></i>
                           </p>
                         </div>
                         <div class="col-md-11">
                           <p class="p-input setIcon">Icon</p>
-
                           <div class="icons">
                             <input class="form-control " type="text" name="icon_name" style="display:inline-block; width: 95%;" placeholder="icon name">
                             <i class="mdi mdi-find-replace search_icon"></i>
@@ -329,8 +143,8 @@
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-9">
                   <input type="hidden" name="submit">
-                  <button class="btn btn-default btn-w-md" type="button">重 置</button>
-                  <button class="btn btn-primary btn-w-md" type="button">提 交</button>
+                  <button class="btn btn-default btn-w-md btn-reset" type="button">重 置</button>
+                  <button class="btn btn-primary btn-w-md btn_submit" type="submit">提 交</button>
                 </div>
               </div>
             </form>
@@ -359,9 +173,7 @@
     if (!$target.is('.set') && !$target.is('ul.new > li.dd-item')) {
       $('.new').hide();
     }
-    // if (!$target.is('.setIcon') && !$target.is('div.icons > a.iconpicker-item')) {
-    //   $(".icons").hide();
-    // }
+
     if (!$target.is('.setIcon') && !$target.is('div.icons *')) {
       $(".icons").hide();
     }
@@ -421,33 +233,28 @@
         }
       }
     });
-    $(".nav a.iconpicker-item").click(function() {
-      var title = $(this).attr('title');
-      $(".nav p.setIcon").html(title);
-      $("p.icon > i").addClass(title);
-      $('#icon').val(title);
-      // $(".icons").hide();
-      $("p").removeClass("select");
-    });
 
     //回车搜索图标
     $("input[name='icon_name']").keydown(function(event) {
       event = event || window.event;
       if (event.keyCode == 13) {
         $(".search_icon").click();
+        return false; //回车不提交表单
       }
     });
-    
+    //搜索icon
     $(".search_icon").click(function() {
       var name = $("input[name='icon_name']").val();
       var modal = $('.icons')
+      if (name == '') {
+        name = 'none_search'
+      }
       $.ajax({
-        url:"{{ route('icon', 'name') }}".replace(/name/,name),
-        success:function (result) {
-          console.log(result)
+        url: "{{ route('icon', 'name') }}".replace(/name/, name),
+        success: function(result) {
           var icons = '';
           for (icon of result) {
-            icons += '<a role="button" href="#" class="iconpicker-item" title="'+icon+'"><i class="mdi '+icon+'"></i></a>'
+            icons += '<a role="button" href="#" class="iconpicker-item" title="' + icon + '"><i class="mdi ' + icon + '"></i></a>'
           }
           if (icons == '') {
             icons = '未找到图标！';
@@ -457,5 +264,24 @@
         }
       })
     });
+    //绑定搜索到的icon点击事件
+    $(document).on("click", ".icons a.iconpicker-item", function() {
+      var title = $(this).attr('title');
+      $(".nav p.setIcon").html(title);
+      $("p.icon > i").addClass(title);
+      $('#icon').val(title);
+      $("p").removeClass("select");
+    });
+    //重置
+    $('.btn-reset').click(function() {
+      $(':input', '#create_menu')
+        .not(':button,:submit,:reset,:hidden')
+        .val('')
+        .removeAttr('checked')
+        .removeAttr('selected');
+      $('.setIcon').html('');
+      $('.set').html('');
+    })
+
   });
 </script>

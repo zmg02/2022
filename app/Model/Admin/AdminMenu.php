@@ -16,7 +16,7 @@ class AdminMenu extends BaseModel
      *
      * @var bool
      */
-//    public $timestamps = false;
+    //    public $timestamps = false;
 
     /**
      * 模型的「booted」方法
@@ -26,7 +26,7 @@ class AdminMenu extends BaseModel
     protected static function booted()
     {
         static::addGlobalScope('status', function (Builder $builder) {
-            $builder->where('status', '=', 1)->orderBy('order','DESC');
+            $builder->where('status', '=', 1)->orderBy('order', 'DESC');
         });
     }
 
@@ -62,44 +62,51 @@ class AdminMenu extends BaseModel
         $this->icon = $request->icon ?? '';
         $this->uri = $request->uri ?? '';
 
-        if (isset($request->id)) {
-//            $this->id = $request->id;
-            $icon = $request->icon ?? '';
-            $uri =$request->uri ?? '';
-            $update = ['parent_id' => $request->parent_id,'order' => $request->order,'title' => $request->title,'icon' => $icon,'uri' => $uri];
-            $sqlRes = $this->where('id',$request->id)->update($update);
-        } else {
-            $sqlRes = $this->save();
-        }
+        $sqlRes = $this->save();
+        return $sqlRes;
+    }
 
+    public function updateMenu($request, $id)
+    {
+
+        $icon = $request->icon ?? '';
+        $uri  =  $request->uri ?? '';
+        $update = [
+            'parent_id' => $request->parent_id,
+            'order' => $request->order,
+            'title' => $request->title,
+            'icon' => $icon, 
+            'uri' => $uri
+        ];
+        $sqlRes = $this->where('id', $id)->update($update);
         return $sqlRes;
     }
 
     //返回该菜单的所有子菜单
-    public function getChildernMenu($id, &$childern=[])
+    public function getChildernMenu($id, &$childern = [])
     {
-        $menu = $this->where('parent_id',$id)->get();
+        $menu = $this->where('parent_id', $id)->get();
         if (!empty($menu->toArray())) {
-            $childern[] = $this->where('id',$id)->first()->toArray();
+            $childern[] = $this->where('id', $id)->first()->toArray();
             foreach ($menu->toArray() as $item) {
                 $childern[] = $this->getChildernMenu($item['id']);
             }
         } else {
-            $childern[] = $this->where('id',$id)->first()->toArray();
+            $childern[] = $this->where('id', $id)->first()->toArray();
         }
         return $childern;
     }
     //返回当前菜单和所有子菜单的ID
-    public function getChildernId($id, &$ids='')
+    public function getChildernId($id, &$ids = '')
     {
-        $menu = $this->where('status','<>', 2)->where('parent_id',$id)->pluck('id');
+        $menu = $this->where('status', '<>', 2)->where('parent_id', $id)->pluck('id');
         if (!empty($menu->toArray())) {
-            $ids .= $this->where('status','<>', 2)->where('id',$id)->value('id') . ',';
+            $ids .= $this->where('status', '<>', 2)->where('id', $id)->value('id') . ',';
             foreach ($menu->toArray() as $val) {
                 $ids .= $this->getChildernId($val);
             }
         } else {
-            $ids .= $this->where('status','<>', 2)->where('id',$id)->value('id') . ',';
+            $ids .= $this->where('status', '<>', 2)->where('id', $id)->value('id') . ',';
         }
 
         return $ids;

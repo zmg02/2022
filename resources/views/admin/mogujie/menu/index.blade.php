@@ -17,81 +17,16 @@
     list-style-type: none;
   }
 
-  .nav {
-    width: 100%;
-    /*margin:20px auto;*/
-
+  #alert_info {
+    width: 500px;
+    height: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 200px auto;
   }
-  .nav p {
-    display:block;
-    padding-left:10px;
-    line-height:30px;
-    border:1px solid #ebebeb;
-  }
-  .set,.setIcon {
-    width: 100%;
-    height: 38px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    padding: 5px 12px;
-    line-height: inherit;
-    -webkit-transition: 0.2s linear;
-    transition: 0.2s linear;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
-  .new {
-    /*width:198px;*/
-    width: 92%;
-    max-height: 200px;
-    overflow-y: auto;
-    position:absolute;
-    border:1px solid #CCC;
-    display:none;
-    z-index: 999;
-    background: white;
-    padding: 0;
-  }
-
-  .nav ul li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-    line-height:30px;
-    cursor: pointer;
-    padding: 6px 10px!important;
-  }
-  .nav ul li.dd-item:hover {
-    background:#CCC;
-    color:#FFF;
-  }
-  p{
-    margin: 0;
-  }
-  .nav > p.set:after,.col-md-11 > p.setIcon:after {
-    transform: rotate(90deg);
-    position: absolute;
-    right: 16px;
-    font-family: 'Material Design Icons';
-    font-size: 20px;
-    line-height: 1.55;
-    content: '\f142';
-    -webkit-transition: -webkit-transform 0.3s linear;
-    transition: -webkit-transform 0.3s linear;
-    transition: transform 0.3s linear;
-    transition: transform 0.3s linear, -webkit-transform 0.3s linear;
-  }
-
-  div p.p-input{
-    display: inline-block;
-  }
-  div p.p-input p.icon{
-    display: block;
-    width: 100%;
-    height: 38px;
-  }
-
-
 
   .dd { position: relative; display: block; margin: 10px; padding: 0; list-style: none; font-size: 13px; line-height: 20px; }
 
@@ -165,6 +100,14 @@
 
     </div>
 
+    <div id="alert_info" class="alert alert-danger" role="alert" style="display: none">
+      <h4>确定要删除该菜单吗？</h4>
+      <p style="margin-top: 100px;text-align: right">
+        <button type="button" class="btn btn-danger-delete" data-id="">确定删除</button>
+        <button type="button" class="btn btn-cancel">取消</button>
+      </p>
+    </div>
+
   </div>
 
 </main>
@@ -178,80 +121,7 @@
 
 <script type="text/javascript">
 
-  $(document).click(function (e) {
-    var $target = $(e.target);
-    //点击选择器及选择以外的地方隐藏选择器
-    if (!$target.is('.set') && !$target.is('ul.new > li.dd-item')) {
-      $('.new').hide();
-    }
-    if (!$target.is('.setIcon') && !$target.is('div.Icons > a.iconpicker-item')) {
-      $(".Icons").hide();
-    }
-  });
-
   $(function() {
-    //选择上级
-    $(".nav p.set").click(function() {
-      var ul = $(".new");
-      if (ul.css("display") == "none") {
-        ul.slideDown();
-      } else {
-        ul.slideUp();
-      }
-    });
-    $(".set").click(function() {
-      var _name = $(this).attr("name");
-      if ($("[name=" + _name + "]").length > 1) {
-        $("[name=" + _name + "]").removeClass("select");
-        $(this).addClass("select");
-      } else {
-        if ($(this).hasClass("select")) {
-          $(this).removeClass("select");
-        } else {
-          $(this).addClass("select");
-        }
-      }
-    });
-    $(".new li.dd-item").click(function() {
-      var li = $(this).text();
-      var id = $(this).attr('data-id');
-      $(".nav p.set").html(li);
-      $('.parent').val(id);
-      $(".new").hide();
-      /*$(".set").css({background:'none'});*/
-      $("p").removeClass("select");
-    });
-    //选择icon
-    $(".nav p.setIcon").click(function() {
-      var div = $(".Icons");
-      if (div.css("display") == "none") {
-        div.slideDown();
-      } else {
-        div.slideUp();
-      }
-    });
-    $(".setIcon").click(function() {
-      var _name = $(this).attr("name");
-      if ($("[name=" + _name + "]").length > 1) {
-        $("[name=" + _name + "]").removeClass("select");
-        $(this).addClass("select");
-      } else {
-        if ($(this).hasClass("select")) {
-          $(this).removeClass("select");
-        } else {
-          $(this).addClass("select");
-        }
-      }
-    });
-    $(".nav a.iconpicker-item").click(function() {
-      var title = $(this).attr('title');
-      $(".nav p.setIcon").html(title);
-      $("p.icon > i").addClass(title);
-      $('#icon').val(title);
-      $(".Icons").hide();
-      $("p").removeClass("select");
-    });
-
     //打开或关闭菜单
     $('button.show-dd-list').click(function (){
       var ol = $(this).siblings('ol').css('display');
@@ -277,14 +147,24 @@
     //删除菜单（假删）
     $('a.menu-delete').click(function(){
       var id = $(this).data('id');
+      $('.btn-danger-delete').attr('data-id',id);
+      $('#alert_info').css('display', 'block');
+    });
+    $('.btn-cancel').click(function() {
+      $('#alert_info').css('display', 'none');
+    });
+
+    $('.btn-danger-delete').click(function() {
+      var id = $(this).data('id');
 
       $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        method:'get',
+        method:'delete',
         url: "{{ route('menu.destroy', 'id') }}".replace(/id/,id),
         success:function(result){
+          $('#alert_info').css('display', 'none');
           if (result == 'success') {
             lightyear.notify('删除成功，页面即将自动跳转~', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , "{{ route('menu.index') }}");
           } else {
@@ -298,32 +178,6 @@
       $.ajax();
     });
 
-    //修改菜单获取数据
-    $('#editMenu').on('show.bs.modal', function (event) {
-      showProgress()
-      var a = $(event.relatedTarget)
-      var id = a.data('id')
-      var modal = $(this)
-      $.ajax({
-        url:"{{ route('menu.index', 'id') }}".replace(/id/,id),
-        async:true,          //异步
-        success:function (result) {
-          hideProgress()
-          modal.find('#_id').val(result.id)
-          modal.find('#parent').val(result.parent_id)
-          modal.find('.nav p.set').text(result.parent_title)
-          modal.find('input[name="title"]').val(result.title)
-          modal.find('p.setIcon').text(result.icon)
-          modal.find('p.icon i').addClass(result.icon)
-          modal.find('input[name="uri"]').val(result.uri)
-          modal.find('input[name="order"]').val(result.order)
-        }
-      })
-    })
-
-    //修改菜单内容
-
-
   })
 function showProgress() {
   var percentage = 0;
@@ -336,7 +190,7 @@ function showProgress() {
       $('.progress').css('width', widthTemp);
       $('.sr-only').text(widthTemp);
     } else {
-      // clearInterval(interval);
+      clearInterval(interval);
 
     }
   }, 1);

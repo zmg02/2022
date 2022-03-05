@@ -54,8 +54,8 @@ class RoleController extends Controller
         return back()->with([
             'message'  => $message,
             'url'      => route('role.index'),
-            'jumpTime' => 2,
-            'pageName' => '角色列表'
+            'jumpTime' => 1,
+            'pageName' => '角色'
         ]);
     }
 
