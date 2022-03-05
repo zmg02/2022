@@ -1,4 +1,4 @@
-@include('admin.mogujie.layouts.head',['title'=>'菜单列表'])
+@include('admin.mogujie.layouts.head',['title'=>'菜单'])
 
 <!--左侧导航-->
 @include('admin.mogujie.layouts.sidebar')
@@ -91,31 +91,7 @@
     height: 38px;
   }
 
-  .Icons {
-    width: 91%;
-    max-height: 200px;
-    overflow-y: auto;
-    position:absolute;
-    border:1px solid #CCC;
-    display:none;
-    z-index: 999;
-    background: white;
-    padding: 12px 0 0 12px;
-  }
-  .Icons a{
-    float: left;
-    width: 50px;
-    height: 50px;
-    padding: 12px;
-    margin: 0 12px 12px 0;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 20px;
-    box-shadow: 0 0 0 1px #ddd;
-    color: inherit;
 
-  }
 
   .dd { position: relative; display: block; margin: 10px; padding: 0; list-style: none; font-size: 13px; line-height: 20px; }
 
@@ -158,25 +134,23 @@
 
   <div class="container-fluid">
     <div class="row">
-
-      <div class="col-md-7">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <div>
-              <div class="btn-group" style="margin-right:3px">
-                <button class="btn btn-primary btn-expand">
-                  <i class="mdi mdi-plus-circle-outline"></i>  Expand
-                </button>
-                <button class="btn btn-primary btn-collapse">
-                  <i class="mdi mdi-minus-circle-outline"></i>  Collapse
-                </button>
-              </div>
+            <div class="col-xs-3" style="margin-right:3px">
+              <button class="btn btn-primary btn-expand">
+                <i class="mdi mdi-plus-circle-outline"></i> Expand
+              </button>
+              <button class="btn btn-primary btn-collapse">
+                <i class="mdi mdi-minus-circle-outline"></i> Collapse
+              </button>
+            </div>
 
-
-              <div class="btn-group" style="margin-right:3px">
-                <button class="btn btn-outline-primary btn-refresh" style="border: 1px solid #33cabb"><i class="mdi mdi-refresh"></i> Refresh</button>
-              </div>
-
+            <div class="col-xs-1" style="margin-right:3px">
+              <button class="btn btn-outline-primary btn-refresh" style="border: 1px solid #33cabb"><i class="mdi mdi-refresh"></i> Refresh</button>
+            </div>
+            <div class="col-xs-1" style="float: right;margin-right:50px">
+              <a class="btn btn-label btn-primary" href="{{route('menu.create')}}"><label><i class="mdi mdi-plus"></i></label> 新增菜单</a>
             </div>
           </div>
           <div class="card-body">
@@ -189,268 +163,6 @@
         </div>
       </div>
 
-      <div class="col-md-5">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="box-title">New</h3>
-          </div>
-          <div class="card-body">
-            <form action="{{ route('menu') }}" method="post">
-              @csrf
-              <div class="form-body">
-                <div class="form-group row">
-                  <div class="col-md-2 control-label"><span>Parent</span></div>
-                  <div class="col-md-9">
-                    <input type="hidden" name="parent_id" class="parent @error('parent_id') is-invalid @enderror">
-                    <div class="nav">
-                      <p class="set">Parent</p>
-                      <ul class="new">
-                        <li class="dd-item dd3-item" data-id="0"><div class="dd3-content">Root</div></li>
-                        <?php echo $menusHtml;?>
-                      </ul>
-                    </div>
-                    @error('parent_id')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-2 control-label"><span>Title</span></div>
-                  <div class="col-md-9">
-                    <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" placeholder="Title">
-                    @error('title')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-2 control-label"><span>Icon</span></div>
-                  <div class="col-md-9">
-                    <input type="hidden" id="icon" name="icon">
-                    <div class="nav">
-                      <div class="row">
-                        <div class="col-md-1">
-                          <p class="p-input icon" style="width: 38px;height: 38px">
-                            <i class="mdi"></i>
-                          </p>
-                        </div>
-                        <div class="col-md-11">
-                          <p class="p-input setIcon">Icon</p>
-
-                          <div class="Icons">
-                            @foreach($icons as $icon)
-                              <a role="button" href="#" class="iconpicker-item" title="{{ $icon }}"><i class="mdi {{ $icon }}"></i></a>
-                            @endforeach
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-2 control-label"><span>URI</span></div>
-                  <div class="col-md-9">
-                    <input class="form-control" type="text" name="uri" placeholder="URI">
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-2 control-label"><span>Order</span></div>
-                  <div class="col-md-9">
-                    <input class="form-control" type="number" name="order" placeholder="Order" value="0">
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-2 control-label"><span>Roles</span></div>
-                  <div class="col-md-9">
-                    <select class="form-control"  style="height: 38px" name="roles_id" size="1">
-                      <option value="1">Admin</option>
-                      <option value="2">zmg</option>
-                      <option value="3">test3</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-2 control-label"><span>Permission</span></div>
-                  <div class="col-md-9">
-                    <div class="input-group">
-                      <input type="hidden" name="permissions[]">
-                      <div class="tree">
-                        <div class="d-flex">
-                          <label class="lyear-checkbox checkbox-inline checkbox-primary">
-                            <input type="checkbox"><span>Select All</span>
-                          </label>
-
-                          <label class="lyear-checkbox checkbox-inline checkbox-primary">
-                            <input type="checkbox"><span>Expand</span>
-                          </label>
-                        </div>
-                        <div class="dd-tree">
-                          <ul>
-                            <li>aaaa</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="form-footer row">
-                <div class="col-md-2">&nbsp;</div>
-                <div class="col-md-9">
-                  <input type="hidden" name="submit">
-                  <button class="btn btn-default btn-w-md" type="button">重 置</button>
-                  <button class="btn btn-primary btn-w-md" type="submit">提 交</button>
-                </div>
-              </div>
-            </form>
-
-          </div>
-        </div>
-      </div>
-
-
-      <div class="modal fade" id="editMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="exampleModalLabel">Edit</h4>
-            </div>
-            <div class="card-body">
-              <form action="{{ route('menu') }}" method="post">
-                @csrf
-                <div class="form-body">
-                  <div class="form-group row">
-                    <div class="col-md-2 control-label"><span>Parent</span></div>
-                    <div class="col-md-9">
-                      <input type="hidden" id="_id" name="id">
-                      <input type="hidden" name="parent_id" class="parent @error('parent_id') is-invalid @enderror">
-                      <div class="nav">
-                        <p class="set">Parent</p>
-                        <ul class="new">
-                          <li class="dd-item dd3-item" data-id="0"><div class="dd3-content">Root</div></li>
-                          <?php echo $menusHtml;?>
-                        </ul>
-                      </div>
-                      @error('parent_id')
-                      <div class="alert alert-danger">{{ $message }}</div>
-                      @enderror
-
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-2 control-label"><span>Title</span></div>
-                    <div class="col-md-9">
-                      <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" placeholder="Title">
-                      @error('title')
-                      <div class="alert alert-danger">{{ $message }}</div>
-                      @enderror
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-2 control-label"><span>Icon</span></div>
-                    <div class="col-md-9">
-                      <input type="hidden" id="icon" name="icon">
-                      <div class="nav">
-                        <div class="row">
-                          <div class="col-md-1">
-                            <p class="p-input icon" style="width: 38px;height: 38px">
-                              <i class="mdi"></i>
-                            </p>
-                          </div>
-                          <div class="col-md-11">
-                            <p class="p-input setIcon">Icon</p>
-
-                            <div class="Icons">
-                              @foreach($icons as $icon)
-                                <a role="button" href="#" class="iconpicker-item" title="{{ $icon }}"><i class="mdi {{ $icon }}"></i></a>
-                              @endforeach
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-2 control-label"><span>URI</span></div>
-                    <div class="col-md-9">
-                      <input class="form-control" type="text" name="uri" placeholder="URI">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-2 control-label"><span>Order</span></div>
-                    <div class="col-md-9">
-                      <input class="form-control" type="number" name="order" placeholder="Order" value="0">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-2 control-label"><span>Roles</span></div>
-                    <div class="col-md-9">
-                      <select class="form-control"  style="height: 38px" name="roles_id" size="1">
-                        <option value="1">Admin</option>
-                        <option value="2">zmg</option>
-                        <option value="3">test3</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="col-md-2 control-label"><span>Permission</span></div>
-                    <div class="col-md-9">
-                      <div class="input-group">
-                        <input type="hidden" name="permissions[]">
-                        <div class="tree">
-                          <div class="d-flex">
-                            <label class="lyear-checkbox checkbox-inline checkbox-primary">
-                              <input type="checkbox"><span>Select All</span>
-                            </label>
-
-                            <label class="lyear-checkbox checkbox-inline checkbox-primary">
-                              <input type="checkbox"><span>Expand</span>
-                            </label>
-                          </div>
-                          <div class="dd-tree">
-                            <ul>
-                              <li>aaaa</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="form-footer row">
-                  <div class="col-md-2">&nbsp;</div>
-                  <div class="col-md-9">
-                    <input type="hidden" name="submit">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button class="btn btn-primary btn-w-md" type="submit">提 交</button>
-                  </div>
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
   </div>
@@ -571,10 +283,10 @@
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         method:'get',
-        url: "{{ route('menu.delete', 'id') }}".replace(/id/,id),
+        url: "{{ route('menu.destroy', 'id') }}".replace(/id/,id),
         success:function(result){
           if (result == 'success') {
-            lightyear.notify('删除成功，页面即将自动跳转~', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , "{{ route('menu') }}");
+            lightyear.notify('删除成功，页面即将自动跳转~', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , "{{ route('menu.index') }}");
           } else {
             lightyear.notify('删除失败，请稍后再试~', 'danger', 100);
           }
@@ -593,7 +305,7 @@
       var id = a.data('id')
       var modal = $(this)
       $.ajax({
-        url:"{{ route('menu.get', 'id') }}".replace(/id/,id),
+        url:"{{ route('menu.index', 'id') }}".replace(/id/,id),
         async:true,          //异步
         success:function (result) {
           hideProgress()

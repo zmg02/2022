@@ -60,4 +60,28 @@ class MenuController extends Controller
         }
         return ['code' => 0, 'message' => 'error'];
     }
+
+    public function create()
+    {
+        $menuM = new AdminMenu();
+        $menus = $menuM->orderBy('order', 'DESC')->get()->toArray();
+        $tree = $this->treeArray($this->getTreeLevel($menus));
+        $menusSelect = $this->getMenuSelect($tree);
+
+        $icons = json_decode(file_get_contents('upload/icons.json'), true);
+        return view('admin\mogujie\menu\create', compact('menusSelect', 'icons'));
+    }
+
+    public function icon($name)
+    {
+        $search = [];
+        $iconsArray = json_decode(file_get_contents('upload/icons.json'), true);
+        foreach ($iconsArray as $icon) {
+            if (strstr($icon, $name)) {
+                $search[] = $icon; 
+            }
+        }
+        
+        return $search;
+    }
 }
