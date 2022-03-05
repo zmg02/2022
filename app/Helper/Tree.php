@@ -57,7 +57,7 @@ trait Tree
             $uri = $v['uri'];
             $edit_url = route('menu.edit',$v['id']);
             if (isset($v['children'])) {
-                $html .= '<li class="dd-item" data-id="' . $v['id'] . '"><button type="button" class="show-dd-list"><i class="mdi mdi-chevron-down"></i></button><div class="dd-handle"><i class="mdi ' . $v['icon'] . '"></i> <strong>' . $v["title"] . '</strong>&nbsp;&nbsp;&nbsp;<a href="' . url("{$uri}") . '" class="dd-nodrag">' . $uri . '</a><span class="pull-right dd-nodrag"><a href="'.$edit_url.'" data-id="' . $v['id'] . '" class="menu-edit"  data-toggle="modal" data-target="#editMenu"><i class="mdi mdi-lead-pencil"></i></a><a href="javascript:void(0);" data-id="' . $v['id'] . '" class="menu-delete"><i class="mdi mdi-delete"></i></a></span></div><ol class="dd-list">';
+                $html .= '<li class="dd-item" data-id="' . $v['id'] . '"><button type="button" class="show-dd-list"><i class="mdi mdi-chevron-down"></i></button><div class="dd-handle"><i class="mdi ' . $v['icon'] . '"></i> <strong>' . $v["title"] . '</strong>&nbsp;&nbsp;&nbsp;<a href="' . url("{$uri}") . '" class="dd-nodrag">' . $uri . '</a><span class="pull-right dd-nodrag"><a href="'.$edit_url.'"><i class="mdi mdi-lead-pencil"></i></a><a href="javascript:void(0);" data-id="' . $v['id'] . '" class="menu-delete"><i class="mdi mdi-delete"></i></a></span></div><ol class="dd-list">';
                 $html .= $this->getMenuLists($v['children']);
                 $html .= '</ol></li>';
             } else {
