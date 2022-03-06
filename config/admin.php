@@ -3,6 +3,6 @@
 return [
     'route' => [
         'prefix' => 'admin',
-        'namespace' => 'App\\Admin\\Controllers\\Mogujie',
+        'namespace' => 'App\\Admin\\Controllers',
     ]
 ];
