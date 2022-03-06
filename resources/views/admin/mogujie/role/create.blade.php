@@ -34,7 +34,7 @@
           </div>
 
           <div class="card-body">
-            <form action="{{ route('role.store') }}" method="post">
+            <form action="{{ route('role.store') }}" method="post" id="create_role">
               @csrf
               <div class="form-body">
                 <div class="form-group row">
@@ -87,7 +87,7 @@
               <div class="form-footer row">
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-9">
-                  <button class="btn btn-default btn-w-md" type="button">重 置</button>
+                  <button class="btn btn-default btn-w-md btn-reset" type="button">重 置</button>
                   <button class="btn btn-primary btn-w-md" type="submit">提 交</button>
                 </div>
               </div>
@@ -108,3 +108,15 @@
 <!--消息提示-->
 <script src="/js/mogujie/admin/bootstrap-notify.min.js"></script>
 <script type="text/javascript" src="/js/mogujie/admin/lightyear.js"></script>
+<script>
+  $(function(){
+    //重置
+    $('.btn-reset').click(function() {
+      $(':input', '#create_role')
+        .not(':button,:submit,:reset,:hidden')
+        .val('')
+        .removeAttr('checked')
+        .removeAttr('selected');
+    })
+  })
+</script>

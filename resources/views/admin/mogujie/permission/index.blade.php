@@ -104,7 +104,7 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
-            <div class="col-xs-2" style="margin-right:3px">
+            <div class="col-xs-3" style="margin-right:3px">
               <button class="btn btn-primary btn-expand">
                 <i class="mdi mdi-plus-circle-outline"></i> Expand
               </button>
@@ -113,10 +113,10 @@
               </button>
             </div>
 
-            <div class="col-xs-1" style="margin-right:3px">
+            <div class="col-xs-1">
               <button class="btn btn-outline-primary btn-refresh" style="border: 1px solid #33cabb"><i class="mdi mdi-refresh"></i> Refresh</button>
             </div>
-            <div class="col-xs-1" style="float: right;margin-right:3px">
+            <div class="col-xs-1" style="float: right;margin-right:50px">
               <a class="btn btn-label btn-primary" href="{{route('permission.create')}}"><label><i class="mdi mdi-plus"></i></label> 新增权限</a>
             </div>
           </div>
@@ -134,7 +134,7 @@
   </div>
 
   <div id="alert_info" class="alert alert-danger" role="alert" style="display: none">
-    <h4>确定要删除该角色吗？</h4>
+    <h4>确定要删除该权限吗？</h4>
     <p style="margin-top: 100px;text-align: right">
       <button type="button" class="btn btn-danger-delete" data-id="">确定删除</button>
       <button type="button" class="btn btn-cancel">取消</button>
@@ -184,11 +184,11 @@
       location.reload();
     })
 
-    $('.btn-danger').click(function() {
+    $(document).on('click','.permission-delete',function(){
       var id = $(this).data('id');
-      $('.btn-danger-delete').attr('data-id', id);
-      $('#alert_info').css('display', 'block');
-    });
+      $('.btn-danger-delete').attr('data-id',id);
+      $('#alert_info').css('display','block');
+    })
     $('.btn-cancel').click(function() {
       $('#alert_info').css('display', 'none');
     });
@@ -199,11 +199,11 @@
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         method: 'delete',
-        url: "{{ route('role.destroy', 'id') }}".replace(/id/, id),
+        url: "{{ route('permission.destroy', 'id') }}".replace(/id/, id),
         success: function(result) {
           $('#alert_info').css('display', 'none');
           if (result == 'success') {
-            lightyear.notify('删除成功!', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center', "{{ route('role.index') }}");
+            lightyear.notify('删除成功!', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center', "{{ route('permission.index') }}");
           } else {
             lightyear.notify('删除失败，请稍后再试~', 'danger', 100);
           }

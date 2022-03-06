@@ -89,26 +89,25 @@ trait Tree
         return $html;
     }
     //权限列表
-    /*
-<button type="button" class="show-dd-list"><i class="mdi mdi-chevron-down"></i></button>
-*/
     public function getPermissionlists($permissions, &$html = '')
     {
         foreach ($permissions as $item) {
             $edit_url = route('permission.edit', [$item['id']]);
             $del_url  = route('permission.destroy', [$item['id']]);
+            $method = empty($item['http_method']) ? 'ANY' : strtoupper($item['http_method']);
 
             if (isset($item['children'])) {
-                $html .= '<li class="dd-item" data-id="' . $item['id'] . '"><button type="button" class="show-dd-list"><i class="mdi mdi-chevron-down"></i></button><div class="dd-handle"><div class="pull-left" style="min-width:310px"><b>' . $item['name'] . '</b>&nbsp;&nbsp;[<span class="text-primary">' . $item['slug'] . '</span>]</div>&nbsp; <span class="label bg-primary">ANY</span>&nbsp;<a class="dd-nodrag"><code style="color:#495abf">' . $item['http_path'] . '</code></a><span class="pull-right dd-nodrag"><a href="" data-url="' . $edit_url . '" class="tree-quick-edit"><i class="mdi mdi-lead-pencil"></i></a><a href="" data-message="ID - ' . $item['name'] . '" data-url="' . $del_url . '" data-action="delete"><i class="mdi mdi-delete"></i></a></span></div><ol class="dd-list">';
+                $html .= '<li class="dd-item" data-id="' . $item['id'] . '"><button type="button" class="show-dd-list"><i class="mdi mdi-chevron-down"></i></button><div class="dd-handle"><div class="pull-left" style="min-width:310px"><b>' . $item['name'] . '</b>&nbsp;&nbsp;[<span class="text-primary">' . $item['slug'] . '</span>]</div>&nbsp; <span class="label bg-primary">'.$method.'</span>&nbsp;<a class="dd-nodrag"><code style="color:#495abf">' . $item['http_path'] . '</code></a><span class="pull-right dd-nodrag"><a href="'.$edit_url.'" ><i class="mdi mdi-lead-pencil"></i></a><a href="javascript:void(0);"  data-id="' . $item['id'] . '" class="permission-delete"><i class="mdi mdi-delete"></i></a></span></div><ol class="dd-list">';
                 $html .= $this->getPermissionlists($item['children']);
                 $html .= '</ol></li>';
             } else {
-                $html .= '<li class="dd-item" data-id="' . $item['id'] . '"><div class="dd-handle"><div class="pull-left" style="min-width:310px"><b>' . $item['name'] . '</b>&nbsp;&nbsp;[<span class="text-primary">' . $item['slug'] . '</span>]</div>&nbsp; <span class="label bg-primary">ANY</span>&nbsp;<a class="dd-nodrag"><code style="color:#495abf">' . $item['http_path'] . '</code></a><span class="pull-right dd-nodrag"><a href="" data-url="' . $edit_url . '" class="tree-quick-edit"><i class="mdi mdi-lead-pencil"></i></a><a href="" data-message="ID - ' . $item['name'] . '" data-url="' . $del_url . '" data-action="delete"><i class="mdi mdi-delete"></i></a></span></div></li>';
+                $html .= '<li class="dd-item" data-id="' . $item['id'] . '"><div class="dd-handle"><div class="pull-left" style="min-width:310px"><b>' . $item['name'] . '</b>&nbsp;&nbsp;[<span class="text-primary">' . $item['slug'] . '</span>]</div>&nbsp; <span class="label bg-primary">'.$method.'</span>&nbsp;<a class="dd-nodrag"><code style="color:#495abf">' . $item['http_path'] . '</code></a><span class="pull-right dd-nodrag"><a href="'.$edit_url.'"><i class="mdi mdi-lead-pencil"></i></a><a href="javascript:
+                (0);"  data-id="' . $item['id'] . '" class="permission-delete"><i class="mdi mdi-delete"></i></a></span></div></li>';
             }
         }
         return $html;
     }
-    //菜单列表选择
+    //权限列表选择
     public function getPermissionSelect($permissions, &$html = '')
     {
         foreach ($permissions as $item) {
