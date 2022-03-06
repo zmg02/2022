@@ -14,11 +14,11 @@ class AdminPermissions extends BaseModel
     protected static function booted()
     {
         static::addGlobalScope('order', function (Builder $builder) {
-            $builder->orderBy('order', 'DESC');
+            $builder->where('status', 1)->orderBy('order', 'DESC');
         });
     }
 
-    public function validate($request)
+    public function validate($request, $id = null)
     {
         $message = [
             'name.required' => '请填写名称',
@@ -29,7 +29,7 @@ class AdminPermissions extends BaseModel
         ];
 
         return $request->validate([
-            'slug' => 'required|unique:admin_permissions|max:255',
+            'slug' => 'required|max:255|unique:admin_permissions,slug,' . $id,
             'name' => 'required|max:255'
         ], $message);
     }
@@ -45,4 +45,34 @@ class AdminPermissions extends BaseModel
         return $this->save();
     }
 
+    public function editPermission($request, $id)
+    {
+        // $permission = $this->where('id', $id)->find($id);
+        $update = [
+            'parent_id' => $request->parent_id ?? 0,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'http_method' => $request->http_method ?? '',
+            'http_path' => $request->http_path ?? '',
+            'order' => $request->order ?? 1,
+        ];
+        $result = $this->where('id', $id)->update($update);
+
+        return $result;
+    }
+
+    //返回子权限id
+    public function getChildrenIds($id, &$ids = '')
+    {
+        $children = $this->where('parent_id', $id)->pluck('id')->toArray();
+        if ($children) {
+            $ids .= $this->withoutGlobalScope('status')->where('id', $id)->where('status','<>',2)->value('id') . ',';
+            foreach ($children as $item) {
+                $ids .= $this->getChildrenIds($item);
+            }
+        } else {
+            $ids .= $this->withoutGlobalScope('status')->where('id',$id)->where('status','<>',2)->value('id') . ',';
+        }
+        return $ids;
+    }
 }

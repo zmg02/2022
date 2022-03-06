@@ -15,6 +15,13 @@ use Illuminate\Support\Str;
 | your application. Factories provide a convenient way to generate new
 | model instances for testing / seeding your application's database.
 |
+| 模型关联
+| $users = factory(App\User::class, 3)
+           ->create()
+           ->each(function ($user) {
+                $user->posts()->save(factory(App\Post::class)->make());
+            });
+|
 */
 
 $factory->define(User::class, function (Faker $faker) {

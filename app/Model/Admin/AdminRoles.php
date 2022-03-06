@@ -41,19 +41,18 @@ class AdminRoles extends BaseModel
         return $this->belongsToMany($relatedModel, 'user', 'role_id', 'user_id');
     }
 
-    public function validate($request)
+    public function validate($request, $id=null)
     {
         $message = [
             'name.required' => '请填写角色名称！',
             'slug.required' => '请填写角色别称！',
-            'name.unique' => '角色重复了！',
             'slug.unique' => '角色别称重复了！',
             'name.max' => '角色名称不能超过255字节！',
             'slug.max' => '角色别称不能超过255字节！',
         ];
         return $request->validate([
-            'name' => 'required|unique:admin_roles|max:255',
-            'slug' => 'required|unique:admin_roles|max:255'
+            'name' => 'required|max:255',
+            'slug' => 'required|max:255|unique:admin_roles,slug,'.$id
         ], $message);
     }
 

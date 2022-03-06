@@ -16,7 +16,9 @@
   .mdi-asterisk {
     color: #bd4147;
   }
-  ul li,ol li {
+
+  ul li,
+  ol li {
     list-style-type: none;
   }
 
@@ -25,13 +27,16 @@
     /*margin:20px auto;*/
 
   }
+
   .nav p {
-    display:block;
-    padding-left:10px;
-    line-height:30px;
-    border:1px solid #ebebeb;
+    display: block;
+    padding-left: 10px;
+    line-height: 30px;
+    border: 1px solid #ebebeb;
   }
-  .set,.setIcon {
+
+  .set,
+  .setIcon {
     width: 100%;
     height: 38px;
     -webkit-border-radius: 2px;
@@ -43,15 +48,15 @@
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-  
+
   .new {
     /*width:198px;*/
     width: 92%;
     max-height: 200px;
     overflow-y: auto;
-    position:absolute;
-    border:1px solid #CCC;
-    display:none;
+    position: absolute;
+    border: 1px solid #CCC;
+    display: none;
     z-index: 999;
     background: white;
     padding: 0;
@@ -60,18 +65,22 @@
   .nav ul li {
     display: list-item;
     text-align: -webkit-match-parent;
-    line-height:30px;
+    line-height: 30px;
     cursor: pointer;
-    padding: 6px 10px!important;
+    padding: 6px 10px !important;
   }
+
   .nav ul li.dd-item:hover {
-    background:#CCC;
-    color:#FFF;
+    background: #CCC;
+    color: #FFF;
   }
-  p{
+
+  p {
     margin: 0;
   }
-  .nav > p.set:after,.col-md-11 > p.setIcon:after {
+
+  .nav>p.set:after,
+  .col-md-11>p.setIcon:after {
     transform: rotate(90deg);
     position: absolute;
     right: 16px;
@@ -84,30 +93,78 @@
     transition: transform 0.3s linear;
     transition: transform 0.3s linear, -webkit-transform 0.3s linear;
   }
-  .dd { position: relative; display: block; margin: 10px; padding: 0; list-style: none; font-size: 13px; line-height: 20px; }
 
-.dd-list { display: block; position: relative; margin: 0; padding: 0; list-style: none; }
-.dd-list .dd-list { padding-left: 30px; }
-.dd-collapsed .dd-list { display: none; }
+  .dd {
+    position: relative;
+    display: block;
+    margin: 10px;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    line-height: 20px;
+  }
 
-.dd-item,
-.dd-empty,
-.dd-placeholder { display: block; position: relative; margin: 0; padding: 0;}
+  .dd-list {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-.dd-handle {
-  display: block;
+  .dd-list .dd-list {
+    padding-left: 30px;
+  }
 
-  margin: 1px 0;
-  padding: 8px 10px;
-  color: #333;
-  text-decoration: none;
-  border: 1px solid #ddd;
-  background: #fff;
-}
-.dd-handle:hover { color: var(--primary); background: #fff; }
+  .dd-collapsed .dd-list {
+    display: none;
+  }
 
-.dd-item > button { display: block; position: relative; right: 40px; top: 5px; cursor: pointer; float: left; width: 25px; height: 20px; margin: 5px 0; padding: 0; text-indent: 100%; white-space: nowrap; border: 0; background: transparent; font-size: 20px; line-height: 1; text-align: center; font-weight: bold; }
+  .dd-item,
+  .dd-empty,
+  .dd-placeholder {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
 
+  .dd-handle {
+    display: block;
+
+    margin: 1px 0;
+    padding: 8px 10px;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+
+  .dd-handle:hover {
+    color: var(--primary);
+    background: #fff;
+  }
+
+  .dd-item>button {
+    display: block;
+    position: relative;
+    right: 40px;
+    top: 5px;
+    cursor: pointer;
+    float: left;
+    width: 25px;
+    height: 20px;
+    margin: 5px 0;
+    padding: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    border: 0;
+    background: transparent;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+  }
 </style>
 
 <!--页面主要内容-->
@@ -121,12 +178,12 @@
               <h3>Create</h3>
             </div>
             <div class="col-xs-1" style="float: right;">
-              <a class="btn btn-label btn-primary" href="{{ route('role.index') }}"><label><i class="mdi mdi-keyboard-return"></i></label> List</a>
+              <a class="btn btn-label btn-primary" href="{{ route('permission.index') }}"><label><i class="mdi mdi-keyboard-return"></i></label> List</a>
             </div>
           </div>
 
           <div class="card-body">
-            <form action="{{ route('permission.store') }}" method="post">
+            <form action="{{ route('permission.store') }}" method="post" id="create_permission">
               @csrf
               <div class="form-body">
                 <div class="form-group row">
@@ -186,7 +243,7 @@
               <div class="form-footer row">
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-9">
-                  <button class="btn btn-default btn-w-md" type="button">重 置</button>
+                  <button class="btn btn-default btn-w-md btn-reset" type="button">重 置</button>
                   <button class="btn btn-primary btn-w-md" type="submit">提 交</button>
                 </div>
               </div>
@@ -209,8 +266,9 @@
 <script type="text/javascript" src="/js/mogujie/admin/lightyear.js"></script>
 
 <script>
-      //选择上级
-      $(".nav p.set").click(function() {
+  $(function() {
+    //选择上级
+    $(".nav p.set").click(function() {
       var ul = $(".new");
       if (ul.css("display") == "none") {
         ul.slideDown();
@@ -240,4 +298,14 @@
       /*$(".set").css({background:'none'});*/
       $("p").removeClass("select");
     });
+    //重置
+    $('.btn-reset').click(function() {
+      $(':input', '#create_permission')
+        .not(':button,:submit,:reset,:hidden')
+        .val('')
+        .removeAttr('checked')
+        .removeAttr('selected');
+      $('.set').html('');
+    })
+  })
 </script>

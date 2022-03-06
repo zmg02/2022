@@ -37,7 +37,7 @@
                   </span>
                 </div>
               </div>
-              <div class="col-xs-1" style="float: right;">
+              <div class="col-xs-1" style="float: right; margin-right:50px">
                 <a class="btn btn-label btn-primary" href="{{ route('role.create') }}"><label><i class="mdi mdi-plus"></i></label> 新增角色</a>
               </div>
             </div>
@@ -103,7 +103,7 @@
   $(function() {
     $('.btn-danger').click(function() {
       var id = $(this).data('id');
-      $('.btn-danger-delete').attr('data-id',id);
+      $('.btn-danger-delete').attr('data-id', id);
       $('#alert_info').css('display', 'block');
     });
     $('.btn-cancel').click(function() {
@@ -113,14 +113,14 @@
       var id = $(this).data('id');
       $.ajax({
         headers: {
-          'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         method: 'delete',
-        url: "{{ route('role.destroy', 'id') }}".replace(/id/,id),
+        url: "{{ route('role.destroy', 'id') }}".replace(/id/, id),
         success: function(result) {
           $('#alert_info').css('display', 'none');
           if (result == 'success') {
-            lightyear.notify('删除成功!', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center' , "{{ route('role.index') }}");
+            lightyear.notify('删除成功!', 'success', 100, 'mdi mdi-emoticon-happy', 'top', 'center', "{{ route('role.index') }}");
           } else {
             lightyear.notify('删除失败，请稍后再试~', 'danger', 100);
           }

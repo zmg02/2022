@@ -96,16 +96,8 @@ class RoleController extends Controller
     public function update(Request $request, $id)
     {
         $roleModel = new AdminRoles();
-        $message = [
-            'name.required' => '请填写角色名称！',
-            'slug.required' => '请填写角色别称！',
-            'name.max' => '角色名称不能超过255字节！',
-            'slug.max' => '角色别称不能超过255字节！',
-        ];
-        $request->validate([
-            'name' => 'required|max:255',
-            'slug' => 'required|max:255'
-        ], $message);
+        $roleModel->validate($request, $id);
+
         $result = $roleModel->editRole($request, $id);
         if ($result) {
             $message = '修改成功！';
@@ -115,7 +107,7 @@ class RoleController extends Controller
         return back()->with([
             'message'  => $message,
             'url'      => route('role.index'),
-            'jumpTime' => 2,
+            'jumpTime' => 1,
             'pageName' => '角色列表'
         ]);
     }
