@@ -52,7 +52,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:user'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -74,10 +74,20 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        $phone = $icon = $session_id='';
+        $is_admin = 1;
+        $last_login_time = time();
+        $last_login_ip = $_SERVER['SERVER_ADDR'];
         return User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
+            'phone' => $phone,
+            'icon' => $icon,
+            'session_id' => $session_id,
+            'is_admin' => $is_admin,
+            'last_login_time' => $last_login_time,
+            'last_login_ip' => $last_login_ip,
         ]);
     }
 }
