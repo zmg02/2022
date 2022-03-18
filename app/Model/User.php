@@ -20,6 +20,10 @@ class User extends Authenticatable
         'name', 'email', 'phone', 'password', 'icon', 'session_id', 'order_count', 'payment_count', 'payment_price', 'come_from', 'login_count', 'last_login_time', 'last_login_ip'
     ];
 
+    const CREATED_AT = 'create_time';
+
+    const UPDATED_AT = 'update_time';
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -34,18 +38,29 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
-//        'create_time' => 'datetime',
-    ];
+    // protected $casts = [
+    //    'create_time' => 'datetime',
+    //    'update_time' => 'datetime',
+    // ];
+
+    /**
+     * 从数据库获取的为时间戳格式
+     * @return string
+     */
+    public function getDateFormat()
+    {
+        return 'U';
+    }
     /**
      * 指示是否自动维护时间戳
      *
      * @var bool
      */
-    public $timestamps = false;
+    public $timestamps = true;
     //用户注册，待修改
     public function createUser($userInfo)
     {
+        dd($userInfo);
 //        $this->name = '张三';
         $this->email = $userInfo['email'];
         $this->phone = $userInfo['phone'];

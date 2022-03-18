@@ -221,7 +221,6 @@
     <!--End 页面主要内容-->
 
 @include('admin.mogujie.layouts.foot')
-
 <!--图表插件-->
 <script type="text/javascript" src="/js/mogujie/admin/Chart.js"></script>
 <script type="text/javascript">
