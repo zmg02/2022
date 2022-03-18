@@ -44,7 +44,7 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        dd(Auth::guard('web')->attempt($credentials));
+        // dd(Auth::guard('web')->attempt($credentials));
         if (Auth::attempt(['email'=>$email, 'password'=>$password, 'is_admin'=>1])) {
             return redirect()->intended('/admin/home');
         }

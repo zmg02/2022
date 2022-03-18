@@ -23,7 +23,7 @@
       loginTime = loginTime - 1;
       $('.loginTime').text(loginTime);
       if (loginTime == 0) {
-        clearInterval(time);
+        clearInterval(time);  //关闭定时
         window.location.href = url;
       }
     }, 1000);
