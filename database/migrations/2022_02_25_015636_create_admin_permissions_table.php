@@ -19,7 +19,7 @@ class CreateAdminPermissionsTable extends Migration
             $table->string('name')->default('')->comment('名称');
             $table->string('slug')->default('')->comment('转换名称中的空格，大小写');
             $table->string('http_method')->default('');
-            $table->text('http_path')->default('');
+            $table->text('http_path');
             $table->smallInteger('order')->default(0)->comment('排序');
             $table->unsignedInteger('create_time');
             $table->unsignedInteger('update_time');
