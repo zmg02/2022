@@ -47,6 +47,8 @@ class LoginController extends Controller
         // dd(Auth::guard('web')->attempt($credentials));
         if (Auth::attempt(['email'=>$email, 'password'=>$password, 'is_admin'=>1])) {
             return redirect()->intended('/admin/home');
+        } else {
+            return ['message'=>'没有该用户！'];
         }
     }
 

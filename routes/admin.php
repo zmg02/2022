@@ -17,6 +17,7 @@ Route::group(['prefix' => 'mogujie', 'namespace' => 'Mogujie', 'middleware' => [
 });
 
 
-    Auth::routes(['register' => false]);
+    //Auth::routes(['register' => false]);
+    Auth::routes();
     Route::get('/home', 'HomeController@index')->middleware('admin')->name('home');
 
